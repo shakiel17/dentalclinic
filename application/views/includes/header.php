@@ -1,23 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
-		<title>Emmanuel MBC Official Website</title>
+<html>
 
-		<!-- Loading third party fonts -->
-		<link href="<?=base_url();?>design/fonts/novecento-font/novecento-font.css" rel="stylesheet" type="text/css">
-		<link href="<?=base_url();?>design/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="<?=base_url();?>design/images/favicon.png" type="">
 
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="<?=base_url();?>design/style.css">
-		<link rel="icon" type="image/x-icon" href="<?=base_url();?>design/images/embc.png">
-		
-		<!--[if lt IE 9]>
-		<script src="js/ie-support/html5.js"></script>
-		<script src="js/ie-support/respond.js"></script>
-		<![endif]-->
+  <title> Hermosilla Dental Clinic </title>
 
-	</head>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="<?=base_url();?>design/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="<?=base_url();?>design/css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="<?=base_url();?>design/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="<?=base_url();?>design/css/responsive.css" rel="stylesheet" />
+
+</head>
