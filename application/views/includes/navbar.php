@@ -6,7 +6,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="<?=base_url();?>">
             <span>
-              Hermosilla Dental Clinic
+            HERMOSILLA DENTAL CLINIC
             </span>
           </a>
 
