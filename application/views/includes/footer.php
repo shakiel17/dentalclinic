@@ -7,16 +7,16 @@
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="https://www.google.com/maps/place/TGP+The+Generics+Pharmacy/@7.0218392,125.0918265,20.75z/data=!4m14!1m7!3m6!1s0x32f8f96617265811:0x3e1dd19f5995fef0!2sOld+PC+Barracks!8m2!3d7.0221226!4d125.0925275!16s%2Fg%2F11qq004y49!3m5!1s0x32f8f97a9fc8ba11:0x7e301b9d3129ed2c!8m2!3d7.0219625!4d125.0919239!16s%2Fg%2F11gffrc5d9?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                029 Hilaria’s bldg. Old Pc Barracks Sudapin Kid city
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call +639622410805
                 </span>
               </a>
               <a href="">
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="footer_social">
-            <a href="">
+            <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
             <a href="">
@@ -58,19 +58,19 @@
               Links
             </h4>
             <div class="footer_links">
-              <a class="active" href="index.html">
+              <a class="active" href="<?=base_url();?>">
                 Home
               </a>
-              <a class="" href="about.html">
+              <a class="" href="<?=base_url();?>about">
                 About
               </a>
-              <a class="" href="departments.html">
-                Departments
+              <a class="" href="<?=base_url();?>services">
+                Services
               </a>
-              <a class="" href="doctors.html">
+              <a class="" href="<?=base_url();?>doctors">
                 Doctors
               </a>
-              <a class="" href="contact.html">
+              <a class="" href="<?=base_url();?>contact_us">
                 Contact Us
               </a>
             </div>

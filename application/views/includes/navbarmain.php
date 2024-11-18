@@ -1,10 +1,13 @@
-<body class="sub_page">
+<body>
   <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="<?=base_url();?>design/images/hero-bg.png" alt="">
+    </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="<?=base_url();?>">
+          <a class="navbar-brand" href="<?=base_url();?>">
             <span>
               Hermosilla Dental Clinic
             </span>
@@ -39,4 +42,3 @@
         </nav>
       </div>
     </header>
-</div>
