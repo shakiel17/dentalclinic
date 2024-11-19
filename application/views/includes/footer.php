@@ -1,7 +1,7 @@
 <footer class="footer_section">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-lg-3 footer_col">
+        <div class="col-md-6 col-lg-4 footer_col">
           <div class="footer_contact">
             <h4>
               Reach at..
@@ -10,7 +10,7 @@
               <a href="https://www.google.com/maps/place/TGP+The+Generics+Pharmacy/@7.0218392,125.0918265,20.75z/data=!4m14!1m7!3m6!1s0x32f8f96617265811:0x3e1dd19f5995fef0!2sOld+PC+Barracks!8m2!3d7.0221226!4d125.0925275!16s%2Fg%2F11qq004y49!3m5!1s0x32f8f97a9fc8ba11:0x7e301b9d3129ed2c!8m2!3d7.0219625!4d125.0919239!16s%2Fg%2F11gffrc5d9?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                029 Hilaria’s bldg. Old Pc Barracks Sudapin Kid city
+                029 Hilaria’s bldg. Old Pc Barracks, Brgy. Sudapin, Kidapawan city
                 </span>
               </a>
               <a href="">
@@ -19,15 +19,15 @@
                   Call +639622410805
                 </span>
               </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+              <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                Hermosilla Dental Clinic
                 </span>
               </a>
             </div>
           </div>
-          <div class="footer_social">
+          <!-- <div class="footer_social">
             <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
@@ -40,7 +40,7 @@
             <a href="">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="col-md-6 col-lg-3 footer_col">
           <div class="footer_detail">
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 footer_col ">
+        <div class="col-md-6 col-lg-2 footer_col ">
           <h4>
             Newsletter
           </h4>
@@ -88,15 +88,14 @@
           </form>
         </div>
       </div>
-      <div class="footer-info">
+      <!-- <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
           <a href="https://html.design/">Free Html Templates<br><br></a>
             &copy; <span id="displayYear"></span> Distributed By
             <a href="https://themewagon.com/">ThemeWagon</a>
-        </p>
-       
-      </div>  
+        </p>       
+      </div>   -->
     </div>
   </footer>
   <!-- footer section -->
