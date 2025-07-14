@@ -7,20 +7,19 @@ date_default_timezone_set('Asia/Manila');
             $page = "index";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
-            }                             
-            $this->load->view('includes/header');
-            $this->load->view('includes/navbarmain');
-            $this->load->view('pages/'.$page);         
-            $this->load->view('includes/footer');               
+            }                                     
+            $this->load->view('pages/'.$page);                 
         }  
-        public function about(){
-            $page = "about";
+        public function main(){
+            $page = "main";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
             }                             
             $this->load->view('includes/header');
             $this->load->view('includes/navbar');
-            $this->load->view('pages/'.$page);         
+            $this->load->view('includes/sidebar');
+            $this->load->view('pages/'.$page);    
+            $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
         } 
         public function services(){
@@ -28,9 +27,11 @@ date_default_timezone_set('Asia/Manila');
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
             }                             
-            $this->load->view('includes/header');
+             $this->load->view('includes/header');
             $this->load->view('includes/navbar');
-            $this->load->view('pages/'.$page);         
+            $this->load->view('includes/sidebar');
+            $this->load->view('pages/'.$page);    
+            $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
         }     
 }
