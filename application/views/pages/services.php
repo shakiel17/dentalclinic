@@ -1,81 +1,53 @@
-<section class="department_section layout_padding">
-    <div class="department_container">
-      <div class="container ">
-        <div class="heading_container heading_center">
-          <h2>
-            Services Offered
-          </h2>
-          <p>
-            Gentle Hands, Brighter Smiles
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="<?=base_url();?>design/images/toothextract.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Tooth Extraction
-                </h5>
-                <p>
-                  (Bunot)
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="<?=base_url();?>design/images/toothfilling.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Tooth Filling
-                </h5>
-                <p>
-                  (Pasta)
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="<?=base_url();?>design/images/toothcleaning.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                Oral Prophylaxis
-                </h5>
-                <p>
-                  (Tooth Cleaning)
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="box ">
-              <div class="img-box">
-                <img src="<?=base_url();?>design/images/braces.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Orthodontics
-                </h5>
-                <p>
-                  (Braces)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="btn-box">
-          <a href="">
-            View All
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+ <div class="content-inner">
+                    <div class="container-fluid">
+                        <!-- Begin Page Header-->
+                        <div class="row">
+                            <div class="page-header">
+	                            <div class="d-flex align-items-center">
+	                                <h2 class="page-header-title">Services Offered</h2>
+	                                <div>
+			                            <ul class="breadcrumb">
+			                                <li class="breadcrumb-item"><a href="db-default.html"><i class="ti ti-home"></i></a></li>
+			                                <li class="breadcrumb-item active">Datatables</li>
+			                            </ul>
+	                                </div>
+	                            </div>
+                            </div>
+                        </div>
+                        <!-- End Page Header -->
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <!-- Sorting -->
+                                <div class="widget has-shadow">
+                                    <div class="widget-header bordered d-flex align-items-center">
+                                        <h2>Services List</h2>
+                                        <div class="widget-options">
+                                            <div class="btn-group" role="group">
+                                                <a href="#" class="btn btn-primary ripple addService" data-toggle="modal" data-target="#ManageServices"><i class="la la-plus-circle"></i> Add Service</a>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="widget-body">
+                                        <div class="table-responsive">
+                                            <table id="sorting-table" class="table mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>No.</th>
+                                                        <th>Code</th>
+                                                        <th>Description</th>
+                                                        <th>Amount</th>                                                        
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                </tbody>                                               
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Sorting -->                               
+                            </div>
+                        </div>
+                        <!-- End Row -->
+                    </div>

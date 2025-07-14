@@ -8,16 +8,42 @@ date_default_timezone_set('Asia/Manila');
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
             }                                     
+            if($this->session->admin_login){redirect(base_url('main'));}
+            else{}
             $this->load->view('pages/'.$page);                 
         }  
+        public function authenticate(){
+            $username=$this->input->post('username');
+            $password=$this->input->post('password');
+            $data=$this->Clinic_model->authenticate($username,$password);
+            if($data){
+                $userdata=array(
+                    'username' => $username,
+                    'fullname' => $data['fullname'],
+                    'admin_login' => true
+                );
+                $this->session->set_userdata($userdata);
+                redirect(base_url('main'));
+            }else{
+                redirect(base_url());
+            }
+        }
+        public function logout(){
+            $this->session->unset_userdata('fullname');
+            $this->session->unset_userdata('username');
+            $this->session->unset_userdata('admin_login');
+            redirect(base_url());
+        }
         public function main(){
             $page = "main";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
-            }                             
-            $this->load->view('includes/header');
-            $this->load->view('includes/navbar');
-            $this->load->view('includes/sidebar');
+            }                        
+            if($this->session->admin_login){}
+            else{redirect(base_url());}
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
             $this->load->view('pages/'.$page);    
             $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
@@ -26,10 +52,12 @@ date_default_timezone_set('Asia/Manila');
             $page = "services";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
-            }                             
-             $this->load->view('includes/header');
-            $this->load->view('includes/navbar');
-            $this->load->view('includes/sidebar');
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}           
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
             $this->load->view('pages/'.$page);    
             $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               

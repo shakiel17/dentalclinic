@@ -1,122 +1,371 @@
-<footer class="footer_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 footer_col">
-          <div class="footer_contact">
-            <h4>
-              Reach at..
-            </h4>
-            <div class="contact_link_box">
-              <a href="https://www.google.com/maps/place/TGP+The+Generics+Pharmacy/@7.0218392,125.0918265,20.75z/data=!4m14!1m7!3m6!1s0x32f8f96617265811:0x3e1dd19f5995fef0!2sOld+PC+Barracks!8m2!3d7.0221226!4d125.0925275!16s%2Fg%2F11qq004y49!3m5!1s0x32f8f97a9fc8ba11:0x7e301b9d3129ed2c!8m2!3d7.0219625!4d125.0919239!16s%2Fg%2F11gffrc5d9?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span>
-                029 Hilaria’s bldg. Old Pc Barracks, Brgy. Sudapin, Kidapawan city
-                </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>
-                  Call +639622410805
-                </span>
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <span>
-                Hermosilla Dental Clinic
-                </span>
-              </a>
+<!-- Begin Page Footer-->
+                    <footer class="main-footer fixed">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+                                <p class="text-gradient-02">Designed & Developed By Eczekiel Aboy</p>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
+                                <!-- <ul class="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="documentation.html">Documentation</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="changelog.html">Changelog</a>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End Page Footer -->
+                    <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
+                    <!-- Offcanvas Sidebar -->
+                    <div class="off-sidebar from-right">
+                        <div class="off-sidebar-container">
+                            <header class="off-sidebar-header">
+                                <ul class="button-nav nav nav-tabs mt-3 mb-3 ml-3" role="tablist" id="weather-tab">
+                                    <li><a class="active" data-toggle="tab" href="#messenger" role="tab" id="messenger-tab">Messages</a></li>
+                                    <li><a data-toggle="tab" href="#today" role="tab" id="today-tab">Today</a></li>
+                                </ul>
+                                <a href="#off-canvas" class="off-sidebar-close"></a>
+                            </header>
+                            <div class="off-sidebar-content offcanvas-scroll auto-scroll">
+                                <div class="tab-content">
+                                    <!-- Begin Messenger -->
+                                    <div role="tabpanel" class="tab-pane show active fade" id="messenger" aria-labelledby="messenger-tab">
+                                        <!-- Begin Chat Message -->
+                                        <span class="date">Today</span>
+                                        <div class="messenger-message messenger-message-sender">
+                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-02.jpg" alt="...">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                        <span class="mb-2">Brandon wrote</span>
+                                                        Hi David, what's up?
+                                                    </p>
+                                                </div>
+                                                <div class="messenger-details">
+                                                    <span class="messenger-message-localization font-size-small">2 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-recipient">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                       Hi Brandon, fine and you?
+                                                   </p>
+                                                    <p>
+                                                       I'm working on the next update of Elisyam
+                                                   </p>
+                                                </div>
+                                                <div class="messenger-details">
+                                                    <span class="messenger-message-localisation font-size-small">3 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-sender">
+                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-02.jpg" alt="...">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                        <span class="mb-2">Brandon wrote</span>
+                                                        I can't wait to see
+                                                    </p>
+                                                </div>
+                                                <div class="messenger-details">
+                                                    <span class="messenger-message-localization font-size-small">5 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-recipient">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                       I'm almost done
+                                                   </p>
+                                                </div>
+                                                <div class="messenger-details">
+                                                    <span class="messenger-message-localisation font-size-small">10 minutes ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span class="date">Yesterday</span>
+                                        <div class="messenger-message messenger-message-sender">
+                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-05.jpg" alt="...">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                        I updated the server tonight
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-recipient">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                       Didn't you have any problems?
+                                                   </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-sender">
+                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-05.jpg" alt="...">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                        No!
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="messenger-message messenger-message-recipient">
+                                            <div class="messenger-message-wrapper">
+                                                <div class="messenger-message-content">
+                                                    <p>
+                                                       Great!
+                                                   </p>
+                                                    <p>
+                                                       See you later!
+                                                   </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Chat Message -->
+                                        <!-- Begin Message Form -->
+                                        <div class="enter-message">
+                                            <div class="enter-message-form">
+                                                <input type="text" placeholder="Enter your message..."/>
+                                            </div>
+                                            <div class="enter-message-button">
+                                                <a href="#" class="send"><i class="ion-paper-airplane"></i></a>
+                                            </div>
+                                        </div>
+                                        <!-- End Message Form -->
+                                    </div>
+                                    <!-- End Messenger -->
+                                    <!-- Begin Today -->
+                                    <div role="tabpanel" class="tab-pane fade" id="today" aria-labelledby="today-tab">
+                                        <!-- Begin Today Stats -->
+                                        <div class="sidebar-heading pt-0">Today</div>
+                                        <div class="today-stats mt-3 mb-3">
+                                            <div class="row">
+                                                <div class="col-4 text-center">
+                                                    <i class="la la-users"></i>
+                                                    <div class="counter">264</div>
+                                                    <div class="heading">Clients</div>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <i class="la la-cart-arrow-down"></i>
+                                                    <div class="counter">360</div>
+                                                    <div class="heading">Sales</div>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <i class="la la-money"></i>
+                                                    <div class="counter">$ 4,565</div>
+                                                    <div class="heading">Earnings</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Today Stats -->
+                                        <!-- Begin Friends -->
+                                        <div class="sidebar-heading">Friends</div>
+                                        <div class="quick-friends mt-3 mb-3">
+                                            <ul class="list-group w-100">
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left align-self-center mr-3">
+                                                            <img src="assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        </div>
+                                                        <div class="media-body align-self-center">
+                                                            <a href="javascript:void(0);">Brandon Smith</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left align-self-center mr-3">
+                                                            <img src="assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        </div>
+                                                        <div class="media-body align-self-center">
+                                                            <a href="javascript:void(0);">Louis Henry</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left align-self-center mr-3">
+                                                            <img src="assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        </div>
+                                                        <div class="media-body align-self-center">
+                                                            <a href="javascript:void(0);">Nathan Hunter</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left align-self-center mr-3">
+                                                            <img src="assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        </div>
+                                                        <div class="media-body align-self-center">
+                                                            <a href="javascript:void(0);">Megan Duncan</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-left align-self-center mr-3">
+                                                            <img src="assets/img/avatar/avatar-06.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        </div>
+                                                        <div class="media-body align-self-center">
+                                                            <a href="javascript:void(0);">Beverly Oliver</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- End Friends -->
+                                        <!-- Begin Settings -->
+                                        <div class="sidebar-heading">Settings</div>
+                                        <div class="quick-settings mt-3 mb-3">
+                                            <ul class="list-group w-100">
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-body align-self-center">
+                                                            <p class="text-dark">Notifications Email</p>
+                                                        </div>
+                                                        <div class="media-right align-self-center">
+                                                            <label>
+                                                                <input class="toggle-checkbox" type="checkbox" checked>
+                                                                <span>
+                                                                    <span></span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-body align-self-center">
+                                                            <p class="text-dark">Notifications Sound</p>
+                                                        </div>
+                                                        <div class="media-right align-self-center">
+                                                            <label>
+                                                                <input class="toggle-checkbox" type="checkbox">
+                                                                <span>
+                                                                    <span></span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <div class="media">
+                                                        <div class="media-body align-self-center">
+                                                            <p class="text-dark">Chat Message Sound</p>
+                                                        </div>
+                                                        <div class="media-right align-self-center">
+                                                            <label>
+                                                                <input class="toggle-checkbox" type="checkbox" checked>
+                                                                <span>
+                                                                    <span></span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- End Settings -->
+                                    </div>
+                                    <!-- End Today -->
+                                </div>
+                            </div>
+                            <!-- End Offcanvas Container -->
+                        </div>
+                        <!-- End Offsidebar Container -->
+                    </div>
+                    <!-- End Offcanvas Sidebar -->
+                </div>
+                <!-- End Content -->
             </div>
-          </div>
-          <!-- <div class="footer_social">
-            <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div> -->
+            <!-- End Page Content -->
         </div>
-        <div class="col-md-6 col-lg-3 footer_col">
-          <div class="footer_detail">
-            <h4>
-              About
-            </h4>
-            <p>
-              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-2 mx-auto footer_col">
-          <div class="footer_link_box">
-            <h4>
-              Links
-            </h4>
-            <div class="footer_links">
-              <a class="active" href="<?=base_url();?>">
-                Home
-              </a>
-              <a class="" href="<?=base_url();?>about">
-                About
-              </a>
-              <a class="" href="<?=base_url();?>services">
-                Services
-              </a>
-              <a class="" href="<?=base_url();?>doctors">
-                Doctors
-              </a>
-              <a class="" href="<?=base_url();?>contact_us">
-                Contact Us
-              </a>
+        <!-- Begin Success Modal -->
+        <div id="delay-modal" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="sa-icon sa-success animate" style="display: block;">
+                            <span class="sa-line sa-tip animateSuccessTip"></span>
+                            <span class="sa-line sa-long animateSuccessLong"></span>
+                            <div class="sa-placeholder"></div>
+                            <div class="sa-fix"></div>
+                        </div>
+                        <div class="section-title mt-5 mb-5">
+                            <h2 class="text-dark">Meeting successfully created</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-6 col-lg-2 footer_col ">
-          <h4>
-            Newsletter
-          </h4>
-          <form action="#">
-            <input type="email" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
-            </button>
-          </form>
+        <!-- End Success Modal -->
+        <!-- Begin Modal -->
+        <div id="modal-view-event" class="modal modal-top fade calendar-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title event-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="media">
+                            <div class="media-left align-self-center mr-3">
+                                <div class="event-icon"></div>
+                            </div>
+                            <div class="media-body align-self-center mt-3 mb-3">
+                                <div class="event-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates<br><br></a>
-            &copy; <span id="displayYear"></span> Distributed By
-            <a href="https://themewagon.com/">ThemeWagon</a>
-        </p>       
-      </div>   -->
-    </div>
-  </footer>
-  <!-- footer section -->
-
-  <!-- jQery -->
-  <script type="text/javascript" src="<?=base_url();?>design/js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script type="text/javascript" src="<?=base_url();?>design/js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- custom js -->
-  <script type="text/javascript" src="<?=base_url();?>design/js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
-
-</body>
-
+        <!-- End Modal -->
+        <!-- Begin Vendor Js -->
+        <script src="<?=base_url('design/assets/vendors/js/base/jquery.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/base/core.min.js');?>"></script>
+        <!-- End Vendor Js -->
+        <!-- Begin Page Vendor Js -->
+        <script src="<?=base_url('design/assets/vendors/js/nicescroll/nicescroll.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/chart/chart.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/progress/circle-progress.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/calendar/moment.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/calendar/fullcalendar.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/owl-carousel/owl.carousel.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/app/app.js');?>"></script>
+         <script src="<?=base_url('design/assets/vendors/js/datatables/datatables.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/dataTables.buttons.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/jszip.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/buttons.html5.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/pdfmake.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/vfs_fonts.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/datatables/buttons.print.min.js');?>"></script>
+        <!-- End Page Vendor Js -->
+        <!-- Begin Page Snippets -->
+        <script src="<?=base_url('design/assets/js/dashboard/db-default.js');?>"></script>
+        <script src="<?=base_url('design/assets/js/components/tables/tables.js');?>"></script>
+        <!-- End Page Snippets -->
+         <script>
+          $('.addService').click(function(){
+            
+          });
+          </script>
+    </body>
 </html>
