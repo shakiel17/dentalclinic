@@ -43,7 +43,7 @@
                                             </div>
                                             <div class="media-body align-self-center">
                                                 <div class="title text-twitter">Total Services</div>
-                                                <div class="number">8,986 Followers</div>
+                                                <div class="number"><?=count($services);?></div>
                                             </div>
                                         </div>
                                     </div>

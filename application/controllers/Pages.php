@@ -41,10 +41,11 @@ date_default_timezone_set('Asia/Manila');
             }                        
             if($this->session->admin_login){}
             else{redirect(base_url());}
+            $data['services'] = $this->Clinic_model->getAllServices();
             $this->load->view('includes/header'); 
             $this->load->view('includes/navbar');           
             $this->load->view('includes/sidebar');            
-            $this->load->view('pages/'.$page);    
+            $this->load->view('pages/'.$page,$data);    
             $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
         } 
@@ -54,13 +55,32 @@ date_default_timezone_set('Asia/Manila');
                 show_404();
             }                  
             if($this->session->admin_login){}
-            else{redirect(base_url());}           
+            else{redirect(base_url());}        
+            $data['items'] = $this->Clinic_model->getAllServices();
             $this->load->view('includes/header'); 
             $this->load->view('includes/navbar');           
             $this->load->view('includes/sidebar');            
-            $this->load->view('pages/'.$page);    
+            $this->load->view('pages/'.$page,$data);    
             $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
-        }     
+        }
+        public function save_services(){
+            $result=$this->Clinic_model->save_services();
+            if($result){
+                $this->session->set_flashdata('success','Service details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save service details!');
+            }
+            redirect(base_url('services'));
+        }
+        public function delete_services($id){
+            $result=$this->Clinic_model->delete_services($id);
+            if($result){
+                $this->session->set_flashdata('success','Service details successfully deleted!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to delete service details!');
+            }
+            redirect(base_url('services'));
+        }
 }
 ?>

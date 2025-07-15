@@ -32,35 +32,57 @@
                         </button>
                     </div>
                     <form action="<?=base_url('save_services');?>" method="POST">
-                    <div class="modal-body">
-                        <div class="mt-1 mb-5 position-relative">
-                        <div class="group material-input">
-                            <input type="text" name="code" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Code</label>
+                        <input type="hidden" name="id" id="service_id">
+                        <div class="modal-body">
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="code" required id="service_code">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Code</label>
+                            </div>
+                            </div>
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="description" required id="service_description">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Description</label>
+                            </div>
+                            </div>  
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="amount" required id="service_amount">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Amount</label>
+                            </div>
+                            </div>                      
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
-                        <div class="mt-1 mb-5 position-relative">
-                        <div class="group material-input">
-                            <input type="text" name="description" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Description</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="success" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="sa-icon sa-success animate" style="display: block;">
+                            <span class="sa-line sa-tip animateSuccessTip"></span>
+                            <span class="sa-line sa-long animateSuccessLong"></span>
+                            <div class="sa-placeholder"></div>
+                            <div class="sa-fix"></div>
                         </div>
-                        </div>  
-                        <div class="mt-1 mb-5 position-relative">
-                        <div class="group material-input">
-                            <input type="text" name="amount" required>
-                            <span class="highlight"></span>
-                            <span class="bar"></span>
-                            <label>Amount</label>
+                        <div class="section-title mt-5 mb-2">
+                            <h2 class="text-gradient-02">Success!</h2>
                         </div>
-                        </div>                      
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <p class="mb-5"><?=$this->session->success;?></p>
+                        <button type="button" class="btn btn-shadow mb-3" data-dismiss="modal">Ok</button>
                     </div>
                 </div>
             </div>

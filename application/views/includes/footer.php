@@ -357,15 +357,32 @@
         <script src="<?=base_url('design/assets/vendors/js/datatables/pdfmake.min.js');?>"></script>
         <script src="<?=base_url('design/assets/vendors/js/datatables/vfs_fonts.js');?>"></script>
         <script src="<?=base_url('design/assets/vendors/js/datatables/buttons.print.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/vendors/js/app/app.min.js');?>"></script>
+        <script src="<?=base_url('design/assets/js/components/notifications/notifications.min.js');?>"></script>
+         <script src="<?=base_url('design/assets/vendors/js/noty/noty.min.js');?>"></script>
         <!-- End Page Vendor Js -->
         <!-- Begin Page Snippets -->
         <script src="<?=base_url('design/assets/js/dashboard/db-default.js');?>"></script>
         <script src="<?=base_url('design/assets/js/components/tables/tables.js');?>"></script>
         <!-- End Page Snippets -->
-         <script>
-          $('.addService').click(function(){
-            
+         <script type="text/javascript">
+          $('.addService').click(function(){            
+            document.getElementById('service_id').value='';
+            document.getElementById('service_code').value='';
+            document.getElementById('service_description').value='';
+            document.getElementById('service_amount').value='';
           });
-          </script>
+          $('.editService').click(function(){
+            var data=$(this).data('id');
+            var id=data.split('_');
+            document.getElementById('service_id').value=id[0];
+            document.getElementById('service_code').value=id[1];
+            document.getElementById('service_description').value=id[2];
+            document.getElementById('service_amount').value=id[3];
+          });          
+          </script>        
+            <script>
+
+            </script>
     </body>
 </html>
