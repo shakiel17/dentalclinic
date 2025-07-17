@@ -42,5 +42,9 @@
                 return false;
             }
         }
+        public function getAllPatient(){
+            $result=$this->db->query("SELECT * FROM customer ORDER BY lastname ASC, firstname ASC");
+            return $result->result_array();
+        }
     }
 ?>

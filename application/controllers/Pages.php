@@ -82,5 +82,21 @@ date_default_timezone_set('Asia/Manila');
             }
             redirect(base_url('services'));
         }
+        public function manage_patient(){
+            $page = "manage_patient";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}     
+            $data['title'] = "Patient Masterfile";   
+            $data['items'] = $this->Clinic_model->getAllPatient();
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
 }
 ?>
