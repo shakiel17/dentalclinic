@@ -158,7 +158,7 @@
                             </div> 
                             <div class="mt-1 mb-5 position-relative">
                             <div class="group material-input">
-                                <select name="address" class="form-control" required>
+                                <select name="civilstatus" class="form-control" required>
                                     <option value="">Civil Status</option>
                                     <option value="Single">Single</option>
                                     <option value="Married">Married</option>
@@ -168,7 +168,7 @@
                             </div> 
                             <div class="mt-1 mb-5 position-relative">
                             <div class="group material-input">
-                                <select name="address" class="form-control" required>
+                                <select name="gender" class="form-control" required>
                                     <option value="">Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>

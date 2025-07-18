@@ -24,6 +24,16 @@
                         <?php
                         }
                         ?>
+                         <?php
+                        if($this->session->failed){
+                        ?>
+                        <div class="alert alert-danger" role="alert">
+                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+                            <strong><?=$this->session->failed;?></strong>
+                        </div>
+                        <?php
+                        }
+                        ?>
                         <!-- End Page Header -->
                         <div class="row">
                             <div class="col-xl-12">

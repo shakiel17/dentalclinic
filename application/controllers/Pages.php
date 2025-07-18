@@ -98,5 +98,58 @@ date_default_timezone_set('Asia/Manila');
             $this->load->view('includes/modal');     
             $this->load->view('includes/footer');               
         }
+        public function save_patient(){
+            $result=$this->Clinic_model->save_patient();
+            if($result){
+                $this->session->set_flashdata('success','Patient details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save patient details!');
+            }
+            redirect(base_url('manage_patient'));
+        }
+        public function view_profile($id){
+            $page = "patient_profile";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}     
+            $data['title'] = "Patient Profile";
+            $data['admission'] = "";
+            $data['item'] = $this->Clinic_model->getSinglePatient($id);
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
+        public function update_patient(){
+            $id=$this->input->post('customer_id');
+            $result=$this->Clinic_model->update_patient();
+            if($result){
+                $this->session->set_flashdata('success','Patient details successfully updated!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to update patient details!');
+            }
+            redirect(base_url('view_profile/'.$id));
+        }
+        public function view_admission_history($id){
+            $page = "patient_profile";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}     
+            $data['title'] = "Patient Profile";
+            $data['admission'] = "1";
+            $data['item'] = $this->Clinic_model->getSinglePatient($id);
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
 }
 ?>
