@@ -262,6 +262,7 @@
                                                     $gross=$row['amount'];                                                     
                                                     $query=$this->Clinic_model->checkrefno($row['referenceno']);
                                                     $description=$row['service_description'];
+                                                    //$desc=$this->Clinic_model->getSingleService($row['service_id']);
                                                     
                                                     echo "<tr>";
                                                         echo "<td>".date('m/d/Y',strtotime($row['datearray']))."</td>";                                                        

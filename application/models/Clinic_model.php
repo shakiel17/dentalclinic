@@ -122,7 +122,7 @@
             if($result){
                 if(count($services)>0){
                     foreach($services as $item){
-                        $query=$this->db->query("SELECT * FROM services WHERE id='$item'");
+                        $query=$this->db->query("SELECT * FROM services WHERE service_id='$item'");
                         $row=$query->row_array();
                         $unitcost=$row['service_unitcost'];
                         $refno="RN".date('YmdHis');
@@ -135,7 +135,7 @@
             }
         }
         public function getAllServicesRendered($caseno){
-            $result=$this->db->query("SELECT s.service_description,s.id as `sid`,po.* FROM services s INNER JOIN productout po ON po.service_id=s.id INNER JOIN admission a ON a.caseno=po.caseno WHERE a.caseno='$caseno'");
+            $result=$this->db->query("SELECT s.service_description,s.service_id as `sid`,po.* FROM services s INNER JOIN productout po ON po.service_id=s.service_id INNER JOIN admission a ON a.caseno=po.caseno WHERE a.caseno='$caseno'");
             return $result->result_array();
         }
         public function getAllActivePatient(){
@@ -148,7 +148,7 @@
         }
 
         public function getPatientPayment($caseno){
-            $result=$this->db->query("SELECT c.*,a.*,s.service_description FROM admission a INNER JOIN `collection` c ON c.caseno=a.caseno INNER JOIN services s ON s.id=c.service_id WHERE a.caseno='$caseno'");
+            $result=$this->db->query("SELECT c.*,a.*,s.service_description FROM admission a INNER JOIN `collection` c ON c.caseno=a.caseno INNER JOIN services s ON s.service_id=c.service_id WHERE a.caseno='$caseno'");
             return $result->result_array();
         }
         public function add_charges(){
@@ -158,7 +158,7 @@
             $time=date('H:i:s');
             $rn=date('YmdHis');
             foreach($services as $item){
-                $query=$this->db->query("SELECT * FROM services WHERE id='$item'");
+                $query=$this->db->query("SELECT * FROM services WHERE service_id='$item'");
                         $row=$query->row_array();
                         $unitcost=$row['service_unitcost'];                        
                         $refno="RN".$rn;
@@ -276,7 +276,7 @@
             }
         }
         public function getAllPatientPayment($customer_id){
-            $result=$this->db->query("SELECT c.*,s.service_description FROM `collection` c INNER JOIN admission a ON a.caseno=c.caseno INNER JOIN customer cs ON cs.customer_id=a.customer_id INNER JOIN services s ON s.id=c.service_id WHERE cs.customer_id='$customer_id' AND c.orno <> '' GROUP BY c.referenceno,c.orno ORDER BY c.id ASC");
+            $result=$this->db->query("SELECT c.*,s.service_description FROM `collection` c INNER JOIN admission a ON a.caseno=c.caseno INNER JOIN customer cs ON cs.customer_id=a.customer_id LEFT JOIN services s ON s.service_id=c.service_id WHERE cs.customer_id='$customer_id' AND c.orno <> '' ORDER BY c.datearray ASC");
             return $result->result_array();
         }
         public function checkrefno($refno){
@@ -287,6 +287,7 @@
             $refno=$this->input->post('refno');
             $balance=$this->input->post('balance');
             $amount=$this->input->post('amount');
+            $description=$this->input->post('description');
             $transno="";
             $file="";
             $query=$this->db->query("SELECT * FROM `collection` WHERE referenceno = '$refno' AND orno = ''");
@@ -301,9 +302,9 @@
             $credit="";
             if($tradeamount > 0){
                 $credit=1;
-                $result=$this->db->query("INSERT INTO `collection`(refno,caseno,orno,service_id,accttitle,amount,amount_paid,`type`,transno,proof_payment,`status`,referenceno,datearray,timearray) VALUES('$refnum','$row[caseno]','','$row[service_id]','$accttitle','$tradeamount','0','ar','$transno','$file','pending','$rrno','$date','$time')");
+                $result=$this->db->query("INSERT INTO `collection`(refno,caseno,orno,service_id,accttitle,amount,amount_paid,`type`,transno,proof_payment,`status`,referenceno,datearray,timearray) VALUES('$refnum','$row[caseno]','','$description','$accttitle','$tradeamount','0','ar','$transno','$file','pending','$rrno','$date','$time')");
             }           
-                $result=$this->db->query("UPDATE `collection` SET orno='$orno',`type`='cash',`status`='PAID',referenceno='$rrno',datearray='$date',timearray='$time',amount='$balance',amount_paid='$amount',accttitle='CASHONHAND',is_credit='$credit' WHERE refno='$rrno'");                 
+                $result=$this->db->query("UPDATE `collection` SET orno='$orno',`type`='cash',`status`='PAID',referenceno='$rrno',datearray='$date',timearray='$time',amount='$balance',amount_paid='$amount',accttitle='CASHONHAND',is_credit='$credit',service_id='$description' WHERE refno='$rrno'");                 
             if($result){                
                 $this->db->query("UPDATE `collection` SET is_credit='' wHERE refno='$refno'");
                 return true;
@@ -324,6 +325,10 @@
             }else{
                 return false;
             }
+        }
+        public function getSingleService($id){
+            $result=$this->db->query("SELECT * FROM services WHERE id='$id'");
+            return $result->row_array();
         }
     }
 ?>

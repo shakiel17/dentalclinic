@@ -220,7 +220,7 @@
                                         <?php
                                         $services=$this->Clinic_model->getAllServices();
                                         foreach($services as $item){
-                                            echo "<input type='checkbox' name='services[]' value='$item[id]'> $item[service_description] <br>";
+                                            echo "<input type='checkbox' name='services[]' value='$item[service_id]'> $item[service_description] <br>";
                                         }
                                         ?>        
                                 </div>                            
@@ -254,7 +254,7 @@
                                         <?php
                                         $services=$this->Clinic_model->getAllServices();
                                         foreach($services as $item){
-                                            echo "<input type='checkbox' name='services[]' value='$item[id]'> $item[service_description] <br>";
+                                            echo "<input type='checkbox' name='services[]' value='$item[service_id]'> $item[service_description] <br>";
                                         }
                                         ?>        
                                 </div>                            
@@ -438,6 +438,18 @@
                             <div class="form-group">
                                 <label>Amount</label>
                                 <input type="text" name="amount" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Remarks</label>
+                                <select name="description" class="form-control" required>
+                                    <option value="">Select Services</option>
+                                    <?php
+                                    $services=$this->Clinic_model->getAllServices();
+                                    foreach($services as $item){
+                                        echo "<option value='$item[service_id]'>$item[service_description]</option>";
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="modal-footer">
