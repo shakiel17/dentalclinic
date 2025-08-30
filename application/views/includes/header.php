@@ -30,6 +30,23 @@
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <style>
+            svg {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            }
+
+            path, circle {
+            stroke: #000; /* Outline for visibility */
+            stroke-width: 2;
+            transition: 0.2s;
+            }
+
+            path:hover {
+            opacity: 0.8;
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Begin Preloader -->

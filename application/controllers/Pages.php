@@ -323,5 +323,25 @@ date_default_timezone_set('Asia/Manila');
             redirect(base_url('main'));
         }
 
+        public function admit_chart($caseno,$customer_id){
+            $page = "admit_chart";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}     
+            $data['title'] = "<a href='".base_url('view_billing/'.$caseno)."'>Patient Billing</a> >> Tooth Chart";
+            $data['admission'] = "";
+            $data['item'] = $this->Clinic_model->getPatientAdmission($caseno);   
+            $data['services'] = $this->Clinic_model->getAllServicesRendered($caseno);
+            $data['payment'] = $this->Clinic_model->getPatientPayment($caseno);   
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');
+        }
+
 }
 ?>

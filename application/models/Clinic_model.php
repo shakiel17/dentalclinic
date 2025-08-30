@@ -117,10 +117,10 @@
             $customer_id=$this->input->post('customer_id');
             $date=date('Y-m-d');
             $time=date('H:i:s');
-            $services=$this->input->post('services');            
+            $services=$this->input->post('services');          
             $result=$this->db->query("INSERT INTO admission(caseno,customer_id,dateadmit,timeadmit,`status`) VALUES('$caseno','$customer_id','$date','$time','Active')");
             if($result){
-                if(count($services)>0){
+                if($services){
                     foreach($services as $item){
                         $query=$this->db->query("SELECT * FROM services WHERE service_id='$item'");
                         $row=$query->row_array();

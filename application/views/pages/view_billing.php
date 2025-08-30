@@ -83,8 +83,8 @@
                                     <div class="widget-header bordered no-actions d-flex align-items-center">
                                         <table width="100%" border="0">
                                             <tr>
-                                                <td><h4>Services Rendered</h4></td>
-                                                <td align="right"><a href="#" class="btn btn-primary btn-sm addCharges" data-toggle="modal" data-target="#AddCharges" data-id="<?=$item['caseno'];?>" <?=$dc;?>><i class="la la-shopping-cart"></i> Charge Cart</a></td>
+                                                <td width="20%"><h4>Services Rendered</h4></td>
+                                                <td align="right"><a href="<?=base_url('admit_chart/'.$item['caseno']."/".$item['customer_id']);?>" class="btn btn-success btn-sm"><i class="la la-pie-chart"></i> Tooth Chart</a> <a href="#" class="btn btn-primary btn-sm addCharges" data-toggle="modal" data-target="#AddCharges" data-id="<?=$item['caseno'];?>" <?=$dc;?>><i class="la la-shopping-cart"></i> Charge Cart</a></td>
                                             </tr>
                                         </table>                                        
                                     </div>
