@@ -145,46 +145,70 @@
                                                                     if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
                                                                         $fill55center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1"){ 
-                                                                        $fill55slice1="#3a018a";
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill55slice1=="#ffffff"){
+                                                                            $fill55slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill55slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill55slice2=="#ffffff"){
+                                                                            $fill55slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill55slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill55slice3=="#ffffff"){
+                                                                            $fill55slice3="#3a018a";
+                                                                        }
                                                                     }
                                                                     if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill55slice4="#3a018a";
+                                                                        if($fill55slice4=="#ffffff"){
+                                                                            $fill55slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"){ 
-                                                                        $fill55slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill55slice1=="#ffffff"){
+                                                                            $fill55slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill55slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill27slice2=="#ffffff"){
+                                                                            $fill27slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill55slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill55slice3=="#ffffff"){
+                                                                            $fill55slice3="#908d94";
+                                                                        }
                                                                     }
                                                                     if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        $fill55slice4="#908d94";
+                                                                        if($fill55slice4=="#ffffff"){
+                                                                            $fill55slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill55slice1="url(#pattern-stripe)";
-                                                                        $pat="red";
+                                                                        if($fill55slice1=="#ffffff"){
+                                                                            $fill55slice1="url(#pattern-stripe55)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill55slice2="url(#pattern-stripe)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill55slice2=="#ffffff"){
+                                                                            $fill55slice2="url(#pattern-stripe55)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill55slice3="url(#pattern-stripe)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill55slice3=="#ffffff"){
+                                                                            $fill55slice3="url(#pattern-stripe55)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill55slice4="url(#pattern-stripe)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill55slice4=="#ffffff"){
+                                                                            $fill55slice4="url(#pattern-stripe55)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
@@ -200,7 +224,7 @@
                                                             <a class="btn btn-info btn-sm text-white">55</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe55" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -240,45 +264,69 @@
                                                                         $fill54center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill54slice1="#3a018a";
+                                                                        if($fill54slice1=="#ffffff"){
+                                                                            $fill54slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill54slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill54slice2=="#ffffff"){
+                                                                            $fill54slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill54slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill54slice3=="#ffffff"){
+                                                                            $fill54slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill54slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill54slice4=="#ffffff"){
+                                                                            $fill54slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill54slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill54slice1=="#ffffff"){
+                                                                            $fill54slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill54slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill54slice2=="#ffffff"){
+                                                                            $fill54slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill54slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill54slice3=="#ffffff"){
+                                                                            $fill54slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill54slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill54slice4=="#ffffff"){
+                                                                            $fill54slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill54slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill54slice1=="#ffffff"){
+                                                                            $fill54slice1="url(#pattern-stripe54)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill54slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill54slice2=="#ffffff"){
+                                                                            $fill54slice2="url(#pattern-stripe54)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill54slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill54slice3=="#ffffff"){
+                                                                            $fill54slice3="url(#pattern-stripe54)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill54slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill54slice4=="#ffffff"){
+                                                                            $fill54slice4="url(#pattern-stripe54)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                     
                                                                 }else{
                                                                     $id="";
@@ -294,7 +342,7 @@
                                                             <a class="btn btn-info btn-sm text-white">54</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe54" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -334,45 +382,69 @@
                                                                         $fill53center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill53slice1="#3a018a";
+                                                                        if($fill53slice1=="#ffffff"){
+                                                                            $fill53slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill53slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill53slice2=="#ffffff"){
+                                                                            $fill53slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill53slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill53slice3=="#ffffff"){
+                                                                            $fill53slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill53slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill53slice4=="#ffffff"){
+                                                                            $fill53slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill53slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill53slice1=="#ffffff"){
+                                                                            $fill53slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill53slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill53slice2=="#ffffff"){
+                                                                            $fill53slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill53slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill53slice3=="#ffffff"){
+                                                                            $fill53slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill53slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill53slice4=="#ffffff"){
+                                                                            $fill53slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill53slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill53slice1=="#ffffff"){
+                                                                            $fill53slice1="url(#pattern-stripe53)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill53slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill53slice2=="#ffffff"){
+                                                                            $fill53slice2="url(#pattern-stripe53)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill53slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill53slice3=="#ffffff"){
+                                                                            $fill53slice3="url(#pattern-stripe53)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill53slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill53slice4=="#ffffff"){
+                                                                            $fill53slice4="url(#pattern-stripe53)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                   
                                                                 }else{
                                                                     $id="";
@@ -388,7 +460,7 @@
                                                             <a class="btn btn-info btn-sm text-white">53</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe53" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -428,45 +500,69 @@
                                                                         $fill52center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill52slice1="#3a018a";
+                                                                        if($fill52slice1=="#ffffff"){
+                                                                            $fill52slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill52slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill52slice2=="#ffffff"){
+                                                                            $fill52slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill52slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill52slice3=="#ffffff"){
+                                                                            $fill52slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill52slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill52slice4=="#ffffff"){
+                                                                            $fill52slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill52slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill52slice1=="#ffffff"){
+                                                                            $fill52slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill52slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill52slice2=="#ffffff"){
+                                                                            $fill52slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill52slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill52slice3=="#ffffff"){
+                                                                            $fill52slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill52slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill52slice4=="#ffffff"){
+                                                                            $fill52slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill52slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill52slice1=="#ffffff"){
+                                                                            $fill52slice1="url(#pattern-stripe52)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill52slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill52slice2=="#ffffff"){
+                                                                            $fill52slice2="url(#pattern-stripe52)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill52slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill52slice3=="#ffffff"){
+                                                                            $fill52slice3="url(#pattern-stripe52)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill52slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill52slice4=="#ffffff"){
+                                                                            $fill52slice4="url(#pattern-stripe52)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                   
                                                                 }else{
                                                                     $id="";
@@ -482,7 +578,7 @@
                                                             <a class="btn btn-info btn-sm text-white">52</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe52" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -522,45 +618,69 @@
                                                                         $fill51center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill51slice1="#3a018a";
+                                                                        if($fill51slice1=="#ffffff"){
+                                                                            $fill51slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill51slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill51slice2=="#ffffff"){
+                                                                            $fill51slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill51slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill51slice3=="#ffffff"){
+                                                                            $fill51slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill51slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill51slice4=="#ffffff"){
+                                                                            $fill51slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill51slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill51slice1=="#ffffff"){
+                                                                            $fill51slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill51slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill51slice2=="#ffffff"){
+                                                                            $fill51slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill51slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill51slice3=="#ffffff"){
+                                                                            $fill51slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill51slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill51slice4=="#ffffff"){
+                                                                            $fill51slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill51slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill51slice1=="#ffffff"){
+                                                                            $fill51slice1="url(#pattern-stripe51)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill51slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill51slice2=="#ffffff"){
+                                                                            $fill51slice2="url(#pattern-stripe51)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill51slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill51slice3=="#ffffff"){
+                                                                            $fill51slice3="url(#pattern-stripe51)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill51slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill51slice4=="#ffffff"){
+                                                                            $fill51slice4="url(#pattern-stripe51)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                                                                                                                                                                                                                     
                                                                 }else{
                                                                     $id="";
@@ -576,7 +696,7 @@
                                                             <a class="btn btn-info btn-sm text-white">51</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe51" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -616,45 +736,69 @@
                                                                         $fill61center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill61slice1="#3a018a";
+                                                                        if($fill61slice1=="#ffffff"){
+                                                                            $fill61slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill61slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill61slice2=="#ffffff"){
+                                                                            $fill61slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill61slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill61slice3=="#ffffff"){
+                                                                            $fill61slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill61slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill61slice4=="#ffffff"){
+                                                                            $fill61slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill61slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill61slice1=="#ffffff"){
+                                                                            $fill61slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill61slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill61slice2=="#ffffff"){
+                                                                            $fill61slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill61slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill61slice3=="#ffffff"){
+                                                                            $fill61slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill61slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill61slice4=="#ffffff"){
+                                                                            $fill61slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill61slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill61slice1=="#ffffff"){
+                                                                            $fill61slice1="url(#pattern-stripe61)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill61slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill61slice2=="#ffffff"){
+                                                                            $fill61slice2="url(#pattern-stripe61)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill61slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill61slice3=="#ffffff"){
+                                                                            $fill61slice3="url(#pattern-stripe61)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill61slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill61slice4=="#ffffff"){
+                                                                            $fill61slice4="url(#pattern-stripe61)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
@@ -710,45 +854,69 @@
                                                                         $fill62center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill62slice1="#3a018a";
+                                                                        if($fill62slice1=="#ffffff"){
+                                                                            $fill62slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill62slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill62slice2=="#ffffff"){
+                                                                            $fill62slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill62slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill62slice3=="#ffffff"){
+                                                                            $fill62slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill62slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill62slice4=="#ffffff"){
+                                                                            $fill62slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill62slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill62slice1=="#ffffff"){
+                                                                            $fill62slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill62slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill62slice2=="#ffffff"){
+                                                                            $fill62slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill62slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill62slice3=="#ffffff"){
+                                                                            $fill62slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill62slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill62slice4=="#ffffff"){
+                                                                            $fill62slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill62slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill62slice1=="#ffffff"){
+                                                                            $fill62slice1="url(#pattern-stripe62)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill62slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill62slice2=="#ffffff"){
+                                                                            $fill62slice2="url(#pattern-stripe62)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill62slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill62slice3=="#ffffff"){
+                                                                            $fill62slice3="url(#pattern-stripe62)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill62slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill62slice4=="#ffffff"){
+                                                                            $fill62slice4="url(#pattern-stripe62)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
@@ -764,7 +932,7 @@
                                                             <a class="btn btn-info btn-sm text-white">62</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe62" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -804,45 +972,69 @@
                                                                         $fill63center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill63slice1="#3a018a";
+                                                                        if($fill63slice1=="#ffffff"){
+                                                                            $fill63slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill51slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill63slice2=="#ffffff"){
+                                                                            $fill63slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill63slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill63slice3=="#ffffff"){
+                                                                            $fill63slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill63slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill63slice4=="#ffffff"){
+                                                                            $fill63slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill63slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill63slice1=="#ffffff"){
+                                                                            $fill63slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill63slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill63slice2=="#ffffff"){
+                                                                            $fill63slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill63slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill63slice3=="#ffffff"){
+                                                                            $fill63slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill63slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill63slice4=="#ffffff"){
+                                                                            $fill63slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill63slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill63slice1=="#ffffff"){
+                                                                            $fill63slice1="url(#pattern-stripe63)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill63slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill63slice2=="#ffffff"){
+                                                                            $fill63slice2="url(#pattern-stripe63)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill63slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill63slice3=="#ffffff"){
+                                                                            $fill63slice3="url(#pattern-stripe63)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill63slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill63slice4=="#ffffff"){
+                                                                            $fill63slice4="url(#pattern-stripe63)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
@@ -858,7 +1050,7 @@
                                                             <a class="btn btn-info btn-sm text-white">63</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe63" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -898,45 +1090,69 @@
                                                                         $fill64center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill64slice1="#3a018a";
+                                                                        if($fill64slice1=="#ffffff"){
+                                                                            $fill64slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill64slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill64slice2=="#ffffff"){
+                                                                            $fill64slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill64slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill64slice3=="#ffffff"){
+                                                                            $fill64slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill64slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill64slice4=="#ffffff"){
+                                                                            $fill64slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill64slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill64slice1=="#ffffff"){
+                                                                            $fill64slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill64slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill64slice2=="#ffffff"){
+                                                                            $fill64slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill64slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill64slice3=="#ffffff"){
+                                                                            $fill64slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill64slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill64slice4=="#ffffff"){
+                                                                            $fill64slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill64slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill64slice1=="#ffffff"){
+                                                                            $fill64slice1="url(#pattern-stripe64)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill64slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill64slice2=="#ffffff"){
+                                                                            $fill64slice2="url(#pattern-stripe64)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill64slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill64slice3=="#ffffff"){
+                                                                            $fill64slice3="url(#pattern-stripe64)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill64slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill64slice4=="#ffffff"){
+                                                                            $fill64slice4="url(#pattern-stripe64)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                     
                                                                 }else{
                                                                     $id="";
@@ -952,7 +1168,7 @@
                                                             <a class="btn btn-info btn-sm text-white">64</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe64" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -992,45 +1208,69 @@
                                                                         $fill65center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill65slice1="#3a018a";
+                                                                        if($fill65slice1=="#ffffff"){
+                                                                            $fill65slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill65slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill65slice2=="#ffffff"){
+                                                                            $fill65slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill65slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill65slice3=="#ffffff"){
+                                                                            $fill65slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill65slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill65slice4=="#ffffff"){
+                                                                            $fill65slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill65slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill65slice1=="#ffffff"){
+                                                                            $fill65slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill65slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill65slice2=="#ffffff"){
+                                                                            $fill65slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill65slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill65slice3=="#ffffff"){
+                                                                            $fill65slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill65slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill65slice4=="#ffffff"){
+                                                                            $fill65slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill65slice1="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                        if($fill65slice1=="#ffffff"){
+                                                                            $fill65slice1="url(#pattern-stripe65)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill65slice2="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill65slice2=="#ffffff"){
+                                                                            $fill65slice2="url(#pattern-stripe65)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill65slice3="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill65slice3=="#ffffff"){
+                                                                            $fill65slice3="url(#pattern-stripe65)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill65slice4="url(#pattern-stripe61)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill65slice4=="#ffffff"){
+                                                                            $fill65slice4="url(#pattern-stripe65)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
@@ -1046,7 +1286,7 @@
                                                             <a class="btn btn-info btn-sm text-white">65</a>
                                                             <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <pattern id="pattern-stripe" 
+                                                                    <pattern id="pattern-stripe65" 
                                                                         width="4" height="4" 
                                                                         patternUnits="userSpaceOnUse"
                                                                         patternTransform="rotate(90)">
@@ -1111,45 +1351,69 @@
                                                                         $fill18center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill18slice1="#3a018a";
+                                                                        if($fill18slice1=="#ffffff"){
+                                                                            $fill18slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill18slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill18slice2=="#ffffff"){
+                                                                            $fill18slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill18slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill18slice3=="#ffffff"){
+                                                                            $fill18slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill18slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill18slice4=="#ffffff"){
+                                                                            $fill18slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill18slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill18slice1=="#ffffff"){
+                                                                            $fill18slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill18slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill18slice2=="#ffffff"){
+                                                                            $fill18slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill18slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill18slice3=="#ffffff"){
+                                                                            $fill18slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill18slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill18slice4=="#ffffff"){
+                                                                            $fill18slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill18slice1="url(#pattern-stripe18)";
-                                                                        $pat="red";
+                                                                        if($fill18slice1=="#ffffff"){
+                                                                            $fill18slice1="url(#pattern-stripe18)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill18slice2="url(#pattern-stripe18)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill18slice2=="#ffffff"){
+                                                                            $fill18slice2="url(#pattern-stripe18)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill18slice3="url(#pattern-stripe18)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill18slice3=="#ffffff"){
+                                                                            $fill18slice3="url(#pattern-stripe18)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill18slice4="url(#pattern-stripe18)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill18slice4=="#ffffff"){
+                                                                            $fill18slice4="url(#pattern-stripe18)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1203,46 +1467,70 @@
                                                                         $fill17center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill17slice1="#3a018a";
+                                                                        if($fill17slice1=="#ffffff"){
+                                                                            $fill17slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill17slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill17slice2=="#ffffff"){
+                                                                            $fill17slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill17slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill17slice3=="#ffffff"){
+                                                                            $fill17slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill17slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill17slice4=="#ffffff"){
+                                                                            $fill17slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill17slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill17slice1=="#ffffff"){
+                                                                            $fill17slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill17slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill17slice2=="#ffffff"){
+                                                                            $fill17slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill17slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill17slice3=="#ffffff"){
+                                                                            $fill17slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill17slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill17slice4=="#ffffff"){
+                                                                            $fill17slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill17slice1="url(#pattern-stripe17)";
-                                                                        $pat="red";
+                                                                        if($fill17slice1=="#ffffff"){
+                                                                            $fill17slice1="url(#pattern-stripe17)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill17slice2="url(#pattern-stripe17)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill17slice2=="#ffffff"){
+                                                                            $fill17slice2="url(#pattern-stripe17)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill17slice3="url(#pattern-stripe17)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill21slice3=="#ffffff"){
+                                                                            $fill17slice3="url(#pattern-stripe17)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill17slice4="url(#pattern-stripe17)";
-                                                                        $pat="red";
-                                                                    } 
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill17slice4=="#ffffff"){
+                                                                            $fill17slice4="url(#pattern-stripe17)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -1295,45 +1583,69 @@
                                                                         $fill16center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill16slice1="#3a018a";
+                                                                        if($fill16slice1=="#ffffff"){
+                                                                            $fill16slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill16slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill16slice2=="#ffffff"){
+                                                                            $fill16slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill16slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill16slice3=="#ffffff"){
+                                                                            $fill16slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill16slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill16slice4=="#ffffff"){
+                                                                            $fill16slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill16slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill16slice1=="#ffffff"){
+                                                                            $fill16slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill16slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill16slice2=="#ffffff"){
+                                                                            $fill16slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill16slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill16slice3=="#ffffff"){
+                                                                            $fill16slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill16slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill16slice4=="#ffffff"){
+                                                                            $fill16slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill16slice1="url(#pattern-stripe16)";
-                                                                        $pat="red";
+                                                                        if($fill16slice1=="#ffffff"){
+                                                                            $fill16slice1="url(#pattern-stripe16)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill16slice2="url(#pattern-stripe16)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill16slice2=="#ffffff"){
+                                                                            $fill16slice2="url(#pattern-stripe16)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill16slice3="url(#pattern-stripe16)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill16slice3=="#ffffff"){
+                                                                            $fill16slice3="url(#pattern-stripe16)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill16slice4="url(#pattern-stripe16)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill16slice4=="#ffffff"){
+                                                                            $fill16slice4="url(#pattern-stripe16)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1387,45 +1699,69 @@
                                                                         $fill15center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill15slice1="#3a018a";
+                                                                        if($fill15slice1=="#ffffff"){
+                                                                            $fill15slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill15slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill15slice2=="#ffffff"){
+                                                                            $fill15slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill15slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill15slice3=="#ffffff"){
+                                                                            $fill15slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill15slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill15slice4=="#ffffff"){
+                                                                            $fill15slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill15slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill15slice1=="#ffffff"){
+                                                                            $fill15slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill15slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill15slice2=="#ffffff"){
+                                                                            $fill15slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill15slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill15slice3=="#ffffff"){
+                                                                            $fill15slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill15slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill15slice4=="#ffffff"){
+                                                                            $fill15slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill15slice1="url(#pattern-stripe15)";
-                                                                        $pat="red";
+                                                                        if($fill15slice1=="#ffffff"){
+                                                                            $fill15slice1="url(#pattern-stripe15)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill15slice2="url(#pattern-stripe15)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill15slice2=="#ffffff"){
+                                                                            $fill15slice2="url(#pattern-stripe15)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill15slice3="url(#pattern-stripe15)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill15slice3=="#ffffff"){
+                                                                            $fill15slice3="url(#pattern-stripe15)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill15slice4="url(#pattern-stripe15)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill15slice4=="#ffffff"){
+                                                                            $fill15slice4="url(#pattern-stripe15)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1479,45 +1815,69 @@
                                                                         $fill14center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill14slice1="#3a018a";
+                                                                        if($fill14slice1=="#ffffff"){
+                                                                            $fill14slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill14slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill14slice2=="#ffffff"){
+                                                                            $fill14slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill14slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill14slice3=="#ffffff"){
+                                                                            $fill14slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill14slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill14slice4=="#ffffff"){
+                                                                            $fill14slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill14slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill14slice1=="#ffffff"){
+                                                                            $fill14slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill14slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill14slice2=="#ffffff"){
+                                                                            $fill14slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill14slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill14slice3=="#ffffff"){
+                                                                            $fill14slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill14slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill14slice4=="#ffffff"){
+                                                                            $fill14slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill14slice1="url(#pattern-stripe14)";
-                                                                        $pat="red";
+                                                                        if($fill14slice1=="#ffffff"){
+                                                                            $fill14slice1="url(#pattern-stripe14)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill14slice2="url(#pattern-stripe14)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill14slice2=="#ffffff"){
+                                                                            $fill14slice2="url(#pattern-stripe14)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill14slice3="url(#pattern-stripe14)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill14slice3=="#ffffff"){
+                                                                            $fill14slice3="url(#pattern-stripe14)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill14slice4="url(#pattern-stripe14)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill14slice4=="#ffffff"){
+                                                                            $fill14slice4="url(#pattern-stripe14)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1571,45 +1931,69 @@
                                                                         $fill13center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill13slice1="#3a018a";
+                                                                        if($fill13slice1=="#ffffff"){
+                                                                            $fill13slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill13slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill13slice2=="#ffffff"){
+                                                                            $fill13slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill13slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill13slice3=="#ffffff"){
+                                                                            $fill13slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill13slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill13slice4=="#ffffff"){
+                                                                            $fill13slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill13slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill13slice1=="#ffffff"){
+                                                                            $fill13slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill13slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill13slice2=="#ffffff"){
+                                                                            $fill13slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill18slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill13slice3=="#ffffff"){
+                                                                            $fill13slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill13slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill13slice4=="#ffffff"){
+                                                                            $fill13slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill13slice1="url(#pattern-stripe13)";
-                                                                        $pat="red";
+                                                                        if($fill13slice1=="#ffffff"){
+                                                                            $fill13slice1="url(#pattern-stripe13)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill13slice2="url(#pattern-stripe13)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill13slice2=="#ffffff"){
+                                                                            $fill13slice2="url(#pattern-stripe13)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill13slice3="url(#pattern-stripe13)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill13slice3=="#ffffff"){
+                                                                            $fill13slice3="url(#pattern-stripe13)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill13slice4="url(#pattern-stripe13)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill13slice4=="#ffffff"){
+                                                                            $fill13slice4="url(#pattern-stripe13)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1663,45 +2047,69 @@
                                                                         $fill12center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill12slice1="#3a018a";
+                                                                        if($fill12slice1=="#ffffff"){
+                                                                            $fill12slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill12slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill12slice2=="#ffffff"){
+                                                                            $fill12slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill12slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill12slice3=="#ffffff"){
+                                                                            $fill12slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill12slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill12slice4=="#ffffff"){
+                                                                            $fill12slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill12slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill12slice1=="#ffffff"){
+                                                                            $fill12slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill12slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill12slice2=="#ffffff"){
+                                                                            $fill12slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill12slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill12slice3=="#ffffff"){
+                                                                            $fill12slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill12slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill12slice4=="#ffffff"){
+                                                                            $fill12slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill12slice1="url(#pattern-stripe18)";
-                                                                        $pat="red";
+                                                                        if($fill12slice1=="#ffffff"){
+                                                                            $fill12slice1="url(#pattern-stripe12)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill12slice2="url(#pattern-stripe12)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill12slice2=="#ffffff"){
+                                                                            $fill12slice2="url(#pattern-stripe12)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill12slice3="url(#pattern-stripe12)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill12slice3=="#ffffff"){
+                                                                            $fill12slice3="url(#pattern-stripe12)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill12slice4="url(#pattern-stripe12)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill12slice4=="#ffffff"){
+                                                                            $fill12slice4="url(#pattern-stripe12)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1755,45 +2163,69 @@
                                                                         $fill11center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill11slice1="#3a018a";
+                                                                        if($fill11slice1=="#ffffff"){
+                                                                            $fill11slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill11slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill11slice2=="#ffffff"){
+                                                                            $fill11slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill11slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill11slice3=="#ffffff"){
+                                                                            $fill11slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill11slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill11slice4=="#ffffff"){
+                                                                            $fill11slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill11slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill11slice1=="#ffffff"){
+                                                                            $fill11slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill11slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill11slice2=="#ffffff"){
+                                                                            $fill11slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill11slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill11slice3=="#ffffff"){
+                                                                            $fill11slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill11slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill11slice4=="#ffffff"){
+                                                                            $fill11slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill11slice1="url(#pattern-1)";
-                                                                        $pat="red";
+                                                                        if($fill11slice1=="#ffffff"){
+                                                                            $fill11slice1="url(#pattern-stripe11)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill11slice2="url(#pattern-stripe11)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill11slice2=="#ffffff"){
+                                                                            $fill11slice2="url(#pattern-stripe11)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill11slice3="url(#pattern-stripe11)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill11slice3=="#ffffff"){
+                                                                            $fill11slice3="url(#pattern-stripe11)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill11slice4="url(#pattern-stripe11)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill11slice4=="#ffffff"){
+                                                                            $fill11slice4="url(#pattern-stripe11)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1847,45 +2279,69 @@
                                                                         $fill21center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill21slice1="#3a018a";
+                                                                        if($fill21slice1=="#ffffff"){
+                                                                            $fill21slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill21slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill21slice2=="#ffffff"){
+                                                                            $fill21slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill21slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill21slice3=="#ffffff"){
+                                                                            $fill21slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill21slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill21slice4=="#ffffff"){
+                                                                            $fill21slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill21slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill21slice1=="#ffffff"){
+                                                                            $fill21slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill21slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill21slice2=="#ffffff"){
+                                                                            $fill21slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill21slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill21slice3=="#ffffff"){
+                                                                            $fill21slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill21slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill21slice4=="#ffffff"){
+                                                                            $fill21slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill21slice1="url(#pattern-stripe21)";
-                                                                        $pat="red";
+                                                                        if($fill21slice1=="#ffffff"){
+                                                                            $fill21slice1="url(#pattern-stripe21)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill21slice2="url(#pattern-stripe21)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill21slice2=="#ffffff"){
+                                                                            $fill21slice2="url(#pattern-stripe21)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill21slice3="url(#pattern-stripe21)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill21slice3=="#ffffff"){
+                                                                            $fill21slice3="url(#pattern-stripe21)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill21slice4="url(#pattern-stripe21)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill21slice4=="#ffffff"){
+                                                                            $fill21slice4="url(#pattern-stripe21)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -1939,45 +2395,69 @@
                                                                         $fill22center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill22slice1="#3a018a";
+                                                                        if($fill22slice1=="#ffffff"){
+                                                                            $fill22slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill18slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill22slice2=="#ffffff"){
+                                                                            $fill22slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill22slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill22slice3=="#ffffff"){
+                                                                            $fill22slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill22slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill22slice4=="#ffffff"){
+                                                                            $fill22slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill22slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill22slice1=="#ffffff"){
+                                                                            $fill22slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill22slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill22slice2=="#ffffff"){
+                                                                            $fill22slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill22slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill22slice3=="#ffffff"){
+                                                                            $fill22slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill22slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill22slice4=="#ffffff"){
+                                                                            $fill22slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill22slice1="url(#pattern-stripe22)";
-                                                                        $pat="red";
+                                                                        if($fill22slice1=="#ffffff"){
+                                                                            $fill22slice1="url(#pattern-stripe22)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill22slice2="url(#pattern-stripe22)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill22slice2=="#ffffff"){
+                                                                            $fill22slice2="url(#pattern-stripe22)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill22slice3="url(#pattern-stripe22)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill22slice3=="#ffffff"){
+                                                                            $fill22slice3="url(#pattern-stripe22)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill22slice4="url(#pattern-stripe22)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill22slice4=="#ffffff"){
+                                                                            $fill22slice4="url(#pattern-stripe22)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2031,45 +2511,69 @@
                                                                         $fill23center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill23slice1="#3a018a";
+                                                                        if($fill23slice1=="#ffffff"){
+                                                                            $fill23slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill23slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill23slice2=="#ffffff"){
+                                                                            $fill23slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill23slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill23slice3=="#ffffff"){
+                                                                            $fill23slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill23slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill23slice4=="#ffffff"){
+                                                                            $fill23slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill23slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill23slice1=="#ffffff"){
+                                                                            $fill23slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill23slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill23slice2=="#ffffff"){
+                                                                            $fill23slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill23slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill23slice3=="#ffffff"){
+                                                                            $fill23slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill23slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill23slice4=="#ffffff"){
+                                                                            $fill23slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill23slice1="url(#pattern-stripe23)";
-                                                                        $pat="red";
+                                                                        if($fill23slice1=="#ffffff"){
+                                                                            $fill23slice1="url(#pattern-stripe23)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill23slice2="url(#pattern-stripe23)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill23slice2=="#ffffff"){
+                                                                            $fill23slice2="url(#pattern-stripe23)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill23slice3="url(#pattern-stripe23)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill23slice3=="#ffffff"){
+                                                                            $fill23slice3="url(#pattern-stripe23)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill23slice4="url(#pattern-stripe23)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill23slice4=="#ffffff"){
+                                                                            $fill23slice4="url(#pattern-stripe23)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2123,45 +2627,69 @@
                                                                         $fill24center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill24slice1="#3a018a";
+                                                                        if($fill24slice1=="#ffffff"){
+                                                                            $fill24slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill24slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill24slice2=="#ffffff"){
+                                                                            $fill24slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill24slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill24slice3=="#ffffff"){
+                                                                            $fill24slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill24slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill24slice4=="#ffffff"){
+                                                                            $fill24slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill24slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill24slice1=="#ffffff"){
+                                                                            $fill24slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill24slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill24slice2=="#ffffff"){
+                                                                            $fill24slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill24slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill24slice3=="#ffffff"){
+                                                                            $fill24slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill24slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill24slice4=="#ffffff"){
+                                                                            $fill24slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill24slice1="url(#pattern-stripe24)";
-                                                                        $pat="red";
+                                                                        if($fill24slice1=="#ffffff"){
+                                                                            $fill24slice1="url(#pattern-stripe24)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill24slice2="url(#pattern-stripe24)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill24slice2=="#ffffff"){
+                                                                            $fill24slice2="url(#pattern-stripe24)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill24slice3="url(#pattern-stripe24)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill24slice3=="#ffffff"){
+                                                                            $fill24slice3="url(#pattern-stripe24)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill24slice4="url(#pattern-stripe24)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill24slice4=="#ffffff"){
+                                                                            $fill24slice4="url(#pattern-stripe24)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2215,45 +2743,69 @@
                                                                         $fill25center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill25slice1="#3a018a";
+                                                                        if($fill25slice1=="#ffffff"){
+                                                                            $fill25slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill25slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill25slice2=="#ffffff"){
+                                                                            $fill25slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill25slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill25slice3=="#ffffff"){
+                                                                            $fill25slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill25slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill25slice4=="#ffffff"){
+                                                                            $fill25slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill25slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill25slice1=="#ffffff"){
+                                                                            $fill25slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill25slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill25slice2=="#ffffff"){
+                                                                            $fill25slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill25slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill25slice3=="#ffffff"){
+                                                                            $fill25slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill25slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill25slice4=="#ffffff"){
+                                                                            $fill25slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill25slice1="url(#pattern-stripe25)";
-                                                                        $pat="red";
+                                                                        if($fill25slice1=="#ffffff"){
+                                                                            $fill25slice1="url(#pattern-stripe25)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill25slice2="url(#pattern-stripe25)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill25slice2=="#ffffff"){
+                                                                            $fill25slice2="url(#pattern-stripe25)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill25slice3="url(#pattern-stripe25)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill25slice3=="#ffffff"){
+                                                                            $fill25slice3="url(#pattern-stripe25)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill25slice4="url(#pattern-stripe25)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill25slice4=="#ffffff"){
+                                                                            $fill25slice4="url(#pattern-stripe25)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2307,45 +2859,69 @@
                                                                         $fill26center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill26slice1="#3a018a";
+                                                                        if($fill26slice1=="#ffffff"){
+                                                                            $fill26slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill26slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill26slice2=="#ffffff"){
+                                                                            $fill26slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill26slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill26slice3=="#ffffff"){
+                                                                            $fill26slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill26slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill26slice4=="#ffffff"){
+                                                                            $fill26slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill26slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill26slice1=="#ffffff"){
+                                                                            $fill26slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill26slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill26slice2=="#ffffff"){
+                                                                            $fill26slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill26slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill26slice3=="#ffffff"){
+                                                                            $fill26slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill26slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill26slice4=="#ffffff"){
+                                                                            $fill26slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill26slice1="url(#pattern-stripe26)";
-                                                                        $pat="red";
+                                                                        if($fill26slice1=="#ffffff"){
+                                                                            $fill26slice1="url(#pattern-stripe26)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill26slice2="url(#pattern-stripe26)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill26slice2=="#ffffff"){
+                                                                            $fill26slice2="url(#pattern-stripe26)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill26slice3="url(#pattern-stripe26)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill26slice3=="#ffffff"){
+                                                                            $fill26slice3="url(#pattern-stripe26)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill26slice4="url(#pattern-stripe26)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill26slice4=="#ffffff"){
+                                                                            $fill26slice4="url(#pattern-stripe26)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2399,45 +2975,69 @@
                                                                         $fill27center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill27slice1="#3a018a";
+                                                                        if($fill27slice1=="#ffffff"){
+                                                                            $fill27slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill27slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill27slice2=="#ffffff"){
+                                                                            $fill27slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill27slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill27slice3=="#ffffff"){
+                                                                            $fill27slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill27slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill27slice4=="#ffffff"){
+                                                                            $fill27slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill27slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill27slice1=="#ffffff"){
+                                                                            $fill27slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill27slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill27slice2=="#ffffff"){
+                                                                            $fill27slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill27slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill27slice3=="#ffffff"){
+                                                                            $fill27slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill27slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill27slice4=="#ffffff"){
+                                                                            $fill27slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill27slice1="url(#pattern-stripe27)";
-                                                                        $pat="red";
+                                                                        if($fill27slice1=="#ffffff"){
+                                                                            $fill27slice1="url(#pattern-stripe27)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill27slice2="url(#pattern-stripe27)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill27slice2=="#ffffff"){
+                                                                            $fill27slice2="url(#pattern-stripe27)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill27slice3="url(#pattern-stripe27)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill27slice3=="#ffffff"){
+                                                                            $fill27slice3="url(#pattern-stripe27)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill27slice4="url(#pattern-stripe27)";
-                                                                        $pat="red";
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill27slice4=="#ffffff"){
+                                                                            $fill27slice4="url(#pattern-stripe27)";
+                                                                            $pat="red";
+                                                                        }
                                                                     } 
                                                                 }else{
                                                                     $id="";
@@ -2491,46 +3091,70 @@
                                                                         $fill28center="red";
                                                                     }
                                                                     if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        $fill28slice1="#3a018a";
+                                                                        if($fill28slice1=="#ffffff"){
+                                                                            $fill28slice1="#3a018a";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['comp_mes']=="1"){ 
-                                                                        $fill28slice2="#3a018a";
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill28slice2=="#ffffff"){
+                                                                            $fill28slice2="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_dis']=="1"){ 
-                                                                        $fill28slice3="#3a018a";
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill28slice3=="#ffffff"){
+                                                                            $fill28slice3="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['comp_buc']=="1"){ 
-                                                                        $fill28slice4="#3a018a";
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill28slice4=="#ffffff"){
+                                                                            $fill28slice4="#3a018a";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_occ']=="1"  || $row['amal_ling']=="1"){ 
-                                                                        $fill28slice1="#908d94";
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill28slice1=="#ffffff"){
+                                                                            $fill28slice1="#908d94";
+                                                                        }                                                                        
                                                                     }
-                                                                    if($row['amal_mes']=="1"){ 
-                                                                        $fill28slice2="#908d94";
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill28slice2=="#ffffff"){
+                                                                            $fill28slice2="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_dis']=="1"){ 
-                                                                        $fill28slice3="#908d94";
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill28slice3=="#ffffff"){
+                                                                            $fill28slice3="#908d94";
+                                                                        }
                                                                     }
-                                                                    if($row['amal_buc']=="1"){ 
-                                                                        $fill28slice4="#908d94";
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill28slice4=="#ffffff"){
+                                                                            $fill28slice4="#908d94";
+                                                                        }
                                                                     }
                                                                     $pat="white";
                                                                     if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        $fill28slice1="url(#pattern-stripe28)";
-                                                                        $pat="red";
+                                                                        if($fill28slice1=="#ffffff"){
+                                                                            $fill28slice1="url(#pattern-stripe28)";
+                                                                            $pat="red";
+                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"){ 
-                                                                        $fill28slice2="url(#pattern-stripe28)";
-                                                                        $pat="red";
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill28slice2=="#ffffff"){
+                                                                            $fill28slice2="url(#pattern-stripe28)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_dis']=="1"){ 
-                                                                        $fill28slice3="url(#pattern-stripe28)";
-                                                                        $pat="red";
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill28slice3=="#ffffff"){
+                                                                            $fill28slice3="url(#pattern-stripe28)";
+                                                                            $pat="red";
+                                                                        }
                                                                     }
-                                                                    if($row['recur_buc']=="1"){ 
-                                                                        $fill28slice4="url(#pattern-stripe28)";
-                                                                        $pat="red";
-                                                                    } 
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill28slice4=="#ffffff"){
+                                                                            $fill28slice4="url(#pattern-stripe28)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
