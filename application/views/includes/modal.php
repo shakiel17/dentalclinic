@@ -495,3 +495,214 @@
                 </div>
             </div>
         </div>
+
+        <div id="ToothChart" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Tooth Condition</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_tooth_chart');?>" method="POST" class="form-horizontal">
+                        <input type="hidden" name="id" id="dent_id">                        
+                        <input type="hidden" name="tooth_id" id="tooth_id">
+                        <input type="hidden" name="caseno" id="dent_caseno">                        
+                        <input type="hidden" name="customer_id" id="dent_customer_id">
+                        <div class="modal-body">
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="10%">&nbsp;</td>
+                                    <td>
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-1" value="OK">
+                                            <label for="rad-1">OK</label>
+                                        </div>
+                                    </td>
+                                    <td width="15%" align="right">
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-2" value="M">
+                                            <label for="rad-2">Missing</label>
+                                        </div>
+                                    </td>
+                                    <td width="22%" align="right">
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-3" value="RF">
+                                            <label for="rad-3">Root Fragment</label>
+                                        </div>
+                                    </td>
+                                    <td width="15%" align="right">
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-4" value="IM">
+                                            <label for="rad-4">Implant</label>
+                                        </div>
+                                    </td>
+                                    <td width="25%" align="right">
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-5" value="IMP">
+                                            <label for="rad-5">Impacted</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="20%">Caries</td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="caries_occ" id="check-1" value="1">
+                                            <label for="check-1">Occlusal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="caries_mes" id="check-2" value="1">
+                                            <label for="check-2">Mesial</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="caries_dis" id="check-3" value="1">
+                                            <label for="check-3">Distal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="caries_buc" id="check-4" value="1">
+                                            <label for="check-4">Buccal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="caries_ling" id="check-5" value="1">
+                                            <label for="check-5">Lingual</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">Composite</td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="comp_occ" id="check-6" value="1">
+                                            <label for="check-6">Occlusal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="comp_mes" id="check-7" value="1">
+                                            <label for="check-7">Mesial</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="comp_dis" id="check-8" value="1">
+                                            <label for="check-8">Distal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="comp_buc" id="check-9" value="1">
+                                            <label for="check-9">Buccal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="comp_ling" id="check-10" value="1">
+                                            <label for="check-10">Lingual</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">Amalgam</td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="amal_occ" id="check-11" value="1">
+                                            <label for="check-11">Occlusal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="amal_mes" id="check-12" value="1">
+                                            <label for="check-12">Mesial</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="amal_dis" id="check-13" value="1">
+                                            <label for="check-13">Distal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="amal_buc" id="check-14" value="1">
+                                            <label for="check-14">Buccal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="amal_ling" id="check-15" value="1">
+                                            <label for="check-15">Lingual</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="20%">Recurrent Caries</td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="recur_occ" id="check-16" value="1">
+                                            <label for="check-16">Occlusal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="recur_mes" id="check-17" value="1">
+                                            <label for="check-17">Mesial</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="recur_dis" id="check-18" value="1">
+                                            <label for="check-18">Distal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="recur_buc" id="check-19" value="1">
+                                            <label for="check-19">Buccal</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-checkbox">
+                                            <input type="checkbox" name="recur_ling" id="check-20" value="1">
+                                            <label for="check-20">Lingual</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Crown</td>
+                                    <td colspan="2">
+                                        <select name="remarks1" class="form-control" id="remarks1">
+                                            <option value="">None</option>
+                                            <option value="PFM">PFM</option>
+                                            <option value="CER">Ceramic</option>
+                                            <option value="GC">Gold</option>
+                                            <option value="MC">Metal</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

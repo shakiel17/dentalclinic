@@ -334,13 +334,30 @@ date_default_timezone_set('Asia/Manila');
             $data['admission'] = "";
             $data['item'] = $this->Clinic_model->getPatientAdmission($caseno);   
             $data['services'] = $this->Clinic_model->getAllServicesRendered($caseno);
-            $data['payment'] = $this->Clinic_model->getPatientPayment($caseno);   
+            $data['payment'] = $this->Clinic_model->getPatientPayment($caseno);
+            $data['chart']  = $this->Clinic_model->checkChart($caseno,$customer_id);
             $this->load->view('includes/header'); 
             $this->load->view('includes/navbar');           
             $this->load->view('includes/sidebar');            
             $this->load->view('pages/'.$page,$data);    
-            $this->load->view('includes/modal');     
+            $this->load->view('includes/modal',$data);     
             $this->load->view('includes/footer');
+        }
+        public function fetch_tooth_chart(){
+            $id=$this->input->post('id');
+            $data=$this->Clinic_model->fetch_tooth_chart($id);
+            echo json_encode($data);
+        }
+        public function save_tooth_chart(){
+            $caseno=$this->input->post('caseno');
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->save_tooth_chart();
+            if($save){
+                $this->session->set_flashdata('success','Tooth Chart successfully saved!');
+            }else{
+                $this->session->set_flashdata('failed','Unable to save tooth chart!');
+            }
+            redirect(base_url('admit_chart/'.$caseno."/".$customer_id));
         }
 
 }

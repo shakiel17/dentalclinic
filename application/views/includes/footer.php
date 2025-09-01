@@ -176,6 +176,108 @@
                         document.getElementById('balance_amount').value=id[2];
                         document.getElementById('balance_caseno').value=id[1];
                     });
+
+                    $('.toothchart').click(function(){
+                        var data=$(this).data('id');
+                        var id=data.split('_');
+                        document.getElementById('dent_id').value = id[0];
+                        document.getElementById('tooth_id').value = id[1];
+                        document.getElementById('dent_caseno').value = id[2];
+                        document.getElementById('dent_customer_id').value = id[3];
+                       $.ajax({
+                            url: '<?=base_url('index.php/pages/fetch_tooth_chart');?>',
+                            type: 'POST',
+                            data: {id:id[0]},
+                            dataType: 'json',
+                            success: function(response) {
+                                if (response) {
+                                    var rem=response[0]['remarks'];
+                                    if(rem=="OK"){
+                                        document.getElementById('rad-1').checked = true;
+                                    }
+                                    if(rem=="M"){
+                                        document.getElementById('rad-2').checked = true;
+                                    }
+                                    if(rem=="RF"){
+                                        document.getElementById('rad-3').checked = true;
+                                    }
+                                    if(rem=="IM"){
+                                        document.getElementById('rad-4').checked = true;
+                                    }
+                                    if(rem=="IMP"){
+                                        document.getElementById('rad-5').checked = true;
+                                    }
+                                    document.getElementById('remarks1').value = rem;
+                                    if(response[0]['caries_occ']=="1"){
+                                        document.getElementById('check-1').checked = true;
+                                    }
+                                    if(response[0]['caries_mes']=="1"){
+                                        document.getElementById('check-2').checked = true;
+                                    }
+                                    if(response[0]['caries_dis']=="1"){
+                                        document.getElementById('check-3').checked = true;
+                                    }
+                                    if(response[0]['caries_buc']=="1"){
+                                        document.getElementById('check-4').checked = true;
+                                    }
+                                    if(response[0]['caries_ling']=="1"){
+                                        document.getElementById('check-5').checked = true;
+                                    }
+
+                                    if(response[0]['comp_occ']=="1"){
+                                        document.getElementById('check-6').checked = true;
+                                    }
+                                    if(response[0]['comp_mes']=="1"){
+                                        document.getElementById('check-7').checked = true;
+                                    }
+                                    if(response[0]['comp_dis']=="1"){
+                                        document.getElementById('check-8').checked = true;
+                                    }
+                                    if(response[0]['comp_buc']=="1"){
+                                        document.getElementById('check-9').checked = true;
+                                    }
+                                    if(response[0]['comp_ling']=="1"){
+                                        document.getElementById('check-10').checked = true;
+                                    }
+
+                                    if(response[0]['amal_occ']=="1"){
+                                        document.getElementById('check-11').checked = true;
+                                    }
+                                    if(response[0]['amal_mes']=="1"){
+                                        document.getElementById('check-12').checked = true;
+                                    }
+                                    if(response[0]['amal_dis']=="1"){
+                                        document.getElementById('check-13').checked = true;
+                                    }
+                                    if(response[0]['amal_buc']=="1"){
+                                        document.getElementById('check-14').checked = true;
+                                    }
+                                    if(response[0]['amal_ling']=="1"){
+                                        document.getElementById('check-115').checked = true;
+                                    }
+                                    
+                                    if(response[0]['recur_occ']=="1"){
+                                        document.getElementById('check-16').checked = true;
+                                    }
+                                    if(response[0]['recur_mes']=="1"){
+                                        document.getElementById('check-17').checked = true;
+                                    }
+                                    if(response[0]['recur_dis']=="1"){
+                                        document.getElementById('check-18').checked = true;
+                                    }
+                                    if(response[0]['recur_buc']=="1"){
+                                        document.getElementById('check-19').checked = true;
+                                    }
+                                    if(response[0]['recur_ling']=="1"){
+                                        document.getElementById('check-20').checked = true;
+                                    }
+                                }
+                            },
+                            error: function(xhr, status, error) {
+                                console.error('AJAX Error:', error);
+                            }
+                        });
+                    });
             </script>
     </body>
 </html>

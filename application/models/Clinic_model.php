@@ -330,5 +330,62 @@
             $result=$this->db->query("SELECT * FROM services WHERE id='$id'");
             return $result->row_array();
         }
+        public function checkChart($caseno,$customer_id){
+            $result=$this->db->query("SELECT * FROM dentition WHERE caseno='$caseno' AND customer_id='$customer_id'");
+            return $result->result_array();
+        }
+        public function fetch_tooth_chart($id){
+            $result=$this->db->query("SELECT * FROM dentition WHERE id='$id'");
+            return $result->result_array();
+        }
+        public function save_tooth_chart(){
+            $id=$this->input->post('id');
+            $tooth_id=$this->input->post('tooth_id');
+            $caseno=$this->input->post('caseno');
+            $customer_id=$this->input->post('customer_id');
+            $remarks=$this->input->post('remarks');
+            $remarks1=$this->input->post('remarks1');            
+            if($remarks==""){
+                if($remarks1==""){
+                    $remarks="";
+                }else{
+                    $remarks=$remarks1;
+                }
+            }else{
+                if($remarks1 <> ""){
+                    $remarks=$remarks1;
+                }
+            }
+            $caries_occ=$this->input->post('caries_occ');
+            $caries_mes=$this->input->post('caries_mes');
+            $caries_dis=$this->input->post('caries_dis');
+            $caries_buc=$this->input->post('caries_buc');
+            $caries_ling=$this->input->post('caries_ling');
+            $comp_occ=$this->input->post('comp_occ');
+            $comp_mes=$this->input->post('comp_mes');
+            $comp_dis=$this->input->post('comp_dis');
+            $comp_buc=$this->input->post('comp_buc');
+            $comp_ling=$this->input->post('comp_ling');
+            $amal_occ=$this->input->post('amal_occ');
+            $amal_mes=$this->input->post('amal_mes');
+            $amal_dis=$this->input->post('amal_dis');
+            $amal_buc=$this->input->post('amal_buc');
+            $amal_ling=$this->input->post('amal_ling');
+            $recur_occ=$this->input->post('recur_occ');
+            $recur_mes=$this->input->post('recur_mes');
+            $recur_dis=$this->input->post('recur_dis');
+            $recur_buc=$this->input->post('recur_buc');
+            $recur_ling=$this->input->post('recur_ling');
+            if($id <> ""){
+                $result=$this->db->query("UPDATE dentition SET remarks='$remarks',caries_occ='$caries_occ',caries_mes='$caries_mes',caries_dis='$caries_dis',caries_buc='$caries_buc',caries_ling='$caries_ling',comp_occ='$comp_occ',comp_mes='$comp_mes',comp_dis='$comp_dis',comp_buc='$comp_buc',comp_ling='$comp_ling',amal_occ='$amal_occ',amal_mes='$amal_mes',amal_dis='$amal_dis',amal_buc='$amal_buc',amal_ling='$amal_ling',recur_occ='$recur_occ',recur_mes='$recur_mes',recur_dis='$recur_dis',recur_buc='$recur_buc',recur_ling='$recur_ling' WHERE id='$id'");                
+            }else{
+                $result=$this->db->query("INSERT INTO dentition(caseno,customer_id,tooth_id,remarks,caries_occ,caries_mes,caries_dis,caries_buc,caries_ling,comp_occ,comp_mes,comp_dis,comp_buc,comp_ling,amal_occ,amal_mes,amal_dis,amal_buc,amal_ling,recur_occ,recur_mes,recur_dis,recur_buc,recur_ling) VALUES('$caseno','$customer_id','$tooth_id','$remarks','$caries_occ','$caries_mes','$caries_dis','$caries_buc','$caries_ling','$comp_occ','$comp_mes','$comp_dis','$comp_buc','$comp_ling','$amal_occ','$amal_mes','$amal_dis','$amal_buc','$amal_ling','$recur_occ','$recur_mes','$recur_dis','$recur_buc','$recur_ling')");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 ?>
