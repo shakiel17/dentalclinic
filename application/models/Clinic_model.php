@@ -353,25 +353,8 @@
             $caseno=$this->input->post('caseno');
             $customer_id=$this->input->post('customer_id');
             $remarks=$this->input->post('remarks');
-            $remarks1=$this->input->post('remarks1');            
-            $remarks2=$this->input->post('remarks2');
-            if($remarks==""){
-                if($remarks1==""){
-                    if($remarks2==""){
-                        $remarks="";
-                    }else{
-                        $remarks=$remarks2;
-                    }     
-                }else{
-                    $remarks=$remarks1;
-                }
-            }else{
-                if($remarks1 <> ""){
-                    $remarks=$remarks1;
-                }else if($remarks2 <> ""){
-                    $remarks=$remarks2;
-                }
-            }
+            $treatment=$this->input->post('remarks1');            
+            $surgery=$this->input->post('remarks2');            
             $caries_occ=$this->input->post('caries_occ');
             $caries_mes=$this->input->post('caries_mes');
             $caries_dis=$this->input->post('caries_dis');
@@ -393,9 +376,9 @@
             $recur_buc=$this->input->post('recur_buc');
             $recur_ling=$this->input->post('recur_ling');
             if($id <> ""){
-                $result=$this->db->query("UPDATE dentition SET remarks='$remarks',caries_occ='$caries_occ',caries_mes='$caries_mes',caries_dis='$caries_dis',caries_buc='$caries_buc',caries_ling='$caries_ling',comp_occ='$comp_occ',comp_mes='$comp_mes',comp_dis='$comp_dis',comp_buc='$comp_buc',comp_ling='$comp_ling',amal_occ='$amal_occ',amal_mes='$amal_mes',amal_dis='$amal_dis',amal_buc='$amal_buc',amal_ling='$amal_ling',recur_occ='$recur_occ',recur_mes='$recur_mes',recur_dis='$recur_dis',recur_buc='$recur_buc',recur_ling='$recur_ling' WHERE id='$id'");                
+                $result=$this->db->query("UPDATE dentition SET remarks='$remarks',caries_occ='$caries_occ',caries_mes='$caries_mes',caries_dis='$caries_dis',caries_buc='$caries_buc',caries_ling='$caries_ling',comp_occ='$comp_occ',comp_mes='$comp_mes',comp_dis='$comp_dis',comp_buc='$comp_buc',comp_ling='$comp_ling',amal_occ='$amal_occ',amal_mes='$amal_mes',amal_dis='$amal_dis',amal_buc='$amal_buc',amal_ling='$amal_ling',recur_occ='$recur_occ',recur_mes='$recur_mes',recur_dis='$recur_dis',recur_buc='$recur_buc',recur_ling='$recur_ling',treatment='$treatment',surgery='$surgery' WHERE id='$id'");                
             }else{
-                $result=$this->db->query("INSERT INTO dentition(caseno,customer_id,tooth_id,remarks,caries_occ,caries_mes,caries_dis,caries_buc,caries_ling,comp_occ,comp_mes,comp_dis,comp_buc,comp_ling,amal_occ,amal_mes,amal_dis,amal_buc,amal_ling,recur_occ,recur_mes,recur_dis,recur_buc,recur_ling) VALUES('$caseno','$customer_id','$tooth_id','$remarks','$caries_occ','$caries_mes','$caries_dis','$caries_buc','$caries_ling','$comp_occ','$comp_mes','$comp_dis','$comp_buc','$comp_ling','$amal_occ','$amal_mes','$amal_dis','$amal_buc','$amal_ling','$recur_occ','$recur_mes','$recur_dis','$recur_buc','$recur_ling')");
+                $result=$this->db->query("INSERT INTO dentition(caseno,customer_id,tooth_id,remarks,caries_occ,caries_mes,caries_dis,caries_buc,caries_ling,comp_occ,comp_mes,comp_dis,comp_buc,comp_ling,amal_occ,amal_mes,amal_dis,amal_buc,amal_ling,recur_occ,recur_mes,recur_dis,recur_buc,recur_ling,treatment,surgery) VALUES('$caseno','$customer_id','$tooth_id','$remarks','$caries_occ','$caries_mes','$caries_dis','$caries_buc','$caries_ling','$comp_occ','$comp_mes','$comp_dis','$comp_buc','$comp_ling','$amal_occ','$amal_mes','$amal_dis','$amal_buc','$amal_ling','$recur_occ','$recur_mes','$recur_dis','$recur_buc','$recur_ling','$treatment','$surgery')");
             }
             if($result){
                 return true;

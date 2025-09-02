@@ -37,15 +37,23 @@
             cursor: pointer;
             }
 
-            path, circle {
-            stroke: #000; /* Outline for visibility */
+            /* path, circle {
+            stroke: #000;
             stroke-width: 2;
             transition: 0.2s;
-            }
+            } */
 
             path:hover {
             opacity: 0.8;
             }
+            .slice, .center {
+            stroke: black;
+            stroke-width: 4;
+            cursor: pointer;
+            }
+            /* .slice:hover, .center:hover {
+            fill: lightgray;
+            } */
         </style>
     </head>
     <body id="page-top">

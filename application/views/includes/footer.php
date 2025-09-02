@@ -204,31 +204,35 @@
                             success: function(response) {
                                 if (response.length > 0) {
                                     var rem=response[0]['remarks'];
+                                    var treat=response[0]['treatment'];
+                                    var surg=response[0]['surgery'];
                                     if(rem=="OK"){
                                         document.getElementById('rad-1').checked = true;
-                                    }
-                                    else if(rem=="M"){
+                                    }else if(rem=="D"){
                                         document.getElementById('rad-2').checked = true;
-                                    }
-                                    else if(rem=="RF"){
+                                    }else if(rem=="M"){
                                         document.getElementById('rad-3').checked = true;
-                                    }
-                                    else if(rem=="IM"){
+                                    }else if(rem=="Mo"){
                                         document.getElementById('rad-4').checked = true;
-                                    }
-                                    else if(rem=="IMP"){
+                                    }else if(rem=="Im"){
                                         document.getElementById('rad-5').checked = true;
-                                    }else if(rem=="PFM" || rem=="CER" || rem=="GC" || rem=="MC"){
-                                        document.getElementById('remarks1').value = rem;
-                                    }else if(rem=="CER I/O" || rem=="G I/O" || rem=="M I/O"){
-                                        document.getElementById('remarks2').value = rem;
+                                    }else if(rem=="Rf"){
+                                        document.getElementById('rad-6').checked = true;
+                                    }else if(rem=="Sp"){
+                                        document.getElementById('rad-7').checked = true;
+                                    }else if(rem=="Un"){
+                                        document.getElementById('rad-8').checked = true;                                    
                                     }else{
                                         document.getElementById('rad-1').checked = false;
                                         document.getElementById('rad-2').checked = false;
                                         document.getElementById('rad-3').checked = false;
                                         document.getElementById('rad-4').checked = false;
                                         document.getElementById('rad-5').checked = false;
-                                    }                                    
+                                        document.getElementById('rad-6').checked = false;
+                                        document.getElementById('rad-7').checked = false;
+                                        document.getElementById('rad-8').checked = false;
+                                    }                                                                        
+
                                     if(response[0]['caries_occ']=="1"){
                                         document.getElementById('check-1').checked = true;
                                     }else{
@@ -332,12 +336,17 @@
                                     }else{
                                         document.getElementById('check-20').checked = false;
                                     }
+                                    document.getElementById('remarks1').value=treat;
+                                    document.getElementById('remarks2').value=surge;
                                 }else{
                                     document.getElementById('rad-1').checked = false;
                                     document.getElementById('rad-2').checked = false;
                                     document.getElementById('rad-3').checked = false;
                                     document.getElementById('rad-4').checked = false;
                                     document.getElementById('rad-5').checked = false;
+                                    document.getElementById('rad-6').checked = false;
+                                    document.getElementById('rad-7').checked = false;
+                                    document.getElementById('rad-8').checked = false;
                                     document.getElementById('check-1').checked = false;
                                     document.getElementById('check-2').checked = false;
                                     document.getElementById('check-3').checked = false;

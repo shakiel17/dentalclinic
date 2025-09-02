@@ -525,35 +525,53 @@
                         <div class="modal-body">
                             <table width="100%" border="0">
                                 <tr>
-                                    <td width="10%">&nbsp;</td>
+                                    
                                     <td>
                                         <div class="styled-radio">
                                             <input type="radio" name="remarks" id="rad-1" value="OK">
                                             <label for="rad-1">OK</label>
                                         </div>
                                     </td>
-                                    <td width="15%" align="right">
+                                    <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-2" value="M">
-                                            <label for="rad-2">Missing</label>
+                                            <input type="radio" name="remarks" id="rad-2" value="D">
+                                            <label for="rad-2">D</label>
                                         </div>
                                     </td>
-                                    <td width="22%" align="right">
+                                    <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-3" value="RF">
-                                            <label for="rad-3">Root Fragment</label>
+                                            <input type="radio" name="remarks" id="rad-3" value="M">
+                                            <label for="rad-3">M</label>
                                         </div>
                                     </td>
-                                    <td width="15%" align="right">
+                                    <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-4" value="IM">
-                                            <label for="rad-4">Implant</label>
+                                            <input type="radio" name="remarks" id="rad-4" value="MO">
+                                            <label for="rad-4">MO</label>
                                         </div>
                                     </td>
-                                    <td width="25%" align="right">
+                                    <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-5" value="IMP">
-                                            <label for="rad-5">Impacted</label>
+                                            <input type="radio" name="remarks" id="rad-5" value="Im">
+                                            <label for="rad-5">Im</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-6" value="Rf">
+                                            <label for="rad-6">RF</label>
+                                        </div>
+                                    </td>  
+                                    <td>
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-7" value="Sp">
+                                            <label for="rad-7">Sp</label>
+                                        </div>
+                                    </td>                                                                                                                                              
+                                    <td>
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-8" value="Un">
+                                            <label for="rad-8">Un</label>
                                         </div>
                                     </td>
                                 </tr>
@@ -696,14 +714,20 @@
                                     <td colspan="6">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td>Crown</td>
+                                    <td>Treatment</td>
                                     <td colspan="2">
                                         <select name="remarks1" class="form-control" id="remarks1">
                                             <option value="">None</option>
-                                            <option value="PFM">PFM</option>
-                                            <option value="CER">Ceramic</option>
-                                            <option value="GC">Gold</option>
-                                            <option value="MC">Metal</option>
+                                            <option value="Am">Amalgam Filling</option>
+                                            <option value="Co">Composite Filling</option>
+                                            <option value="JC">Jacket Crown</option>
+                                            <option value="Ab">Abutment</option>
+                                            <option value="Att">Attachment</option>
+                                            <option value="P">Pontic</option>
+                                            <option value="In">Inlay</option>
+                                            <option value="Imp">Implant</option>
+                                            <option value="S">Sealants</option>
+                                            <option value="RD">Removable Denture</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -711,13 +735,12 @@
                                     <td colspan="6">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td>Inlay/Onlay</td>
+                                    <td>Surgery</td>
                                     <td colspan="2">
                                         <select name="remarks2" class="form-control" id="remarks2">
                                             <option value="">None</option>
-                                            <option value="CER I/O">Ceramic</option>                                            
-                                            <option value="G I/O">Gold</option>
-                                            <option value="M I/O">Metal</option>
+                                            <option value="X">Extraction due to Caries</option>                                            
+                                            <option value="Xo">Extraction due to Other Causes</option>                                            
                                         </select>
                                     </td>
                                 </tr>
