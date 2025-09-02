@@ -411,9 +411,12 @@ cursor: pointer;
 
       //d.addEventListener('click', () => selectDate(ymd(date)));
       d.addEventListener('click',()=>{
-if(list.length>0){
-openBookedDayPopup(ymd(date));
-}
+      if(list.length>0){
+        selectDate(ymd(date));
+      openBookedDayPopup(ymd(date));
+      }else{
+        selectDate(ymd(date));
+      }
 });
       return d;
     }
