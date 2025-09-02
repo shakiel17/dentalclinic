@@ -199,6 +199,7 @@
                                                     <tr>
                                                         <th>Case No.</th>
                                                         <th>Services Rendered</th>
+                                                        <th>Doctor</th>
                                                         <th>Admit Date</th>
                                                         <th>Status</th>
                                                         <!-- <th>Action</th> -->
@@ -212,6 +213,12 @@
                                                         foreach($services as $serv){
                                                             $rendered .=$serv['service_description']."<br>";
                                                         }
+                                                        $doctor=$this->Clinic_model->getSingleDoctor($item['ap']);
+                                                        if($doctor){
+                                                            $apname="DR. ".$doctor['name'];
+                                                        }else{
+                                                            $apname="";
+                                                        }
                                                         // if($item['status']=="Active"){
                                                         //     $billing="";
                                                         // }else{
@@ -220,6 +227,7 @@
                                                         echo "<tr>";
                                                             echo "<td><a href='".base_url('view_billing/'.$item['caseno'])."'>$item[caseno]</a></td>";
                                                             echo "<td>".$rendered."</td>";
+                                                            echo "<td>".$apname."</td>";
                                                             echo "<td>".date('M-d-Y',strtotime($item['dateadmit']))." ".date('h:i A',strtotime($item['timeadmit']))."</td>";
                                                             echo "<td>$item[status]</td>";
                                                             ?>

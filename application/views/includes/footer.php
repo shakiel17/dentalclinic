@@ -112,7 +112,19 @@
             document.getElementById('service_code').value=id[1];
             document.getElementById('service_description').value=id[2];
             document.getElementById('service_amount').value=id[3];
-          });          
+          });       
+          $('.addDoctor').click(function(){            
+            document.getElementById('doc_id').value='';
+            document.getElementById('doc_name').value='';
+            document.getElementById('doc_amount').value='';
+          });
+          $('.editDoctor').click(function(){
+            var data=$(this).data('id');
+            var id=data.split('_');
+            document.getElementById('doc_id').value=id[0];
+            document.getElementById('doc_name').value=id[1];
+            document.getElementById('doc_amount').value=id[2];
+          });   
           </script>        
             <script>
                 $('.newAdmission').click(function(){
@@ -190,87 +202,162 @@
                             data: {id:id[0]},
                             dataType: 'json',
                             success: function(response) {
-                                if (response) {
+                                if (response.length > 0) {
                                     var rem=response[0]['remarks'];
                                     if(rem=="OK"){
                                         document.getElementById('rad-1').checked = true;
                                     }
-                                    if(rem=="M"){
+                                    else if(rem=="M"){
                                         document.getElementById('rad-2').checked = true;
                                     }
-                                    if(rem=="RF"){
+                                    else if(rem=="RF"){
                                         document.getElementById('rad-3').checked = true;
                                     }
-                                    if(rem=="IM"){
+                                    else if(rem=="IM"){
                                         document.getElementById('rad-4').checked = true;
                                     }
-                                    if(rem=="IMP"){
+                                    else if(rem=="IMP"){
                                         document.getElementById('rad-5').checked = true;
-                                    }
-                                    document.getElementById('remarks1').value = rem;
+                                    }else if(rem=="PFM" || rem=="CER" || rem=="GC" || rem=="MC"){
+                                        document.getElementById('remarks1').value = rem;
+                                    }else if(rem=="CER I/O" || rem=="G I/O" || rem=="M I/O"){
+                                        document.getElementById('remarks2').value = rem;
+                                    }else{
+                                        document.getElementById('rad-1').checked = false;
+                                        document.getElementById('rad-2').checked = false;
+                                        document.getElementById('rad-3').checked = false;
+                                        document.getElementById('rad-4').checked = false;
+                                        document.getElementById('rad-5').checked = false;
+                                    }                                    
                                     if(response[0]['caries_occ']=="1"){
                                         document.getElementById('check-1').checked = true;
+                                    }else{
+                                        document.getElementById('check-1').checked = false;
                                     }
                                     if(response[0]['caries_mes']=="1"){
                                         document.getElementById('check-2').checked = true;
+                                    }else{
+                                        document.getElementById('check-2').checked = false;
                                     }
                                     if(response[0]['caries_dis']=="1"){
                                         document.getElementById('check-3').checked = true;
+                                    }else{
+                                        document.getElementById('check-3').checked = false;
                                     }
                                     if(response[0]['caries_buc']=="1"){
                                         document.getElementById('check-4').checked = true;
+                                    }else{
+                                        document.getElementById('check-4').checked = false;
                                     }
                                     if(response[0]['caries_ling']=="1"){
                                         document.getElementById('check-5').checked = true;
+                                    }else{
+                                        document.getElementById('check-5').checked = false;
                                     }
 
                                     if(response[0]['comp_occ']=="1"){
                                         document.getElementById('check-6').checked = true;
+                                    }else{
+                                        document.getElementById('check-6').checked = false;
                                     }
                                     if(response[0]['comp_mes']=="1"){
                                         document.getElementById('check-7').checked = true;
+                                    }else{
+                                        document.getElementById('check-7').checked = false;
                                     }
                                     if(response[0]['comp_dis']=="1"){
                                         document.getElementById('check-8').checked = true;
+                                    }else{
+                                        document.getElementById('check-8').checked = false;
                                     }
                                     if(response[0]['comp_buc']=="1"){
                                         document.getElementById('check-9').checked = true;
+                                    }else{
+                                        document.getElementById('check-9').checked = false;
                                     }
                                     if(response[0]['comp_ling']=="1"){
                                         document.getElementById('check-10').checked = true;
+                                    }else{
+                                        document.getElementById('check-10').checked = false;
                                     }
 
                                     if(response[0]['amal_occ']=="1"){
                                         document.getElementById('check-11').checked = true;
+                                    }else{
+                                        document.getElementById('check-11').checked = false;
                                     }
                                     if(response[0]['amal_mes']=="1"){
                                         document.getElementById('check-12').checked = true;
+                                    }else{
+                                        document.getElementById('check-12').checked = false;
                                     }
                                     if(response[0]['amal_dis']=="1"){
                                         document.getElementById('check-13').checked = true;
+                                    }else{
+                                        document.getElementById('check-13').checked = false;
                                     }
                                     if(response[0]['amal_buc']=="1"){
                                         document.getElementById('check-14').checked = true;
+                                    }else{
+                                        document.getElementById('check-14').checked = false;
                                     }
                                     if(response[0]['amal_ling']=="1"){
-                                        document.getElementById('check-115').checked = true;
+                                        document.getElementById('check-15').checked = true;
+                                    }else{
+                                        document.getElementById('check-15').checked = false;
                                     }
                                     
                                     if(response[0]['recur_occ']=="1"){
                                         document.getElementById('check-16').checked = true;
+                                    }else{
+                                        document.getElementById('check-16').checked = false;
                                     }
                                     if(response[0]['recur_mes']=="1"){
                                         document.getElementById('check-17').checked = true;
+                                    }else{
+                                        document.getElementById('check-17').checked = false;
                                     }
                                     if(response[0]['recur_dis']=="1"){
                                         document.getElementById('check-18').checked = true;
+                                    }else{
+                                        document.getElementById('check-18').checked = false;
                                     }
                                     if(response[0]['recur_buc']=="1"){
                                         document.getElementById('check-19').checked = true;
+                                    }else{
+                                        document.getElementById('check-19').checked = false;
                                     }
                                     if(response[0]['recur_ling']=="1"){
                                         document.getElementById('check-20').checked = true;
+                                    }else{
+                                        document.getElementById('check-20').checked = false;
                                     }
+                                }else{
+                                    document.getElementById('rad-1').checked = false;
+                                    document.getElementById('rad-2').checked = false;
+                                    document.getElementById('rad-3').checked = false;
+                                    document.getElementById('rad-4').checked = false;
+                                    document.getElementById('rad-5').checked = false;
+                                    document.getElementById('check-1').checked = false;
+                                    document.getElementById('check-2').checked = false;
+                                    document.getElementById('check-3').checked = false;
+                                    document.getElementById('check-4').checked = false;
+                                    document.getElementById('check-5').checked = false;
+                                    document.getElementById('check-6').checked = false;
+                                    document.getElementById('check-7').checked = false;
+                                    document.getElementById('check-8').checked = false;
+                                    document.getElementById('check-9').checked = false;
+                                    document.getElementById('check-10').checked = false;
+                                    document.getElementById('check-11').checked = false;
+                                    document.getElementById('check-12').checked = false;
+                                    document.getElementById('check-13').checked = false;
+                                    document.getElementById('check-14').checked = false;
+                                    document.getElementById('check-15').checked = false;
+                                    document.getElementById('check-16').checked = false;
+                                    document.getElementById('check-17').checked = false;
+                                    document.getElementById('check-18').checked = false;
+                                    document.getElementById('check-19').checked = false;
+                                    document.getElementById('check-20').checked = false;
                                 }
                             },
                             error: function(xhr, status, error) {

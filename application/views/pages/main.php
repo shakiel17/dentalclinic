@@ -138,6 +138,16 @@
                                 </div>
                                 <!-- End Widget 07 -->
                             </div>
+                            <div class="col-xl-12">
+                                <!-- Begin Widget 07 -->
+                                <div class="widget widget-07 has-shadow">  
+                                    <div class="widget-header bordered d-flex align-items-center">
+                                        <h2>Appointment</h2>                                        
+                                    </div>
+                                  <iframe src="design/appointment.php" frameborder="0" style="border:none; width: 98%; height: 850px; margin:1%;"></iframe>
+                                </div>
+                                <!-- End Widget 07 -->
+                            </div>
                         </div>                        
                         <!-- End Row -->                                                                    
                     </div>

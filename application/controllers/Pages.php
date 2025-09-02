@@ -329,13 +329,14 @@ date_default_timezone_set('Asia/Manila');
                 show_404();
             }                  
             if($this->session->admin_login){}
-            else{redirect(base_url());}     
+            else{redirect(base_url());}
             $data['title'] = "<a href='".base_url('view_billing/'.$caseno)."'>Patient Billing</a> >> Tooth Chart";
             $data['admission'] = "";
             $data['item'] = $this->Clinic_model->getPatientAdmission($caseno);   
             $data['services'] = $this->Clinic_model->getAllServicesRendered($caseno);
             $data['payment'] = $this->Clinic_model->getPatientPayment($caseno);
             $data['chart']  = $this->Clinic_model->checkChart($caseno,$customer_id);
+            $data['status'] = $data['item']['status'];
             $this->load->view('includes/header'); 
             $this->load->view('includes/navbar');           
             $this->load->view('includes/sidebar');            
@@ -359,6 +360,29 @@ date_default_timezone_set('Asia/Manila');
             }
             redirect(base_url('admit_chart/'.$caseno."/".$customer_id));
         }
-
+        public function manage_doctor(){
+            $page = "doctor";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['items'] = $this->Clinic_model->getAllDoctor();
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
+        public function save_doctor(){
+            $result=$this->Clinic_model->save_doctor();
+            if($result){
+                $this->session->set_flashdata('success','Doctor details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save doctor details!');
+            }
+            redirect(base_url('manage_doctor'));
+        }
 }
 ?>

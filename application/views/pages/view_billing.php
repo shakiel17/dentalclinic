@@ -8,7 +8,8 @@
                                     <h2 class="page-header-title"><?=$title;?></h2>
                                     <div>
                                         <ul class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="<?=base_url('main');?>"><i class="ti ti-home"></i></a></li>                                            
+                                            <li class="breadcrumb-item"><a href="<?=base_url('main');?>"><i class="ti ti-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="<?=base_url('view_admission_history/'.$item['customer_id']);?>">Admission History</a></li>
                                             <li class="breadcrumb-item active">Patient Billing</li>
                                         </ul>
                                     </div>

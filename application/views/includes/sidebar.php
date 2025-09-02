@@ -13,6 +13,7 @@
                             <li><a href="#dropdown-ui" aria-expanded="false" data-toggle="collapse"><i class="la la-gears"></i><span>Settings</span></a>
                                 <ul id="dropdown-ui" class="collapse list-unstyled pt-0">
                                     <li><a href="<?=base_url('services');?>">Services</a></li>                                    
+                                    <li><a href="<?=base_url('manage_doctor');?>">Doctor</a></li>
                                 </ul>
                             </li>
                         </ul>                       

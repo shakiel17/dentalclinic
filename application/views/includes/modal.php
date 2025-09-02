@@ -215,6 +215,17 @@
                         <input type="hidden" name="customer_id" id="admit_customer_id">
                         <div class="modal-body">
                             <div class="form-group">
+                                <label class="col-lg-12">Select Doctor</label>                                    
+                                <div class="ml-5">
+                                        <?php
+                                        $services=$this->Clinic_model->getAllDoctor();
+                                        foreach($services as $item){
+                                            echo "<input type='radio' name='ap' value='$item[id]' required> $item[name] <br>";
+                                        }
+                                        ?>        
+                                </div>                            
+                            </div>
+                            <div class="form-group">
                                 <label class="col-lg-12">Select Services</label>                                    
                                 <div class="ml-5">
                                         <?php
@@ -505,7 +516,7 @@
                             <span aria-hidden="true">×</span>
                             <span class="sr-only">close</span>
                         </button>
-                    </div>
+                    </div>                    
                     <form action="<?=base_url('save_tooth_chart');?>" method="POST" class="form-horizontal">
                         <input type="hidden" name="id" id="dent_id">                        
                         <input type="hidden" name="tooth_id" id="tooth_id">
@@ -696,11 +707,70 @@
                                         </select>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Inlay/Onlay</td>
+                                    <td colspan="2">
+                                        <select name="remarks2" class="form-control" id="remarks2">
+                                            <option value="">None</option>
+                                            <option value="CER I/O">Ceramic</option>                                            
+                                            <option value="G I/O">Gold</option>
+                                            <option value="M I/O">Metal</option>
+                                        </select>
+                                    </td>
+                                </tr>
                             </table>
                         </div>                        
                         <div class="modal-footer">
                             <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <?php
+                            if($status=="Active"){
+                                ?>
                             <button type="submit" class="btn btn-primary">Submit</button>        
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="ManageDoctor" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Manage Doctor</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_doctor');?>" method="POST">
+                        <input type="hidden" name="id" id="doc_id">
+                        <div class="modal-body">
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="docname" required id="doc_name">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Name</label>
+                            </div>
+                            </div>                             
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="amount" required id="doc_amount">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>PF Amount</label>
+                            </div>
+                            </div>                      
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

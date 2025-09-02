@@ -131,9 +131,11 @@
                                                             $fill55slice2="#ffffff";
                                                             $fill55slice3="#ffffff";
                                                             $fill55slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="55"){
+                                                            $pat="white";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -171,8 +173,8 @@
                                                                         }                                                                        
                                                                     }
                                                                     if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill27slice2=="#ffffff"){
-                                                                            $fill27slice2="#908d94";
+                                                                        if($fill55slice2=="#ffffff"){
+                                                                            $fill55slice2="#908d94";
                                                                         }
                                                                     }
                                                                     if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
@@ -214,11 +216,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">55</a>
@@ -249,9 +251,10 @@
                                                             $fill54slice2="#ffffff";
                                                             $fill54slice3="#ffffff";
                                                             $fill54slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="54"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -332,11 +335,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">54</a>
@@ -367,9 +370,10 @@
                                                             $fill53slice2="#ffffff";
                                                             $fill53slice3="#ffffff";
                                                             $fill53slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="53"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -450,11 +454,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">53</a>
@@ -485,9 +489,12 @@
                                                             $fill52slice2="#ffffff";
                                                             $fill52slice3="#ffffff";
                                                             $fill52slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="52"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="52"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -568,11 +575,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">52</a>
@@ -603,9 +610,12 @@
                                                             $fill51slice2="#ffffff";
                                                             $fill51slice3="#ffffff";
                                                             $fill51slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="51"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="51"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -686,11 +696,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }   
-                                                            }                                                         
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }                                                         
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                         
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">51</a>
@@ -721,9 +731,12 @@
                                                             $fill61slice2="#ffffff";
                                                             $fill61slice3="#ffffff";
                                                             $fill61slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="61"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="61"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -804,11 +817,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">61</a>
@@ -839,9 +852,12 @@
                                                             $fill62slice2="#ffffff";
                                                             $fill62slice3="#ffffff";
                                                             $fill62slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="62"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="62"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -922,11 +938,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">62</a>
@@ -957,9 +973,12 @@
                                                             $fill63slice2="#ffffff";
                                                             $fill63slice3="#ffffff";
                                                             $fill63slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="63"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="63"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1040,11 +1059,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">63</a>
@@ -1075,9 +1094,12 @@
                                                             $fill64slice2="#ffffff";
                                                             $fill64slice3="#ffffff";
                                                             $fill64slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="64"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="64"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1158,11 +1180,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">64</a>
@@ -1193,9 +1215,12 @@
                                                             $fill65slice2="#ffffff";
                                                             $fill65slice3="#ffffff";
                                                             $fill65slice4="#ffffff";
-                                                            if(count($chart)>0){                                                                
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="65"){
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="65"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1276,11 +1301,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $id="";
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             
                                                             ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">65</a>
@@ -1336,9 +1361,10 @@
                                                             $fill18slice2="#ffffff";
                                                             $fill18slice3="#ffffff";
                                                             $fill18slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="18"){
+                                                            $pat="white";
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1419,10 +1445,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -1452,9 +1478,10 @@
                                                             $fill17slice2="#ffffff";
                                                             $fill17slice3="#ffffff";
                                                             $fill17slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="17"){
+                                                            $pat="white";
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1535,10 +1562,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -1568,9 +1595,9 @@
                                                             $fill16slice2="#ffffff";
                                                             $fill16slice3="#ffffff";
                                                             $fill16slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="18"){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1651,10 +1678,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -1684,9 +1711,9 @@
                                                             $fill15slice2="#ffffff";
                                                             $fill15slice3="#ffffff";
                                                             $fill15slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="15"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1767,10 +1794,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -1800,9 +1827,12 @@
                                                             $fill14slice2="#ffffff";
                                                             $fill14slice3="#ffffff";
                                                             $fill14slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="14"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="14"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1883,10 +1913,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -1916,9 +1946,12 @@
                                                             $fill13slice2="#ffffff";
                                                             $fill13slice3="#ffffff";
                                                             $fill13slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="13"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                                // if($row['tooth_id']=="13"){
+                                                                 $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -1999,10 +2032,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2032,9 +2065,12 @@
                                                             $fill12slice2="#ffffff";
                                                             $fill12slice3="#ffffff";
                                                             $fill12slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="12"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="12"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2115,10 +2151,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2148,9 +2184,12 @@
                                                             $fill11slice2="#ffffff";
                                                             $fill11slice3="#ffffff";
                                                             $fill11slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="11"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="11"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2231,10 +2270,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2264,9 +2303,12 @@
                                                             $fill21slice2="#ffffff";
                                                             $fill21slice3="#ffffff";
                                                             $fill21slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="21"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="21"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2347,10 +2389,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2380,9 +2422,12 @@
                                                             $fill22slice2="#ffffff";
                                                             $fill22slice3="#ffffff";
                                                             $fill22slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="22"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="22"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2463,10 +2508,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2496,9 +2541,12 @@
                                                             $fill23slice2="#ffffff";
                                                             $fill23slice3="#ffffff";
                                                             $fill23slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="23"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="23"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2579,10 +2627,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2612,9 +2660,12 @@
                                                             $fill24slice2="#ffffff";
                                                             $fill24slice3="#ffffff";
                                                             $fill24slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="24"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="24"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2695,10 +2746,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2728,9 +2779,12 @@
                                                             $fill25slice2="#ffffff";
                                                             $fill25slice3="#ffffff";
                                                             $fill25slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="25"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="25"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2811,10 +2865,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2844,9 +2898,12 @@
                                                             $fill26slice2="#ffffff";
                                                             $fill26slice3="#ffffff";
                                                             $fill26slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="26"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="26"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -2927,10 +2984,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -2960,10 +3017,12 @@
                                                             $fill27slice2="#ffffff";
                                                             $fill27slice3="#ffffff";
                                                             $fill27slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="27"){
-                                                                    $id=$row['id'];                                                                    
+                                                            //if(count($chart)>0){
+                                                                $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];
+                                                                    echo $id;                                                               ;
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
                                                                     }else if($row['remarks']=="IM"){
@@ -3043,10 +3102,11 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            //}
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -3076,9 +3136,12 @@
                                                             $fill28slice2="#ffffff";
                                                             $fill28slice3="#ffffff";
                                                             $fill28slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="28"){
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="28"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3159,10 +3222,10 @@
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -3196,532 +3259,1940 @@
                                                     </tr>
                                                     <tr>
                                                         <td width="2%" align="center">
+                                                            <?php
+                                                            $tid=48;
+                                                            $fill48center="#ffffff";
+                                                            $fill48slice1="#ffffff";
+                                                            $fill48slice2="#ffffff";
+                                                            $fill48slice3="#ffffff";
+                                                            $fill48slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="48"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
+                                                                    if($row['remarks']=="" || $row['remarks']=="OK"){
+                                                                        $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
+                                                                    }else{
+                                                                        $remark=$row['remarks'];
+                                                                    }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill48center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill48slice1=="#ffffff"){
+                                                                            $fill48slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill48slice2=="#ffffff"){
+                                                                            $fill48slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill48slice3=="#ffffff"){
+                                                                            $fill48slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill48slice4=="#ffffff"){
+                                                                            $fill48slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill48slice1=="#ffffff"){
+                                                                            $fill48slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill48slice2=="#ffffff"){
+                                                                            $fill48slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill48slice3=="#ffffff"){
+                                                                            $fill48slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill48slice4=="#ffffff"){
+                                                                            $fill48slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill48slice1=="#ffffff"){
+                                                                            $fill48slice1="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill48slice2=="#ffffff"){
+                                                                            $fill48slice2="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill48slice3=="#ffffff"){
+                                                                            $fill48slice3="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill48slice4=="#ffffff"){
+                                                                            $fill48slice4="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
+                                                                }else{
+                                                                    $id="";
+                                                                    $remark="&check;";
+                                                                }
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">48</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe48" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill48slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill48slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill48slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill48slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill48center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="48"){
+                                                            $tid=47;
+                                                            $fill47center="#ffffff";
+                                                            $fill47slice1="#ffffff";
+                                                            $fill47slice2="#ffffff";
+                                                            $fill47slice3="#ffffff";
+                                                            $fill47slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="47"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill47center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill47slice1=="#ffffff"){
+                                                                            $fill47slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill47slice2=="#ffffff"){
+                                                                            $fill47slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill47slice3=="#ffffff"){
+                                                                            $fill47slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill47slice4=="#ffffff"){
+                                                                            $fill47slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill55slice1=="#ffffff"){
+                                                                            $fill55slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill47slice2=="#ffffff"){
+                                                                            $fill47slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill47slice3=="#ffffff"){
+                                                                            $fill47slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill47slice4=="#ffffff"){
+                                                                            $fill47slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill47slice1=="#ffffff"){
+                                                                            $fill47slice1="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill47slice2=="#ffffff"){
+                                                                            $fill47slice2="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill47slice3=="#ffffff"){
+                                                                            $fill47slice3="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill47slice4=="#ffffff"){
+                                                                            $fill47slice4="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">47</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe47" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill47slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill47slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill47slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill47slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill47center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="47"){
+                                                            $tid=46;
+                                                            $fill46center="#ffffff";
+                                                            $fill46slice1="#ffffff";
+                                                            $fill46slice2="#ffffff";
+                                                            $fill46slice3="#ffffff";
+                                                            $fill46slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="46"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill46center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill46slice1=="#ffffff"){
+                                                                            $fill46slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill46slice2=="#ffffff"){
+                                                                            $fill46slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill46slice3=="#ffffff"){
+                                                                            $fill46slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill46slice4=="#ffffff"){
+                                                                            $fill46slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill46slice1=="#ffffff"){
+                                                                            $fill46slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill46slice2=="#ffffff"){
+                                                                            $fill46slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill46slice3=="#ffffff"){
+                                                                            $fill46slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill46slice4=="#ffffff"){
+                                                                            $fill46slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill46slice1=="#ffffff"){
+                                                                            $fill46slice1="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill46slice2=="#ffffff"){
+                                                                            $fill46slice2="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill46slice3=="#ffffff"){
+                                                                            $fill46slice3="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill46slice4=="#ffffff"){
+                                                                            $fill46slice4="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
-                                                             <a class="btn btn-info btn-sm text-white">46</a>
-                                                            <a href="asdfasdf.html">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
+                                                            <a class="btn btn-info btn-sm text-white">46</a>
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe46" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill46slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill46slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill46slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill46slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill46center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                           <br>
+                                                            <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="46"){
+                                                            $tid=45;
+                                                            $fill45center="#ffffff";
+                                                            $fill45slice1="#ffffff";
+                                                            $fill45slice2="#ffffff";
+                                                            $fill45slice3="#ffffff";
+                                                            $fill45slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="45"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill45center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill45slice1=="#ffffff"){
+                                                                            $fill45slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill45slice2=="#ffffff"){
+                                                                            $fill45slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill45slice3=="#ffffff"){
+                                                                            $fill45slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill45slice4=="#ffffff"){
+                                                                            $fill45slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill45slice1=="#ffffff"){
+                                                                            $fill45slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill45slice2=="#ffffff"){
+                                                                            $fill45slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill45slice3=="#ffffff"){
+                                                                            $fill45slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill45slice4=="#ffffff"){
+                                                                            $fill45slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill45slice1=="#ffffff"){
+                                                                            $fill45slice1="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill45slice2=="#ffffff"){
+                                                                            $fill45slice2="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill45slice3=="#ffffff"){
+                                                                            $fill45slice3="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill45slice4=="#ffffff"){
+                                                                            $fill45slice4="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">45</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe45" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill45slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill45slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill45slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill45slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill45center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="45"){
+                                                            $tid=44;
+                                                            $fill44center="#ffffff";
+                                                            $fill44slice1="#ffffff";
+                                                            $fill44slice2="#ffffff";
+                                                            $fill44slice3="#ffffff";
+                                                            $fill44slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="44"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill44center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill44slice1=="#ffffff"){
+                                                                            $fill44slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill44slice2=="#ffffff"){
+                                                                            $fill44slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill44slice3=="#ffffff"){
+                                                                            $fill44slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill44slice4=="#ffffff"){
+                                                                            $fill44slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill44slice1=="#ffffff"){
+                                                                            $fill44slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill44slice2=="#ffffff"){
+                                                                            $fill44slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill44slice3=="#ffffff"){
+                                                                            $fill44slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill44slice4=="#ffffff"){
+                                                                            $fill44slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill44slice1=="#ffffff"){
+                                                                            $fill44slice1="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill44slice2=="#ffffff"){
+                                                                            $fill44slice2="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill44slice3=="#ffffff"){
+                                                                            $fill44slice3="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill44slice4=="#ffffff"){
+                                                                            $fill44slice4="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">44</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe44" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill44slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill44slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill44slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill44slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill44center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="44"){
+                                                            $tid=43;
+                                                            $fill43center="#ffffff";
+                                                            $fill43slice1="#ffffff";
+                                                            $fill43slice2="#ffffff";
+                                                            $fill43slice3="#ffffff";
+                                                            $fill43slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="43"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill43center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill43slice1=="#ffffff"){
+                                                                            $fill43slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill43slice2=="#ffffff"){
+                                                                            $fill43slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill43slice3=="#ffffff"){
+                                                                            $fill43slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill43slice4=="#ffffff"){
+                                                                            $fill43slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill43slice1=="#ffffff"){
+                                                                            $fill43slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill43slice2=="#ffffff"){
+                                                                            $fill43slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill43slice3=="#ffffff"){
+                                                                            $fill43slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill43slice4=="#ffffff"){
+                                                                            $fill43slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill43slice1=="#ffffff"){
+                                                                            $fill43slice1="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill43slice2=="#ffffff"){
+                                                                            $fill43slice2="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill43slice3=="#ffffff"){
+                                                                            $fill43slice3="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill43slice4=="#ffffff"){
+                                                                            $fill43slice4="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">43</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe43" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill43slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill43slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill43slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill43slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill43center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="43"){
+                                                            $tid=42;
+                                                            $fill42center="#ffffff";
+                                                            $fill42slice1="#ffffff";
+                                                            $fill42slice2="#ffffff";
+                                                            $fill42slice3="#ffffff";
+                                                            $fill42slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="42"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill42center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill42slice1=="#ffffff"){
+                                                                            $fill42slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill42slice2=="#ffffff"){
+                                                                            $fill42slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill42slice3=="#ffffff"){
+                                                                            $fill42slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill42slice4=="#ffffff"){
+                                                                            $fill42slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill42slice1=="#ffffff"){
+                                                                            $fill42slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill42slice2=="#ffffff"){
+                                                                            $fill42slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill42slice3=="#ffffff"){
+                                                                            $fill42slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill42slice4=="#ffffff"){
+                                                                            $fill42slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill42slice1=="#ffffff"){
+                                                                            $fill42slice1="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill42slice2=="#ffffff"){
+                                                                            $fill42slice2="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill42slice3=="#ffffff"){
+                                                                            $fill42slice3="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill42slice4=="#ffffff"){
+                                                                            $fill42slice4="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">42</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe42" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill42slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill42slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill42slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill42slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill42center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="42"){
+                                                            $tid=41;
+                                                            $fill41center="#ffffff";
+                                                            $fill41slice1="#ffffff";
+                                                            $fill41slice2="#ffffff";
+                                                            $fill41slice3="#ffffff";
+                                                            $fill41slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="41"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill41center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill41slice1=="#ffffff"){
+                                                                            $fill41slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill41slice2=="#ffffff"){
+                                                                            $fill41slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill41slice3=="#ffffff"){
+                                                                            $fill41slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill41slice4=="#ffffff"){
+                                                                            $fill41slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill41slice1=="#ffffff"){
+                                                                            $fill41slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill41slice2=="#ffffff"){
+                                                                            $fill41slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill41slice3=="#ffffff"){
+                                                                            $fill41slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill41slice4=="#ffffff"){
+                                                                            $fill41slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill41slice1=="#ffffff"){
+                                                                            $fill41slice1="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill41slice2=="#ffffff"){
+                                                                            $fill41slice2="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill41slice3=="#ffffff"){
+                                                                            $fill41slice3="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill41slice4=="#ffffff"){
+                                                                            $fill41slice4="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">41</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe41" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill41slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill41slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill41slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill41slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill41center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="41"){
+                                                            $tid=31;
+                                                            $fill31center="#ffffff";
+                                                            $fill31slice1="#ffffff";
+                                                            $fill31slice2="#ffffff";
+                                                            $fill31slice3="#ffffff";
+                                                            $fill31slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="31"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill31center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill31slice1=="#ffffff"){
+                                                                            $fill31slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill31slice2=="#ffffff"){
+                                                                            $fill31slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill31slice3=="#ffffff"){
+                                                                            $fill31slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill31slice4=="#ffffff"){
+                                                                            $fill31slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill31slice1=="#ffffff"){
+                                                                            $fill31slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill31slice2=="#ffffff"){
+                                                                            $fill31slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill31slice3=="#ffffff"){
+                                                                            $fill31slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill31slice4=="#ffffff"){
+                                                                            $fill31slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill31slice1=="#ffffff"){
+                                                                            $fill31slice1="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill31slice2=="#ffffff"){
+                                                                            $fill31slice2="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill31slice3=="#ffffff"){
+                                                                            $fill31slice3="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill31slice4=="#ffffff"){
+                                                                            $fill31slice4="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">31</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe31" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill31slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill31slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill31slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill31slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill31center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="31"){
+                                                            $tid=32;
+                                                            $fill32center="#ffffff";
+                                                            $fill32slice1="#ffffff";
+                                                            $fill32slice2="#ffffff";
+                                                            $fill32slice3="#ffffff";
+                                                            $fill32slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="32"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill32center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill32slice1=="#ffffff"){
+                                                                            $fill32slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill32slice2=="#ffffff"){
+                                                                            $fill32slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill32slice3=="#ffffff"){
+                                                                            $fill32slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill32slice4=="#ffffff"){
+                                                                            $fill32slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill32slice1=="#ffffff"){
+                                                                            $fill32slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill32slice2=="#ffffff"){
+                                                                            $fill32slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill32slice3=="#ffffff"){
+                                                                            $fill32slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill32slice4=="#ffffff"){
+                                                                            $fill32slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill32slice1=="#ffffff"){
+                                                                            $fill32slice1="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill32slice2=="#ffffff"){
+                                                                            $fill32slice2="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill32slice3=="#ffffff"){
+                                                                            $fill32slice3="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill32slice4=="#ffffff"){
+                                                                            $fill32slice4="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">32</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe32" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill32slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill32slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill32slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill32slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill32center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="32"){
+                                                            $tid=33;
+                                                            $fill33center="#ffffff";
+                                                            $fill33slice1="#ffffff";
+                                                            $fill33slice2="#ffffff";
+                                                            $fill33slice3="#ffffff";
+                                                            $fill33slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="33"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill33center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill33slice1=="#ffffff"){
+                                                                            $fill33slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill33slice2=="#ffffff"){
+                                                                            $fill33slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill33slice3=="#ffffff"){
+                                                                            $fill33slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill33slice4=="#ffffff"){
+                                                                            $fill33slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill33slice1=="#ffffff"){
+                                                                            $fill33slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill33slice2=="#ffffff"){
+                                                                            $fill33slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill33slice3=="#ffffff"){
+                                                                            $fill33slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill33slice4=="#ffffff"){
+                                                                            $fill33slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill33slice1=="#ffffff"){
+                                                                            $fill33slice1="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill33slice2=="#ffffff"){
+                                                                            $fill33slice2="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill33slice3=="#ffffff"){
+                                                                            $fill33slice3="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill33slice4=="#ffffff"){
+                                                                            $fill33slice4="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">33</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe33" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill33slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill33slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill33slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill33slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill33center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="33"){
+                                                            $tid=34;
+                                                            $fill34center="#ffffff";
+                                                            $fill34slice1="#ffffff";
+                                                            $fill34slice2="#ffffff";
+                                                            $fill34slice3="#ffffff";
+                                                            $fill34slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="34"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill34center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill34slice1=="#ffffff"){
+                                                                            $fill34slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill34slice2=="#ffffff"){
+                                                                            $fill34slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill34slice3=="#ffffff"){
+                                                                            $fill34slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill34slice4=="#ffffff"){
+                                                                            $fill34slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill34slice1=="#ffffff"){
+                                                                            $fill34slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill34slice2=="#ffffff"){
+                                                                            $fill34slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill34slice3=="#ffffff"){
+                                                                            $fill34slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill34slice4=="#ffffff"){
+                                                                            $fill34slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill34slice1=="#ffffff"){
+                                                                            $fill34slice1="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill34slice2=="#ffffff"){
+                                                                            $fill34slice2="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill34slice3=="#ffffff"){
+                                                                            $fill34slice3="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill34slice4=="#ffffff"){
+                                                                            $fill34slice4="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">34</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe34" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill34slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill34slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill34slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill34slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill34center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="34"){
+                                                            $tid=35;
+                                                            $fill35center="#ffffff";
+                                                            $fill35slice1="#ffffff";
+                                                            $fill35slice2="#ffffff";
+                                                            $fill35slice3="#ffffff";
+                                                            $fill35slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="35"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill35center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill35slice1=="#ffffff"){
+                                                                            $fill35slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill35slice2=="#ffffff"){
+                                                                            $fill35slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill35slice3=="#ffffff"){
+                                                                            $fill35slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill53slice4=="#ffffff"){
+                                                                            $fill35slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill35slice1=="#ffffff"){
+                                                                            $fill35slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill35slice2=="#ffffff"){
+                                                                            $fill35slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill35slice3=="#ffffff"){
+                                                                            $fill35slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill35slice4=="#ffffff"){
+                                                                            $fill35slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill35slice1=="#ffffff"){
+                                                                            $fill35slice1="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill35slice2=="#ffffff"){
+                                                                            $fill35slice2="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill35slice3=="#ffffff"){
+                                                                            $fill35slice3="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill35slice4=="#ffffff"){
+                                                                            $fill35slice4="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">35</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe35" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill35slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill35slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill35slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill35slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill35center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="35"){
+                                                            $tid=36;
+                                                            $fill36center="#ffffff";
+                                                            $fill36slice1="#ffffff";
+                                                            $fill36slice2="#ffffff";
+                                                            $fill36slice3="#ffffff";
+                                                            $fill36slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="36"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill36center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill36slice1=="#ffffff"){
+                                                                            $fill36slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill36slice2=="#ffffff"){
+                                                                            $fill36slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill36slice3=="#ffffff"){
+                                                                            $fill36slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill36slice4=="#ffffff"){
+                                                                            $fill36slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill36slice1=="#ffffff"){
+                                                                            $fill36slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill36slice2=="#ffffff"){
+                                                                            $fill36slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill36slice3=="#ffffff"){
+                                                                            $fill36slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill36slice4=="#ffffff"){
+                                                                            $fill36slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill36slice1=="#ffffff"){
+                                                                            $fill36slice1="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill36slice2=="#ffffff"){
+                                                                            $fill36slice2="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill36slice3=="#ffffff"){
+                                                                            $fill36slice3="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill36slice4=="#ffffff"){
+                                                                            $fill36slice4="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
-                                                             <a class="btn btn-info btn-sm text-white">36</a>
-                                                            <a href="asdfasdf.html">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
+                                                            <a class="btn btn-info btn-sm text-white">36</a>
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe36" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill36slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill36slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill36slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill36slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill36center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                           <br>
+                                                            <br>
+                                                            <?=$remark;?>
+                                                        </td>
+                                                        <td width="2%" align="center">
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="36"){
+                                                            $tid=37;
+                                                            $fill37center="#ffffff";
+                                                            $fill37slice1="#ffffff";
+                                                            $fill37slice2="#ffffff";
+                                                            $fill37slice3="#ffffff";
+                                                            $fill37slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="37"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill37center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill37slice1=="#ffffff"){
+                                                                            $fill37slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill37slice2=="#ffffff"){
+                                                                            $fill37slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill37slice3=="#ffffff"){
+                                                                            $fill37slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill37slice4=="#ffffff"){
+                                                                            $fill37slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill37slice1=="#ffffff"){
+                                                                            $fill37slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill37slice2=="#ffffff"){
+                                                                            $fill37slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill37slice3=="#ffffff"){
+                                                                            $fill37slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill37slice4=="#ffffff"){
+                                                                            $fill37slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill37slice1=="#ffffff"){
+                                                                            $fill37slice1="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill37slice2=="#ffffff"){
+                                                                            $fill37slice2="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill37slice3=="#ffffff"){
+                                                                            $fill37slice3="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill37slice4=="#ffffff"){
+                                                                            $fill37slice4="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
-                                                        </td>
-                                                        <td width="2%" align="center">
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
                                                             <a class="btn btn-info btn-sm text-white">37</a>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe37" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill37slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill37slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill37slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill37slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill37center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <br>
-                                                            <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="37"){
-                                                                    if($row['remarks']=="" || $row['remarks']=="OK"){
-                                                                        $remark="&check;";
-                                                                    }else{
-                                                                        $remark=$row['remarks'];
-                                                                    }
-                                                                }else{
-                                                                    $id="";
-                                                                    $remark="&check;";
-                                                                }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
+                                                            <?=$remark;?>
                                                         </td>
                                                         <td width="2%" align="center">
-                                                            <a class="btn btn-info btn-sm text-white">38</a>
-                                                            <a href="asdfasdf.html">
-                                                                <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
-                                                                    <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
-                                                                </svg>
-                                                            </a>
-                                                            <br>
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="38"){
+                                                            $tid=38;
+                                                            $fill38center="#ffffff";
+                                                            $fill38slice1="#ffffff";
+                                                            $fill38slice2="#ffffff";
+                                                            $fill38slice3="#ffffff";
+                                                            $fill38slice4="#ffffff";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="38"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill38center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill38slice1=="#ffffff"){
+                                                                            $fill38slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill38slice2=="#ffffff"){
+                                                                            $fill38slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill38slice3=="#ffffff"){
+                                                                            $fill38slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill38slice4=="#ffffff"){
+                                                                            $fill38slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill38slice1=="#ffffff"){
+                                                                            $fill38slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill38slice2=="#ffffff"){
+                                                                            $fill38slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill38slice3=="#ffffff"){
+                                                                            $fill38slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill38slice4=="#ffffff"){
+                                                                            $fill38slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill38slice1=="#ffffff"){
+                                                                            $fill38slice1="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill38slice2=="#ffffff"){
+                                                                            $fill38slice2="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill38slice3=="#ffffff"){
+                                                                            $fill38slice3="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill38slice4=="#ffffff"){
+                                                                            $fill38slice4="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }                                                                                                                                    
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
-                                                            echo "<b>".$remark."<b>";
-                                                            ?>
+                                                            // }
+                                                            // }else{
+                                                            //     $id="";
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
+                                                            
+                                                            ?>                                                             
+                                                            <a class="btn btn-info btn-sm text-white">38</a>
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                                <svg viewBox="0 0 200 200">
+                                                                    <pattern id="pattern-stripe38" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill38slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill38slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill38slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill38slice4;?>"/>
+                                                                    <!-- Clickable hole in the center -->
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill38center;?>"/>
+                                                                </svg>
+                                                            </a>
+                                                            <br>
+                                                            <?=$remark;?>
                                                         </td>
                                                     </tr>
                                                     </tr>
@@ -3750,313 +5221,1164 @@
                                                         <td width="2%" align="center">
                                                             
                                                         </td>
-                                                        <td width="2%" align="center"> 
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="85"){
+                                                            $tid=85;
+                                                            $fill85center="#ffffff";
+                                                            $fill85slice1="#ffffff";
+                                                            $fill85slice2="#ffffff";
+                                                            $fill85slice3="#ffffff";
+                                                            $fill85slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="85"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill85center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill85slice1=="#ffffff"){
+                                                                            $fill85slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill85slice2=="#ffffff"){
+                                                                            $fill85slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill85slice3=="#ffffff"){
+                                                                            $fill85slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill85slice4=="#ffffff"){
+                                                                            $fill85slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill85slice1=="#ffffff"){
+                                                                            $fill85slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill85slice2=="#ffffff"){
+                                                                            $fill85slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill85slice3=="#ffffff"){
+                                                                            $fill85slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill85slice4=="#ffffff"){
+                                                                            $fill85slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill85slice1=="#ffffff"){
+                                                                            $fill85slice1="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill85slice2=="#ffffff"){
+                                                                            $fill85slice2="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill85slice3=="#ffffff"){
+                                                                            $fill85slice3="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill85slice4=="#ffffff"){
+                                                                            $fill85slice4="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
-                                                            <br>                                                           
-                                                            <a href="asdfasdf.html">
+                                                            <br>
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe85" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill85slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill85slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill85slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill85slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill85center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">85</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="84"){
+                                                            $tid=84;
+                                                            $fill84center="#ffffff";
+                                                            $fill84slice1="#ffffff";
+                                                            $fill84slice2="#ffffff";
+                                                            $fill84slice3="#ffffff";
+                                                            $fill84slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="84"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill84center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill84slice1=="#ffffff"){
+                                                                            $fill84slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill84slice2=="#ffffff"){
+                                                                            $fill84slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill84slice3=="#ffffff"){
+                                                                            $fill84slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill18slice4=="#ffffff"){
+                                                                            $fill18slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill84slice1=="#ffffff"){
+                                                                            $fill84slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill84slice2=="#ffffff"){
+                                                                            $fill84slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill84slice3=="#ffffff"){
+                                                                            $fill84slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill84slice4=="#ffffff"){
+                                                                            $fill84slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill84slice1=="#ffffff"){
+                                                                            $fill84slice1="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill84slice2=="#ffffff"){
+                                                                            $fill84slice2="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill84slice3=="#ffffff"){
+                                                                            $fill84slice3="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill84slice4=="#ffffff"){
+                                                                            $fill84slice4="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe84" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill84slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill84slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill84slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill84slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill84center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">84</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="83"){
+                                                            $tid=83;
+                                                            $fill83center="#ffffff";
+                                                            $fill83slice1="#ffffff";
+                                                            $fill83slice2="#ffffff";
+                                                            $fill83slice3="#ffffff";
+                                                            $fill83slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="83"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill83center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill83slice1=="#ffffff"){
+                                                                            $fill83slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill83slice2=="#ffffff"){
+                                                                            $fill83slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill83slice3=="#ffffff"){
+                                                                            $fill83slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill83slice4=="#ffffff"){
+                                                                            $fill83slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill83slice1=="#ffffff"){
+                                                                            $fill83slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill83slice2=="#ffffff"){
+                                                                            $fill83slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill83slice3=="#ffffff"){
+                                                                            $fill83slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill83slice4=="#ffffff"){
+                                                                            $fill83slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill83slice1=="#ffffff"){
+                                                                            $fill83slice1="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill83slice2=="#ffffff"){
+                                                                            $fill83slice2="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill83slice3=="#ffffff"){
+                                                                            $fill83slice3="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill83slice4=="#ffffff"){
+                                                                            $fill83slice4="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe83" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill83slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill83slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill83slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill83slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill83center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">83</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="82"){
+                                                            $tid=82;
+                                                            $fill82center="#ffffff";
+                                                            $fill82slice1="#ffffff";
+                                                            $fill82slice2="#ffffff";
+                                                            $fill82slice3="#ffffff";
+                                                            $fill82slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="82"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill82center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill82slice1=="#ffffff"){
+                                                                            $fill82slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill82slice2=="#ffffff"){
+                                                                            $fill82slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill82slice3=="#ffffff"){
+                                                                            $fill82slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill82slice4=="#ffffff"){
+                                                                            $fill82slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill82slice1=="#ffffff"){
+                                                                            $fill82slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill82slice2=="#ffffff"){
+                                                                            $fill82slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill82slice3=="#ffffff"){
+                                                                            $fill82slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill82slice4=="#ffffff"){
+                                                                            $fill82slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill82slice1=="#ffffff"){
+                                                                            $fill82slice1="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill82slice2=="#ffffff"){
+                                                                            $fill82slice2="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill82slice3=="#ffffff"){
+                                                                            $fill82slice3="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill82slice4=="#ffffff"){
+                                                                            $fill82slice4="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe82" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill82slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill82slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill82slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill82slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill82center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">82</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="81"){
+                                                            $tid=81;
+                                                            $fill81center="#ffffff";
+                                                            $fill81slice1="#ffffff";
+                                                            $fill81slice2="#ffffff";
+                                                            $fill81slice3="#ffffff";
+                                                            $fill81slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="81"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill81center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill81slice1=="#ffffff"){
+                                                                            $fill81slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill81slice2=="#ffffff"){
+                                                                            $fill81slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill81slice3=="#ffffff"){
+                                                                            $fill81slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill81slice4=="#ffffff"){
+                                                                            $fill81slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill81slice1=="#ffffff"){
+                                                                            $fill81slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill81slice2=="#ffffff"){
+                                                                            $fill81slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill81slice3=="#ffffff"){
+                                                                            $fill81slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill81slice4=="#ffffff"){
+                                                                            $fill81slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill81slice1=="#ffffff"){
+                                                                            $fill81slice1="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill81slice2=="#ffffff"){
+                                                                            $fill81slice2="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill81slice3=="#ffffff"){
+                                                                            $fill81slice3="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill81slice4=="#ffffff"){
+                                                                            $fill81slice4="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe81" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill81slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill81slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill81slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill81slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill81center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">81</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="71"){
+                                                            $tid=71;
+                                                            $fill71center="#ffffff";
+                                                            $fill71slice1="#ffffff";
+                                                            $fill71slice2="#ffffff";
+                                                            $fill71slice3="#ffffff";
+                                                            $fill71slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="71"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill71center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill71slice1=="#ffffff"){
+                                                                            $fill71slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill71slice2=="#ffffff"){
+                                                                            $fill71slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill71slice3=="#ffffff"){
+                                                                            $fill71slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill71slice4=="#ffffff"){
+                                                                            $fill71slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill71slice1=="#ffffff"){
+                                                                            $fill71slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill71slice2=="#ffffff"){
+                                                                            $fill71slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill71slice3=="#ffffff"){
+                                                                            $fill71slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill71slice4=="#ffffff"){
+                                                                            $fill71slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill71slice1=="#ffffff"){
+                                                                            $fill71slice1="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill71slice2=="#ffffff"){
+                                                                            $fill71slice2="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill71slice3=="#ffffff"){
+                                                                            $fill71slice3="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill71slice4=="#ffffff"){
+                                                                            $fill71slice4="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe71" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill71slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill71slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill71slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill71slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill71center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">71</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="72"){
+                                                            $tid=72;
+                                                            $fill72center="#ffffff";
+                                                            $fill72slice1="#ffffff";
+                                                            $fill72slice2="#ffffff";
+                                                            $fill72slice3="#ffffff";
+                                                            $fill72slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="72"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill72center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill72slice1=="#ffffff"){
+                                                                            $fill72slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill72slice2=="#ffffff"){
+                                                                            $fill72slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill72slice3=="#ffffff"){
+                                                                            $fill72slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill72slice4=="#ffffff"){
+                                                                            $fill72slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill72slice1=="#ffffff"){
+                                                                            $fill72slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill72slice2=="#ffffff"){
+                                                                            $fill72slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill72slice3=="#ffffff"){
+                                                                            $fill72slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill72slice4=="#ffffff"){
+                                                                            $fill72slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill72slice1=="#ffffff"){
+                                                                            $fill72slice1="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill72slice2=="#ffffff"){
+                                                                            $fill72slice2="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill72slice3=="#ffffff"){
+                                                                            $fill72slice3="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill72slice4=="#ffffff"){
+                                                                            $fill72slice4="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe72" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill72slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill72slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill72slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill72slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill72center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">72</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="73"){
+                                                            $tid=73;
+                                                            $fill73center="#ffffff";
+                                                            $fill73slice1="#ffffff";
+                                                            $fill73slice2="#ffffff";
+                                                            $fill73slice3="#ffffff";
+                                                            $fill73slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="73"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill73center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill73slice1=="#ffffff"){
+                                                                            $fill73slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill73slice2=="#ffffff"){
+                                                                            $fill73slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill73slice3=="#ffffff"){
+                                                                            $fill73slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill73slice4=="#ffffff"){
+                                                                            $fill73slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill73slice1=="#ffffff"){
+                                                                            $fill73slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill73slice2=="#ffffff"){
+                                                                            $fill73slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill73slice3=="#ffffff"){
+                                                                            $fill73slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill73slice4=="#ffffff"){
+                                                                            $fill73slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill73slice1=="#ffffff"){
+                                                                            $fill73slice1="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill73slice2=="#ffffff"){
+                                                                            $fill73slice2="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill73slice3=="#ffffff"){
+                                                                            $fill73slice3="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill73slice4=="#ffffff"){
+                                                                            $fill73slice4="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe73" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill73slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill73slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill73slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill73slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill73center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">73</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="74"){
+                                                            $tid=74;
+                                                            $fill74center="#ffffff";
+                                                            $fill74slice1="#ffffff";
+                                                            $fill74slice2="#ffffff";
+                                                            $fill74slice3="#ffffff";
+                                                            $fill74slice4="#ffffff";
+                                                            // if(count($chart)>0){
+                                                            //     foreach($chart as $row){
+                                                            //     if($row['tooth_id']=="74"){
+                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                               // foreach($chart as $row){
+                                                                if($row){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill74center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill74slice1=="#ffffff"){
+                                                                            $fill74slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill74slice2=="#ffffff"){
+                                                                            $fill74slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill74slice3=="#ffffff"){
+                                                                            $fill74slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill74slice4=="#ffffff"){
+                                                                            $fill74slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill74slice1=="#ffffff"){
+                                                                            $fill74slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill74slice2=="#ffffff"){
+                                                                            $fill74slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill74slice3=="#ffffff"){
+                                                                            $fill74slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill74slice4=="#ffffff"){
+                                                                            $fill74slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill74slice1=="#ffffff"){
+                                                                            $fill74slice1="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill74slice2=="#ffffff"){
+                                                                            $fill74slice2="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill74slice3=="#ffffff"){
+                                                                            $fill74slice3="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill74slice4=="#ffffff"){
+                                                                            $fill74slice4="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe74" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill74slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill74slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill74slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill74slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill74center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">74</a>
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center">                                                            
                                                             <?php
+                                                            $tid=75;
+                                                            $fill75center="#ffffff";
+                                                            $fill75slice1="#ffffff";
+                                                            $fill75slice2="#ffffff";
+                                                            $fill75slice3="#ffffff";
+                                                            $fill75slice4="#ffffff";
                                                             if(count($chart)>0){
                                                                 foreach($chart as $row){
                                                                 if($row['tooth_id']=="75"){
+                                                                    $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
+                                                                    }else if($row['remarks']=="IM"){
+                                                                        $remark="<img src=".base_url('design/assets/images/implantlogo.jpg')." width='15'>";
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
+                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                        $fill75center="red";
+                                                                    }
+                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill75slice1=="#ffffff"){
+                                                                            $fill75slice1="#3a018a";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
+                                                                       if($fill75slice2=="#ffffff"){
+                                                                            $fill75slice2="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill75slice3=="#ffffff"){
+                                                                            $fill75slice3="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
+                                                                        if($fill75slice4=="#ffffff"){
+                                                                            $fill75slice4="#3a018a";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill75slice1=="#ffffff"){
+                                                                            $fill75slice1="#908d94";
+                                                                        }                                                                        
+                                                                    }
+                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill75slice2=="#ffffff"){
+                                                                            $fill75slice2="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill75slice3=="#ffffff"){
+                                                                            $fill75slice3="#908d94";
+                                                                        }
+                                                                    }
+                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
+                                                                        if($fill75slice4=="#ffffff"){
+                                                                            $fill75slice4="#908d94";
+                                                                        }
+                                                                    }
+                                                                    $pat="white";
+                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill75slice1=="#ffffff"){
+                                                                            $fill75slice1="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                        }                                                                       
+                                                                    }
+                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
+                                                                        if($fill75slice2=="#ffffff"){
+                                                                            $fill75slice2="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill75slice3=="#ffffff"){
+                                                                            $fill75slice3="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    }
+                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
+                                                                        if($fill75slice4=="#ffffff"){
+                                                                            $fill75slice4="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                        }
+                                                                    } 
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4068,14 +6390,20 @@
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
-                                                            <a href="asdfasdf.html">
+                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
                                                                 <svg viewBox="0 0 200 200">
-                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="#ffffff"/>
-                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#ffffff"/>
+                                                                    <pattern id="pattern-stripe75" 
+                                                                        width="4" height="4" 
+                                                                        patternUnits="userSpaceOnUse"
+                                                                        patternTransform="rotate(90)">
+                                                                        <rect width="1" height="4" transform="translate(0,0)" fill="<?=$pat;?>"></rect>
+                                                                    </pattern>
+                                                                    <path d="M100,100 L100,20 A80,80 0 0,1 180,100 Z" fill="<?=$fill75slice1;?>"/>
+                                                                    <path d="M100,100 L180,100 A80,80 0 0,1 100,180 Z" fill="<?=$fill75slice2;?>"/>
+                                                                    <path d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="<?=$fill75slice3;?>"/>
+                                                                    <path d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="<?=$fill75slice4;?>"/>
                                                                     <!-- Clickable hole in the center -->
-                                                                    <circle cx="100" cy="100" r="35" fill="#ffffff"/>
+                                                                    <circle cx="100" cy="100" r="35" fill="<?=$fill75center;?>"/>
                                                                 </svg>
                                                             </a>
                                                             <a class="btn btn-info btn-sm text-white">75</a>

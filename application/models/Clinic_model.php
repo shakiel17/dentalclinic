@@ -115,10 +115,11 @@
         public function save_admission(){
             $caseno=date('YmdHis');
             $customer_id=$this->input->post('customer_id');
+            $ap=$this->input->post('ap');
             $date=date('Y-m-d');
             $time=date('H:i:s');
             $services=$this->input->post('services');          
-            $result=$this->db->query("INSERT INTO admission(caseno,customer_id,dateadmit,timeadmit,`status`) VALUES('$caseno','$customer_id','$date','$time','Active')");
+            $result=$this->db->query("INSERT INTO admission(caseno,customer_id,ap,dateadmit,timeadmit,`status`) VALUES('$caseno','$customer_id','$ap','$date','$time','Active')");
             if($result){
                 if($services){
                     foreach($services as $item){
@@ -334,6 +335,14 @@
             $result=$this->db->query("SELECT * FROM dentition WHERE caseno='$caseno' AND customer_id='$customer_id'");
             return $result->result_array();
         }
+        public function getSingleChart($caseno,$customer_id,$id){
+            $result=$this->db->query("SELECT * FROM dentition WHERE tooth_id='$id' AND caseno='$caseno' AND customer_id='$customer_id'");
+            if($result->num_rows()>0){
+                return $result->row_array();
+            }else{
+                return false;
+            }
+        }
         public function fetch_tooth_chart($id){
             $result=$this->db->query("SELECT * FROM dentition WHERE id='$id'");
             return $result->result_array();
@@ -345,15 +354,22 @@
             $customer_id=$this->input->post('customer_id');
             $remarks=$this->input->post('remarks');
             $remarks1=$this->input->post('remarks1');            
+            $remarks2=$this->input->post('remarks2');
             if($remarks==""){
                 if($remarks1==""){
-                    $remarks="";
+                    if($remarks2==""){
+                        $remarks="";
+                    }else{
+                        $remarks=$remarks2;
+                    }     
                 }else{
                     $remarks=$remarks1;
                 }
             }else{
                 if($remarks1 <> ""){
                     $remarks=$remarks1;
+                }else if($remarks2 <> ""){
+                    $remarks=$remarks2;
                 }
             }
             $caries_occ=$this->input->post('caries_occ');
@@ -383,6 +399,34 @@
             }
             if($result){
                 return true;
+            }else{
+                return false;
+            }
+        }
+        public function getAllDoctor(){
+            $result=$this->db->query("SELECT * FROM doctor");
+            return $result->result_array();
+        }
+        public function save_doctor(){
+            $id=$this->input->post('id');
+            $docname=$this->input->post('docname');            
+            $amount=$this->input->post('amount');
+
+            if($id==""){                
+                $result=$this->db->query("INSERT INTO doctor(`name`,pfamount) VALUES('$docname','$amount')");
+            }else{
+                $result=$this->db->query("UPDATE doctor SET `name`='$docname',pfamount='$amount' WHERE id='$id'");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function getSingleDoctor($id){
+            $result=$this->db->query("SELECT * FROM doctor WHERE id='$id'");
+            if($result->num_rows()>0){
+                return $result->row_array();
             }else{
                 return false;
             }
