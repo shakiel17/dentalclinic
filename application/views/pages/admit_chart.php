@@ -3457,12 +3457,14 @@
                                                             $fill48slice2="#ffffff";
                                                             $fill48slice3="#ffffff";
                                                             $fill48slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="48"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3471,74 +3473,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill48center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill48slice1=="#ffffff"){
-                                                                            $fill48slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill48center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill48slice2=="#ffffff"){
-                                                                            $fill48slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill48center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill48slice3=="#ffffff"){
-                                                                            $fill48slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill48slice4=="#ffffff"){
-                                                                            $fill48slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill48slice1=="#ffffff"){
-                                                                            $fill48slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill48slice2=="#ffffff"){
-                                                                            $fill48slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill48slice3=="#ffffff"){
-                                                                            $fill48slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill48slice4=="#ffffff"){
-                                                                            $fill48slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill48slice1=="#ffffff"){
-                                                                            $fill48slice1="url(#pattern-stripe48)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill48center="url(#pattern-stripe48)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill48slice2=="#ffffff"){
-                                                                            $fill48slice2="url(#pattern-stripe48)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill48slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill48slice3=="#ffffff"){
-                                                                            $fill48slice3="url(#pattern-stripe48)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill48slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill48slice4=="#ffffff"){
-                                                                            $fill48slice4="url(#pattern-stripe48)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill48slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill48slice1="url(#pattern-stripe48)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill48slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill48slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill48slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill48slice3="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill48slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill48slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill48slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill48slice2="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill48slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill48slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill48slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill48slice4="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -3569,6 +3573,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3578,12 +3584,14 @@
                                                             $fill47slice2="#ffffff";
                                                             $fill47slice3="#ffffff";
                                                             $fill47slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="47"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3592,74 +3600,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill47center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill47slice1=="#ffffff"){
-                                                                            $fill47slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill47center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill47slice2=="#ffffff"){
-                                                                            $fill47slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill47center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill47slice3=="#ffffff"){
-                                                                            $fill47slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill47slice4=="#ffffff"){
-                                                                            $fill47slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill55slice1=="#ffffff"){
-                                                                            $fill55slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill47slice2=="#ffffff"){
-                                                                            $fill47slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill47slice3=="#ffffff"){
-                                                                            $fill47slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill47slice4=="#ffffff"){
-                                                                            $fill47slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill47slice1=="#ffffff"){
-                                                                            $fill47slice1="url(#pattern-stripe47)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill47center="url(#pattern-stripe47)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill47slice2=="#ffffff"){
-                                                                            $fill47slice2="url(#pattern-stripe47)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill47slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill47slice3=="#ffffff"){
-                                                                            $fill47slice3="url(#pattern-stripe47)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill47slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill47slice4=="#ffffff"){
-                                                                            $fill47slice4="url(#pattern-stripe47)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill47slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill47slice1="url(#pattern-stripe47)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill47slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill47slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill47slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill47slice3="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill47slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill47slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill47slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill47slice2="url(#pattern-stripe48)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill47slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill47slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill47slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill47slice4="url(#pattern-stripe47)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -3690,6 +3700,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3699,12 +3711,14 @@
                                                             $fill46slice2="#ffffff";
                                                             $fill46slice3="#ffffff";
                                                             $fill46slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="46"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3713,74 +3727,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill46center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill46slice1=="#ffffff"){
-                                                                            $fill46slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill46center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill46slice2=="#ffffff"){
-                                                                            $fill46slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill46center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill46slice3=="#ffffff"){
-                                                                            $fill46slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill46slice4=="#ffffff"){
-                                                                            $fill46slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill46slice1=="#ffffff"){
-                                                                            $fill46slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill46slice2=="#ffffff"){
-                                                                            $fill46slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill46slice3=="#ffffff"){
-                                                                            $fill46slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill46slice4=="#ffffff"){
-                                                                            $fill46slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill46slice1=="#ffffff"){
-                                                                            $fill46slice1="url(#pattern-stripe46)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill46center="url(#pattern-stripe46)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill46slice2=="#ffffff"){
-                                                                            $fill46slice2="url(#pattern-stripe46)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill46slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill46slice3=="#ffffff"){
-                                                                            $fill46slice3="url(#pattern-stripe46)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill46slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill46slice4=="#ffffff"){
-                                                                            $fill46slice4="url(#pattern-stripe46)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill46slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill46slice1="url(#pattern-stripe46)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill46slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill46slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill46slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill46slice3="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill46slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill46slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill46slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill46slice2="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill46slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill46slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill46slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill46slice4="url(#pattern-stripe46)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -3811,6 +3827,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3820,12 +3838,14 @@
                                                             $fill45slice2="#ffffff";
                                                             $fill45slice3="#ffffff";
                                                             $fill45slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="45"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3834,74 +3854,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill45center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill45slice1=="#ffffff"){
-                                                                            $fill45slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill45center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill45slice2=="#ffffff"){
-                                                                            $fill45slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill45center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill45slice3=="#ffffff"){
-                                                                            $fill45slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill45slice4=="#ffffff"){
-                                                                            $fill45slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill45slice1=="#ffffff"){
-                                                                            $fill45slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill45slice2=="#ffffff"){
-                                                                            $fill45slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill45slice3=="#ffffff"){
-                                                                            $fill45slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill45slice4=="#ffffff"){
-                                                                            $fill45slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill45slice1=="#ffffff"){
-                                                                            $fill45slice1="url(#pattern-stripe45)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill45center="url(#pattern-stripe45)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill45slice2=="#ffffff"){
-                                                                            $fill45slice2="url(#pattern-stripe45)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill45slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill45slice3=="#ffffff"){
-                                                                            $fill45slice3="url(#pattern-stripe45)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill45slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill45slice4=="#ffffff"){
-                                                                            $fill45slice4="url(#pattern-stripe45)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill45slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill45slice1="url(#pattern-stripe45)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill45slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill45slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill45slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill45slice3="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill45slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill45slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill45slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill45slice2="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill45slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill45slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill45slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill45slice4="url(#pattern-stripe45)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -3932,6 +3954,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3941,12 +3965,14 @@
                                                             $fill44slice2="#ffffff";
                                                             $fill44slice3="#ffffff";
                                                             $fill44slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="44"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -3955,74 +3981,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill44center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill44slice1=="#ffffff"){
-                                                                            $fill44slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill44center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill44slice2=="#ffffff"){
-                                                                            $fill44slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill44center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill44slice3=="#ffffff"){
-                                                                            $fill44slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill44slice4=="#ffffff"){
-                                                                            $fill44slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill44slice1=="#ffffff"){
-                                                                            $fill44slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill44slice2=="#ffffff"){
-                                                                            $fill44slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill44slice3=="#ffffff"){
-                                                                            $fill44slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill44slice4=="#ffffff"){
-                                                                            $fill44slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill44slice1=="#ffffff"){
-                                                                            $fill44slice1="url(#pattern-stripe44)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill44center="url(#pattern-stripe44)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill44slice2=="#ffffff"){
-                                                                            $fill44slice2="url(#pattern-stripe44)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill44slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill44slice3=="#ffffff"){
-                                                                            $fill44slice3="url(#pattern-stripe44)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill44slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill44slice4=="#ffffff"){
-                                                                            $fill44slice4="url(#pattern-stripe44)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill44slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill44slice1="url(#pattern-stripe44)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill44slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill44slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill48slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill44slice3="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill44slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill44slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill44slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill44slice2="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill44slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill44slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill44slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill44slice4="url(#pattern-stripe44)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4053,6 +4081,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4062,12 +4092,14 @@
                                                             $fill43slice2="#ffffff";
                                                             $fill43slice3="#ffffff";
                                                             $fill43slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="43"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4076,74 +4108,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill43center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill43slice1=="#ffffff"){
-                                                                            $fill43slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill43center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill43slice2=="#ffffff"){
-                                                                            $fill43slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill43center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill43slice3=="#ffffff"){
-                                                                            $fill43slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill43slice4=="#ffffff"){
-                                                                            $fill43slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill43slice1=="#ffffff"){
-                                                                            $fill43slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill43slice2=="#ffffff"){
-                                                                            $fill43slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill43slice3=="#ffffff"){
-                                                                            $fill43slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill43slice4=="#ffffff"){
-                                                                            $fill43slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill43slice1=="#ffffff"){
-                                                                            $fill43slice1="url(#pattern-stripe43)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill43center="url(#pattern-stripe43)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill43slice2=="#ffffff"){
-                                                                            $fill43slice2="url(#pattern-stripe43)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill43slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill43slice3=="#ffffff"){
-                                                                            $fill43slice3="url(#pattern-stripe43)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill43slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill43slice4=="#ffffff"){
-                                                                            $fill43slice4="url(#pattern-stripe43)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill43slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill43slice1="url(#pattern-stripe43)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill43slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill43slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill43slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill43slice3="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill43slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill43slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill43slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill43slice2="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill43slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill43slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill43slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill43slice4="url(#pattern-stripe43)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4174,6 +4208,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4183,12 +4219,14 @@
                                                             $fill42slice2="#ffffff";
                                                             $fill42slice3="#ffffff";
                                                             $fill42slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="42"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4197,74 +4235,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill42center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill42slice1=="#ffffff"){
-                                                                            $fill42slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill42center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill42slice2=="#ffffff"){
-                                                                            $fill42slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill42center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill42slice3=="#ffffff"){
-                                                                            $fill42slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill42slice4=="#ffffff"){
-                                                                            $fill42slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill42slice1=="#ffffff"){
-                                                                            $fill42slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill42slice2=="#ffffff"){
-                                                                            $fill42slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill42slice3=="#ffffff"){
-                                                                            $fill42slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill42slice4=="#ffffff"){
-                                                                            $fill42slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill42slice1=="#ffffff"){
-                                                                            $fill42slice1="url(#pattern-stripe42)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill42center="url(#pattern-stripe42)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill42slice2=="#ffffff"){
-                                                                            $fill42slice2="url(#pattern-stripe42)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill42slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill42slice3=="#ffffff"){
-                                                                            $fill42slice3="url(#pattern-stripe42)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill42slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill42slice4=="#ffffff"){
-                                                                            $fill42slice4="url(#pattern-stripe42)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill42slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill42slice1="url(#pattern-stripe42)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill42slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill42slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill42slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill42slice3="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill42slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill42slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill42slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill42slice2="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill42slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill42slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill42slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill42slice4="url(#pattern-stripe42)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4295,6 +4335,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4304,12 +4346,14 @@
                                                             $fill41slice2="#ffffff";
                                                             $fill41slice3="#ffffff";
                                                             $fill41slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="41"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4318,74 +4362,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill41center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill41slice1=="#ffffff"){
-                                                                            $fill41slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill41center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill41slice2=="#ffffff"){
-                                                                            $fill41slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill41center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill41slice3=="#ffffff"){
-                                                                            $fill41slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill41slice4=="#ffffff"){
-                                                                            $fill41slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill41slice1=="#ffffff"){
-                                                                            $fill41slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill41slice2=="#ffffff"){
-                                                                            $fill41slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill41slice3=="#ffffff"){
-                                                                            $fill41slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill41slice4=="#ffffff"){
-                                                                            $fill41slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill41slice1=="#ffffff"){
-                                                                            $fill41slice1="url(#pattern-stripe41)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill41center="url(#pattern-stripe41)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill41slice2=="#ffffff"){
-                                                                            $fill41slice2="url(#pattern-stripe41)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill41slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill41slice3=="#ffffff"){
-                                                                            $fill41slice3="url(#pattern-stripe41)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill41slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill41slice4=="#ffffff"){
-                                                                            $fill41slice4="url(#pattern-stripe41)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill41slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill41slice1="url(#pattern-stripe41)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill41slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill41slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill41slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill41slice3="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill41slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill41slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill41slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill41slice2="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill41slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill41slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill41slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill41slice4="url(#pattern-stripe41)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4416,6 +4462,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4425,12 +4473,14 @@
                                                             $fill31slice2="#ffffff";
                                                             $fill31slice3="#ffffff";
                                                             $fill31slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="31"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4439,74 +4489,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill31center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill31slice1=="#ffffff"){
-                                                                            $fill31slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill31center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill31slice2=="#ffffff"){
-                                                                            $fill31slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill31center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill31slice3=="#ffffff"){
-                                                                            $fill31slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill31slice4=="#ffffff"){
-                                                                            $fill31slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill31slice1=="#ffffff"){
-                                                                            $fill31slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill31slice2=="#ffffff"){
-                                                                            $fill31slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill31slice3=="#ffffff"){
-                                                                            $fill31slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill31slice4=="#ffffff"){
-                                                                            $fill31slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill31slice1=="#ffffff"){
-                                                                            $fill31slice1="url(#pattern-stripe31)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill31center="url(#pattern-stripe31)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill31slice2=="#ffffff"){
-                                                                            $fill31slice2="url(#pattern-stripe31)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill31slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill31slice3=="#ffffff"){
-                                                                            $fill31slice3="url(#pattern-stripe31)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill31slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill31slice4=="#ffffff"){
-                                                                            $fill31slice4="url(#pattern-stripe31)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill31slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill31slice3="url(#pattern-stripe31)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill31slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill31slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill31slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill31slice1="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill31slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill31slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill31slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill31slice2="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill31slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill31slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill31slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill31slice4="url(#pattern-stripe31)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4537,6 +4589,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4546,12 +4600,14 @@
                                                             $fill32slice2="#ffffff";
                                                             $fill32slice3="#ffffff";
                                                             $fill32slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="32"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4560,74 +4616,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill32center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill32slice1=="#ffffff"){
-                                                                            $fill32slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill32center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill32slice2=="#ffffff"){
-                                                                            $fill32slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill32center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill32slice3=="#ffffff"){
-                                                                            $fill32slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill32slice4=="#ffffff"){
-                                                                            $fill32slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill32slice1=="#ffffff"){
-                                                                            $fill32slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill32slice2=="#ffffff"){
-                                                                            $fill32slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill32slice3=="#ffffff"){
-                                                                            $fill32slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill32slice4=="#ffffff"){
-                                                                            $fill32slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill32slice1=="#ffffff"){
-                                                                            $fill32slice1="url(#pattern-stripe32)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill32center="url(#pattern-stripe32)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill32slice2=="#ffffff"){
-                                                                            $fill32slice2="url(#pattern-stripe32)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill32slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill32slice3=="#ffffff"){
-                                                                            $fill32slice3="url(#pattern-stripe32)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill32slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill32slice4=="#ffffff"){
-                                                                            $fill32slice4="url(#pattern-stripe32)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill32slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill32slice3="url(#pattern-stripe32)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill32slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill32slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill32slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill32slice1="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill32slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill32slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill32slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill32slice2="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill32slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill32slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill32slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill32slice4="url(#pattern-stripe32)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4658,6 +4716,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4667,12 +4727,14 @@
                                                             $fill33slice2="#ffffff";
                                                             $fill33slice3="#ffffff";
                                                             $fill33slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="33"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4681,74 +4743,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill33center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill33slice1=="#ffffff"){
-                                                                            $fill33slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill33center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill33slice2=="#ffffff"){
-                                                                            $fill33slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill33center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill33slice3=="#ffffff"){
-                                                                            $fill33slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill33slice4=="#ffffff"){
-                                                                            $fill33slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill33slice1=="#ffffff"){
-                                                                            $fill33slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill33slice2=="#ffffff"){
-                                                                            $fill33slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill33slice3=="#ffffff"){
-                                                                            $fill33slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill33slice4=="#ffffff"){
-                                                                            $fill33slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill33slice1=="#ffffff"){
-                                                                            $fill33slice1="url(#pattern-stripe33)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill33center="url(#pattern-stripe33)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill33slice2=="#ffffff"){
-                                                                            $fill33slice2="url(#pattern-stripe33)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill33slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill33slice3=="#ffffff"){
-                                                                            $fill33slice3="url(#pattern-stripe33)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill33slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill33slice4=="#ffffff"){
-                                                                            $fill33slice4="url(#pattern-stripe33)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill33slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill33slice3="url(#pattern-stripe33)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill33slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill33slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill33slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill33slice1="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill33slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill33slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill33slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill33slice2="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill33slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill33slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill33slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill33slice4="url(#pattern-stripe33)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4779,6 +4843,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4788,12 +4854,14 @@
                                                             $fill34slice2="#ffffff";
                                                             $fill34slice3="#ffffff";
                                                             $fill34slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="34"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4802,74 +4870,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill34center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill34slice1=="#ffffff"){
-                                                                            $fill34slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill34center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill34slice2=="#ffffff"){
-                                                                            $fill34slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill34center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill34slice3=="#ffffff"){
-                                                                            $fill34slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill34slice4=="#ffffff"){
-                                                                            $fill34slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill34slice1=="#ffffff"){
-                                                                            $fill34slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill34slice2=="#ffffff"){
-                                                                            $fill34slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill34slice3=="#ffffff"){
-                                                                            $fill34slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill34slice4=="#ffffff"){
-                                                                            $fill34slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill34slice1=="#ffffff"){
-                                                                            $fill34slice1="url(#pattern-stripe34)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill34center="url(#pattern-stripe34)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill34slice2=="#ffffff"){
-                                                                            $fill34slice2="url(#pattern-stripe34)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill34slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill34slice3=="#ffffff"){
-                                                                            $fill34slice3="url(#pattern-stripe34)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill34slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill34slice4=="#ffffff"){
-                                                                            $fill34slice4="url(#pattern-stripe34)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill34slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill34slice3="url(#pattern-stripe34)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill34slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill34slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill34slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill34slice1="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill34slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill34slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill34slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill34slice2="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill34slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill34slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill34slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill34slice4="url(#pattern-stripe34)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -4900,6 +4970,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4909,12 +4981,14 @@
                                                             $fill35slice2="#ffffff";
                                                             $fill35slice3="#ffffff";
                                                             $fill35slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="35"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -4923,74 +4997,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill35center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill35slice1=="#ffffff"){
-                                                                            $fill35slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill35center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill35slice2=="#ffffff"){
-                                                                            $fill35slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill35center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill35slice3=="#ffffff"){
-                                                                            $fill35slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill53slice4=="#ffffff"){
-                                                                            $fill35slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill35slice1=="#ffffff"){
-                                                                            $fill35slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill35slice2=="#ffffff"){
-                                                                            $fill35slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill35slice3=="#ffffff"){
-                                                                            $fill35slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill35slice4=="#ffffff"){
-                                                                            $fill35slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill35slice1=="#ffffff"){
-                                                                            $fill35slice1="url(#pattern-stripe35)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill35center="url(#pattern-stripe35)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill35slice2=="#ffffff"){
-                                                                            $fill35slice2="url(#pattern-stripe35)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill35slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill35slice3=="#ffffff"){
-                                                                            $fill35slice3="url(#pattern-stripe35)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill35slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill35slice4=="#ffffff"){
-                                                                            $fill35slice4="url(#pattern-stripe35)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill35slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill35slice3="url(#pattern-stripe35)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill35slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill35slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill35slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill35slice1="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill35slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill35slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill35slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill35slice2="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill35slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill35slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill35slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill35slice4="url(#pattern-stripe35)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5021,6 +5097,7 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5030,12 +5107,14 @@
                                                             $fill36slice2="#ffffff";
                                                             $fill36slice3="#ffffff";
                                                             $fill36slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="36"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5044,74 +5123,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill36center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill36slice1=="#ffffff"){
-                                                                            $fill36slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill36center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill36slice2=="#ffffff"){
-                                                                            $fill36slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill36center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill36slice3=="#ffffff"){
-                                                                            $fill36slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill36slice4=="#ffffff"){
-                                                                            $fill36slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill36slice1=="#ffffff"){
-                                                                            $fill36slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill36slice2=="#ffffff"){
-                                                                            $fill36slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill36slice3=="#ffffff"){
-                                                                            $fill36slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill36slice4=="#ffffff"){
-                                                                            $fill36slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill36slice1=="#ffffff"){
-                                                                            $fill36slice1="url(#pattern-stripe36)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill36center="url(#pattern-stripe36)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill36slice2=="#ffffff"){
-                                                                            $fill36slice2="url(#pattern-stripe36)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill36slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill36slice3=="#ffffff"){
-                                                                            $fill36slice3="url(#pattern-stripe36)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill36slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill36slice4=="#ffffff"){
-                                                                            $fill36slice4="url(#pattern-stripe36)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill36slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill36slice3="url(#pattern-stripe36)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill36slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill36slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill36slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill36slice1="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill36slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill36slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill36slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill36slice2="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill36slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill36slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill36slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill36slice4="url(#pattern-stripe36)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5142,6 +5223,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5151,12 +5234,14 @@
                                                             $fill37slice2="#ffffff";
                                                             $fill37slice3="#ffffff";
                                                             $fill37slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="37"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5165,74 +5250,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill37center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill37slice1=="#ffffff"){
-                                                                            $fill37slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill37center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill37slice2=="#ffffff"){
-                                                                            $fill37slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill37center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill37slice3=="#ffffff"){
-                                                                            $fill37slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill37slice4=="#ffffff"){
-                                                                            $fill37slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill37slice1=="#ffffff"){
-                                                                            $fill37slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill37slice2=="#ffffff"){
-                                                                            $fill37slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill37slice3=="#ffffff"){
-                                                                            $fill37slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill37slice4=="#ffffff"){
-                                                                            $fill37slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill37slice1=="#ffffff"){
-                                                                            $fill37slice1="url(#pattern-stripe37)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill37center="url(#pattern-stripe37)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill37slice2=="#ffffff"){
-                                                                            $fill37slice2="url(#pattern-stripe37)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill37slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill37slice3=="#ffffff"){
-                                                                            $fill37slice3="url(#pattern-stripe37)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill37slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill37slice4=="#ffffff"){
-                                                                            $fill37slice4="url(#pattern-stripe37)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill37slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill37slice3="url(#pattern-stripe37)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill37slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill37slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill37slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill37slice1="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill37slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill37slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill37slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill37slice2="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill37slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill37slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill37slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill37slice4="url(#pattern-stripe37)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5263,6 +5350,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5272,12 +5361,14 @@
                                                             $fill38slice2="#ffffff";
                                                             $fill38slice3="#ffffff";
                                                             $fill38slice4="#ffffff";
+                                                            $treatment="";
+                                                            $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="38"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5286,74 +5377,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill38center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill38slice1=="#ffffff"){
-                                                                            $fill38slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill38center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill38slice2=="#ffffff"){
-                                                                            $fill38slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill38center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill38slice3=="#ffffff"){
-                                                                            $fill38slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill38slice4=="#ffffff"){
-                                                                            $fill38slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill38slice1=="#ffffff"){
-                                                                            $fill38slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill38slice2=="#ffffff"){
-                                                                            $fill38slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill38slice3=="#ffffff"){
-                                                                            $fill38slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill38slice4=="#ffffff"){
-                                                                            $fill38slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill38slice1=="#ffffff"){
-                                                                            $fill38slice1="url(#pattern-stripe38)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill38center="url(#pattern-stripe38)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill38slice2=="#ffffff"){
-                                                                            $fill38slice2="url(#pattern-stripe38)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill38slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill38slice3=="#ffffff"){
-                                                                            $fill38slice3="url(#pattern-stripe38)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill38slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill38slice4=="#ffffff"){
-                                                                            $fill38slice4="url(#pattern-stripe38)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill38slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill38slice3="url(#pattern-stripe38)";
                                                                             $pat="red";
-                                                                        }
-                                                                    }                                                                                                                                    
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill38slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill38slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill38slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill38slice1="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill38slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill38slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill38slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill38slice2="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill38slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill38slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill38slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill38slice4="url(#pattern-stripe38)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5384,6 +5477,8 @@
                                                             </a>
                                                             <br>
                                                             <?=$remark;?>
+                                                            <br>
+                                                            <?=$treatment;?>
                                                         </td>
                                                     </tr>
                                                     </tr>
@@ -5420,12 +5515,14 @@
                                                             $fill85slice2="#ffffff";
                                                             $fill85slice3="#ffffff";
                                                             $fill85slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="85"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5434,74 +5531,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill85center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill85slice1=="#ffffff"){
-                                                                            $fill85slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill85center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill85slice2=="#ffffff"){
-                                                                            $fill85slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill85center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill85slice3=="#ffffff"){
-                                                                            $fill85slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill85slice4=="#ffffff"){
-                                                                            $fill85slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill85slice1=="#ffffff"){
-                                                                            $fill85slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill85slice2=="#ffffff"){
-                                                                            $fill85slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill85slice3=="#ffffff"){
-                                                                            $fill85slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill85slice4=="#ffffff"){
-                                                                            $fill85slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill85slice1=="#ffffff"){
-                                                                            $fill85slice1="url(#pattern-stripe85)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill85center="url(#pattern-stripe85)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill85slice2=="#ffffff"){
-                                                                            $fill85slice2="url(#pattern-stripe85)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill85slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill85slice3=="#ffffff"){
-                                                                            $fill85slice3="url(#pattern-stripe85)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill85slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill85slice4=="#ffffff"){
-                                                                            $fill85slice4="url(#pattern-stripe85)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill85slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill85slice1="url(#pattern-stripe85)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill85slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill85slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill85slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill85slice3="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill85slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill85slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill85slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill85slice2="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill85slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill85slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill85slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill85slice4="url(#pattern-stripe85)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5509,7 +5608,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }    
+                                                            echo "$treatment<br>";                                                        
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -5539,12 +5639,14 @@
                                                             $fill84slice2="#ffffff";
                                                             $fill84slice3="#ffffff";
                                                             $fill84slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="84"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5553,74 +5655,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill84center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill84slice1=="#ffffff"){
-                                                                            $fill84slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill84center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill84slice2=="#ffffff"){
-                                                                            $fill84slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill84center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill84slice3=="#ffffff"){
-                                                                            $fill84slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill18slice4=="#ffffff"){
-                                                                            $fill18slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill84slice1=="#ffffff"){
-                                                                            $fill84slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill84slice2=="#ffffff"){
-                                                                            $fill84slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill84slice3=="#ffffff"){
-                                                                            $fill84slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill84slice4=="#ffffff"){
-                                                                            $fill84slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill84slice1=="#ffffff"){
-                                                                            $fill84slice1="url(#pattern-stripe84)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill84center="url(#pattern-stripe84)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill84slice2=="#ffffff"){
-                                                                            $fill84slice2="url(#pattern-stripe84)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill84slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill84slice3=="#ffffff"){
-                                                                            $fill84slice3="url(#pattern-stripe84)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill84slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill84slice4=="#ffffff"){
-                                                                            $fill84slice4="url(#pattern-stripe84)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill84slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill84slice1="url(#pattern-stripe84)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill84slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill84slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill84slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill84slice3="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill84slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill84slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill84slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill84slice2="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill84slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill84slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill84slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill84slice4="url(#pattern-stripe84)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5628,7 +5732,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }    
+                                                            echo "$treatment<br>";                                                        
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -5658,12 +5763,14 @@
                                                             $fill83slice2="#ffffff";
                                                             $fill83slice3="#ffffff";
                                                             $fill83slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="83"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5672,74 +5779,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill83center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill83slice1=="#ffffff"){
-                                                                            $fill83slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill83center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill83slice2=="#ffffff"){
-                                                                            $fill83slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill83center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill83slice3=="#ffffff"){
-                                                                            $fill83slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill83slice4=="#ffffff"){
-                                                                            $fill83slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill83slice1=="#ffffff"){
-                                                                            $fill83slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill83slice2=="#ffffff"){
-                                                                            $fill83slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill83slice3=="#ffffff"){
-                                                                            $fill83slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill83slice4=="#ffffff"){
-                                                                            $fill83slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill83slice1=="#ffffff"){
-                                                                            $fill83slice1="url(#pattern-stripe83)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill83center="url(#pattern-stripe83)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill83slice2=="#ffffff"){
-                                                                            $fill83slice2="url(#pattern-stripe83)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill83slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill83slice3=="#ffffff"){
-                                                                            $fill83slice3="url(#pattern-stripe83)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill83slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill83slice4=="#ffffff"){
-                                                                            $fill83slice4="url(#pattern-stripe83)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill83slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill83slice1="url(#pattern-stripe83)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill83slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill83slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill83slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill83slice3="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill83slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill83slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill83slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill83slice2="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill83slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill83slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill83slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill83slice4="url(#pattern-stripe83)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5747,7 +5856,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }    
+                                                            echo "$treatment<br>";                                                        
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -5777,12 +5887,14 @@
                                                             $fill82slice2="#ffffff";
                                                             $fill82slice3="#ffffff";
                                                             $fill82slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="82"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5791,74 +5903,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill82center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill82slice1=="#ffffff"){
-                                                                            $fill82slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill82center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill82slice2=="#ffffff"){
-                                                                            $fill82slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill82center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill82slice3=="#ffffff"){
-                                                                            $fill82slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill82slice4=="#ffffff"){
-                                                                            $fill82slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill82slice1=="#ffffff"){
-                                                                            $fill82slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill82slice2=="#ffffff"){
-                                                                            $fill82slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill82slice3=="#ffffff"){
-                                                                            $fill82slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill82slice4=="#ffffff"){
-                                                                            $fill82slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill82slice1=="#ffffff"){
-                                                                            $fill82slice1="url(#pattern-stripe82)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill82center="url(#pattern-stripe82)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill82slice2=="#ffffff"){
-                                                                            $fill82slice2="url(#pattern-stripe82)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill82slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill82slice3=="#ffffff"){
-                                                                            $fill82slice3="url(#pattern-stripe82)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill82slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill82slice4=="#ffffff"){
-                                                                            $fill82slice4="url(#pattern-stripe82)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill82slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill82slice1="url(#pattern-stripe82)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill82slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill82slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill82slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill82slice3="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill82slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill82slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill82slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill82slice2="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill82slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill82slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill82slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill82slice4="url(#pattern-stripe82)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5866,7 +5980,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }    
+                                                            echo "$treatment<br>";                                                        
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -5896,12 +6011,14 @@
                                                             $fill81slice2="#ffffff";
                                                             $fill81slice3="#ffffff";
                                                             $fill81slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="81"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -5910,74 +6027,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill81center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill81slice1=="#ffffff"){
-                                                                            $fill81slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill81center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill81slice2=="#ffffff"){
-                                                                            $fill81slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill81center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill81slice3=="#ffffff"){
-                                                                            $fill81slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill81slice4=="#ffffff"){
-                                                                            $fill81slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill81slice1=="#ffffff"){
-                                                                            $fill81slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill81slice2=="#ffffff"){
-                                                                            $fill81slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill81slice3=="#ffffff"){
-                                                                            $fill81slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill81slice4=="#ffffff"){
-                                                                            $fill81slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill81slice1=="#ffffff"){
-                                                                            $fill81slice1="url(#pattern-stripe81)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill81center="url(#pattern-stripe81)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill81slice2=="#ffffff"){
-                                                                            $fill81slice2="url(#pattern-stripe81)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill81slice1="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill81slice3=="#ffffff"){
-                                                                            $fill81slice3="url(#pattern-stripe81)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill81slice1="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill81slice4=="#ffffff"){
-                                                                            $fill81slice4="url(#pattern-stripe81)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill81slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill81slice1="url(#pattern-stripe81)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill81slice3="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill81slice3="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill81slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill81slice3="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill81slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill81slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill81slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill81slice2="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill81slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill81slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill81slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill81slice4="url(#pattern-stripe81)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -5985,7 +6104,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }    
+                                                            echo "$treatment<br>";                                                        
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -6015,12 +6135,14 @@
                                                             $fill71slice2="#ffffff";
                                                             $fill71slice3="#ffffff";
                                                             $fill71slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="71"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -6029,74 +6151,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill71center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill71slice1=="#ffffff"){
-                                                                            $fill71slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill71center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill71slice2=="#ffffff"){
-                                                                            $fill71slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill71center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill71slice3=="#ffffff"){
-                                                                            $fill71slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill71slice4=="#ffffff"){
-                                                                            $fill71slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill71slice1=="#ffffff"){
-                                                                            $fill71slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill71slice2=="#ffffff"){
-                                                                            $fill71slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill71slice3=="#ffffff"){
-                                                                            $fill71slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill71slice4=="#ffffff"){
-                                                                            $fill71slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill71slice1=="#ffffff"){
-                                                                            $fill71slice1="url(#pattern-stripe71)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill71center="url(#pattern-stripe71)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill71slice2=="#ffffff"){
-                                                                            $fill71slice2="url(#pattern-stripe71)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill71slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill71slice3=="#ffffff"){
-                                                                            $fill71slice3="url(#pattern-stripe71)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill71slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill71slice4=="#ffffff"){
-                                                                            $fill71slice4="url(#pattern-stripe71)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill71slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill71slice3="url(#pattern-stripe71)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill71slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill71slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill71slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill71slice1="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill71slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill71slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill71slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill71slice2="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill71slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill71slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill71slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill71slice4="url(#pattern-stripe71)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -6104,7 +6228,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }
+                                                            echo $treatment."<br>";                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -6134,12 +6259,14 @@
                                                             $fill72slice2="#ffffff";
                                                             $fill72slice3="#ffffff";
                                                             $fill72slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="72"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -6148,74 +6275,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill72center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill72slice1=="#ffffff"){
-                                                                            $fill72slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill72center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill72slice2=="#ffffff"){
-                                                                            $fill72slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill72center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill72slice3=="#ffffff"){
-                                                                            $fill72slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill72slice4=="#ffffff"){
-                                                                            $fill72slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill72slice1=="#ffffff"){
-                                                                            $fill72slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill72slice2=="#ffffff"){
-                                                                            $fill72slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill72slice3=="#ffffff"){
-                                                                            $fill72slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill72slice4=="#ffffff"){
-                                                                            $fill72slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill72slice1=="#ffffff"){
-                                                                            $fill72slice1="url(#pattern-stripe72)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill72center="url(#pattern-stripe72)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill72slice2=="#ffffff"){
-                                                                            $fill72slice2="url(#pattern-stripe72)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill72slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill72slice3=="#ffffff"){
-                                                                            $fill72slice3="url(#pattern-stripe72)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill72slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill72slice4=="#ffffff"){
-                                                                            $fill72slice4="url(#pattern-stripe72)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill72slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill72slice3="url(#pattern-stripe72)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill72slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill72slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill72slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill72slice1="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill72slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill72slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill72slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill72slice2="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill72slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill72slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill72slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill72slice4="url(#pattern-stripe72)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -6223,7 +6352,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }
+                                                            echo $treatment."<br>";                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -6253,12 +6383,14 @@
                                                             $fill73slice2="#ffffff";
                                                             $fill73slice3="#ffffff";
                                                             $fill73slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="73"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -6267,74 +6399,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill73center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill73slice1=="#ffffff"){
-                                                                            $fill73slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill73center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill73slice2=="#ffffff"){
-                                                                            $fill73slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill73center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill73slice3=="#ffffff"){
-                                                                            $fill73slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill73slice4=="#ffffff"){
-                                                                            $fill73slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill73slice1=="#ffffff"){
-                                                                            $fill73slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill73slice2=="#ffffff"){
-                                                                            $fill73slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill73slice3=="#ffffff"){
-                                                                            $fill73slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill73slice4=="#ffffff"){
-                                                                            $fill73slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill73slice1=="#ffffff"){
-                                                                            $fill73slice1="url(#pattern-stripe73)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill73center="url(#pattern-stripe73)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill73slice2=="#ffffff"){
-                                                                            $fill73slice2="url(#pattern-stripe73)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill73slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill73slice3=="#ffffff"){
-                                                                            $fill73slice3="url(#pattern-stripe73)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill73slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill73slice4=="#ffffff"){
-                                                                            $fill73slice4="url(#pattern-stripe73)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill73slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill73slice3="url(#pattern-stripe73)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill73slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill73slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill73slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill73slice1="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill73slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill73slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill73slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill73slice2="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill73slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill73slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill73slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill73slice4="url(#pattern-stripe73)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -6342,7 +6476,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }
+                                                            echo $treatment."<br>";                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -6372,12 +6507,14 @@
                                                             $fill74slice2="#ffffff";
                                                             $fill74slice3="#ffffff";
                                                             $fill74slice4="#ffffff";
-                                                            // if(count($chart)>0){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            //     if($row['tooth_id']=="74"){
-                                                             $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
-                                                               // foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
                                                                 if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -6386,74 +6523,76 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill74center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill74slice1=="#ffffff"){
-                                                                            $fill74slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill74center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill74slice2=="#ffffff"){
-                                                                            $fill74slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill74center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill74slice3=="#ffffff"){
-                                                                            $fill74slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill74slice4=="#ffffff"){
-                                                                            $fill74slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill74slice1=="#ffffff"){
-                                                                            $fill74slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill74slice2=="#ffffff"){
-                                                                            $fill74slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill74slice3=="#ffffff"){
-                                                                            $fill74slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill74slice4=="#ffffff"){
-                                                                            $fill74slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill74slice1=="#ffffff"){
-                                                                            $fill74slice1="url(#pattern-stripe74)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill74center="url(#pattern-stripe74)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill74slice2=="#ffffff"){
-                                                                            $fill74slice2="url(#pattern-stripe74)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill74slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill74slice3=="#ffffff"){
-                                                                            $fill74slice3="url(#pattern-stripe74)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill74slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill74slice4=="#ffffff"){
-                                                                            $fill74slice4="url(#pattern-stripe74)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill74slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill74slice3="url(#pattern-stripe74)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill74slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill74slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill74slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill74slice1="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill74slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill74slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill74slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill74slice2="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill74slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill74slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill74slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill74slice4="url(#pattern-stripe74)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
@@ -6461,7 +6600,8 @@
                                                             // }
                                                             // }else{
                                                             //     $remark="&check;";    
-                                                            // }                                                            
+                                                            // }
+                                                            echo $treatment."<br>";                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>
@@ -6491,9 +6631,14 @@
                                                             $fill75slice2="#ffffff";
                                                             $fill75slice3="#ffffff";
                                                             $fill75slice4="#ffffff";
-                                                            if(count($chart)>0){
-                                                                foreach($chart as $row){
-                                                                if($row['tooth_id']=="75"){
+                                                            $treatment="";
+                                                            $surgery="";
+                                                            // if(count($chart)>0){                                                                
+                                                            //     foreach($chart as $row){
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                                if($row){
+                                                                    $treatment=$row['treatment'];
+                                                                    $surgery=$row['surgery'];
                                                                     $id=$row['id'];                                                                    
                                                                     if($row['remarks']=="" || $row['remarks']=="OK"){
                                                                         $remark="&check;";
@@ -6502,82 +6647,85 @@
                                                                     }else{
                                                                         $remark=$row['remarks'];
                                                                     }
-                                                                    if($row['caries_occ']=="1" || $row['caries_mes']=="1" || $row['caries_dis']=="1"  || $row['caries_buc']=="1"  || $row['caries_ling']=="1"){
+                                                                    if($row['caries_occ']=="1"){                                                                        
                                                                         $fill75center="red";
                                                                     }
-                                                                    if($row['comp_occ']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill75slice1=="#ffffff"){
-                                                                            $fill75slice1="#3a018a";
-                                                                        }                                                                        
+                                                                    if($row['comp_occ']=="1"){                                                                        
+                                                                        $fill75center="#3a018a";
                                                                     }
-                                                                    if($row['comp_mes']=="1" || $row['comp_ling']=="1"){ 
-                                                                       if($fill75slice2=="#ffffff"){
-                                                                            $fill75slice2="#3a018a";
-                                                                        }
+                                                                    if($row['amal_occ']=="1"){
+                                                                        $fill75center="#908d94";
                                                                     }
-                                                                    if($row['comp_dis']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill75slice3=="#ffffff"){
-                                                                            $fill75slice3="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['comp_buc']=="1" || $row['comp_ling']=="1"){ 
-                                                                        if($fill75slice4=="#ffffff"){
-                                                                            $fill75slice4="#3a018a";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_occ']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill75slice1=="#ffffff"){
-                                                                            $fill75slice1="#908d94";
-                                                                        }                                                                        
-                                                                    }
-                                                                    if($row['amal_mes']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill75slice2=="#ffffff"){
-                                                                            $fill75slice2="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_dis']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill75slice3=="#ffffff"){
-                                                                            $fill75slice3="#908d94";
-                                                                        }
-                                                                    }
-                                                                    if($row['amal_buc']=="1" || $row['amal_ling']=="1"){ 
-                                                                        if($fill75slice4=="#ffffff"){
-                                                                            $fill75slice4="#908d94";
-                                                                        }
-                                                                    }
-                                                                    $pat="white";
-                                                                    if($row['recur_occ']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill75slice1=="#ffffff"){
-                                                                            $fill75slice1="url(#pattern-stripe75)";
+                                                                    if($row['recur_occ']=="1"){                                                                        
+                                                                        $fill75center="url(#pattern-stripe75)";
                                                                             $pat="red";
-                                                                        }                                                                       
                                                                     }
-                                                                    if($row['recur_mes']=="1"  || $row['recur_ling']=="1"){ 
-                                                                        if($fill75slice2=="#ffffff"){
-                                                                            $fill75slice2="url(#pattern-stripe75)";
-                                                                            $pat="red";
-                                                                        }
+
+                                                                    if($row['caries_mes']=="1"){                                                                        
+                                                                        $fill75slice3="red";
                                                                     }
-                                                                    if($row['recur_dis']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill75slice3=="#ffffff"){
-                                                                            $fill75slice3="url(#pattern-stripe75)";
-                                                                            $pat="red";
-                                                                        }
+                                                                    if($row['comp_mes']=="1"){                                                                        
+                                                                        $fill75slice3="#3a018a";
                                                                     }
-                                                                    if($row['recur_buc']=="1" || $row['recur_ling']=="1"){ 
-                                                                        if($fill75slice4=="#ffffff"){
-                                                                            $fill75slice4="url(#pattern-stripe75)";
+                                                                    if($row['amal_mes']=="1"){
+                                                                        $fill75slice3="#908d94";
+                                                                    }
+                                                                    if($row['recur_mes']=="1"){                                                                        
+                                                                        $fill75slice3="url(#pattern-stripe75)";
                                                                             $pat="red";
-                                                                        }
-                                                                    } 
+                                                                    }
+
+                                                                     if($row['caries_dis']=="1"){                                                                        
+                                                                        $fill75slice1="red";
+                                                                    }
+                                                                    if($row['comp_dis']=="1"){                                                                        
+                                                                        $fill75slice1="#3a018a";
+                                                                    }
+                                                                    if($row['amal_dis']=="1"){
+                                                                        $fill75slice1="#908d94";
+                                                                    }
+                                                                    if($row['recur_dis']=="1"){                                                                        
+                                                                        $fill75slice1="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_buc']=="1"){                                                                        
+                                                                        $fill75slice2="red";
+                                                                    }
+                                                                    if($row['comp_buc']=="1"){                                                                        
+                                                                        $fill75slice2="#3a018a";
+                                                                    }
+                                                                    if($row['amal_buc']=="1"){
+                                                                        $fill75slice2="#908d94";
+                                                                    }
+                                                                    if($row['recur_buc']=="1"){                                                                        
+                                                                        $fill75slice2="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                    }
+
+                                                                     if($row['caries_ling']=="1"){                                                                        
+                                                                        $fill75slice4="red";
+                                                                    }
+                                                                    if($row['comp_ling']=="1"){                                                                        
+                                                                        $fill75slice4="#3a018a";
+                                                                    }
+                                                                    if($row['amal_ling']=="1"){
+                                                                        $fill75slice4="#908d94";
+                                                                    }
+                                                                    if($row['recur_ling']=="1"){                                                                        
+                                                                        $fill75slice4="url(#pattern-stripe75)";
+                                                                            $pat="red";
+                                                                    }
+                                                                                                                                                                                                       
                                                                 }else{
                                                                     $id="";
                                                                     $remark="&check;";
                                                                 }
-                                                            }
-                                                            }else{
-                                                                $remark="&check;";    
-                                                            }                                                            
+                                                            // }
+                                                            // }else{
+                                                            //     $remark="&check;";    
+                                                            // }
+                                                            echo $treatment."<br>";                                                            
                                                             echo "<b>".$remark."<b>";
                                                             ?>
                                                             <br>

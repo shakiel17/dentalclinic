@@ -546,7 +546,7 @@
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-4" value="MO">
+                                            <input type="radio" name="remarks" id="rad-4" value="Mo">
                                             <label for="rad-4">MO</label>
                                         </div>
                                     </td>
