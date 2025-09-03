@@ -29,10 +29,10 @@
         <tr>
             <td width="120"><img src='data:image/jpg;charset=utf8;base64,<?=base64_encode($setting['logo']);?>' width='100'></td>
             <td valign="top">
-                <b style="font-size:20px;"><?=$setting['companyname'];?></b>
-                <?=$setting['address'];?>
-                CP: <b><?=$setting['contactno'];?></b>
-                Email: <b><?=$setting['email'];?></b>
+                <b style="font-size:20px;"><?=$setting['companyname'];?></b><br>
+                <?=$setting['address'];?><br>
+                CP: <b><?=$setting['contactno'];?></b><br>
+                Email: <b><?=$setting['email'];?></b><br>
                 Clinic Hours: <b><?php
                     $clinic=explode(';',$setting['clinic_hours']);
                     echo $clinic[0]."".$clinic[1];
