@@ -799,3 +799,88 @@
                 </div>
             </div>
         </div>
+
+        <div id="ManageRx" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Manage Rx</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_rx');?>" method="POST">
+                        <input type="hidden" name="id" id="rx_id">
+                        <input type="hidden" name="caseno" id="rx_caseno">
+                        <input type="hidden" name="customer_id" id="rx_customer_id">
+                        <div class="modal-body">
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="description" required id="rx_description">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Description</label>
+                            </div>
+                            </div>
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="quantity" required id="rx_quantity">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Quantity</label>
+                            </div>
+                            </div>
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="route" required id="rx_route">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Route</label>
+                            </div>
+                            </div>
+                            <div class="mt-1 mb-5 position-relative">
+                            <div class="group material-input">
+                                <input type="text" name="frequency" required id="rx_frequency">
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Frequency</label>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="ClinicLogo" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Manage Clinic Logo</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_clinic_logo');?>" method="POST" class="form-horizontal" enctype="multipart/form-data">                        
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-12">Image</label>
+                                <div class="ml-5">
+                                        <input type="file" name="file" class="form-control">      
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

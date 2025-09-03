@@ -1,171 +1,78 @@
+<style>
+            svg {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            }
 
-<!-- Begin Content -->
-                <div class="content-inner profile">
-                    <div class="container-fluid">
-                        <!-- Begin Page Header-->
-                        <div class="row">
-                            <div class="page-header">
-                                <div class="d-flex align-items-center">
-                                    <h2 class="page-header-title"><?=$title;?></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                        if($this->session->success){
-                        ?>
-                        <div class="alert alert-success" role="alert">
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-                            <strong><?=$this->session->success;?></strong>
-                        </div>
-                        <?php
-                        }
-                        ?>
-                        <?php
-                        if($this->session->failed){
-                        ?>
-                        <div class="alert alert-danger" role="alert">
-                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-                            <strong><?=$this->session->failed;?></strong>
-                        </div>
-                        <?php
-                        }
+            /* path, circle {
+            stroke: #000;
+            stroke-width: 2;
+            transition: 0.2s;
+            } */
 
-                        // if($item['status']=="discharged"){
-                        //     $dc="style='display:none;'";
-                        // }else{
-                        //     $dc="";
-                        // }
-                        
-                        ?>
-                        <!-- End Page Header -->
-                        <div class="row flex-row">
-                            <div class="col-xl-3">
-                                <!-- Begin Widget -->
-                                <div class="widget has-shadow">
-                                    <div class="widget-body">
-                                        
-                                        <h4 class="text-center mt-1 mb-1"><b>TOOTH CHART LEGEND</b></h4>
-                                        <div class="em-separator separator-dashed"></div>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0);"><b>CONDITION</b></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0);">&check; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Present Teeth</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">D &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Decayed (Caries indicated for <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filling)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">M &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Missing due to Caries</a>
-                                            </li>
-                                             <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">MO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Missing due to Other Causes</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Rf &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Root Fragment</a>
-                                            </li>                                                                                       
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Im &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impacted Tooth</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Sp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supernumerary Tooth</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Un&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unerupted</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0);"><b>RESTORATION & PROSTHETICS</b></a>
-                                            </li>  
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Am &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amalgam Filling</a>
-                                            </li>                                         
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Co &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Composite Filling</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">JC &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacket Crown</a>
-                                            </li>
-                                             <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Ab &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Abutment</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Att &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attachment</a>
-                                            </li>                                                                                       
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">P &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pontic</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">In &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inlay</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Imp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implant</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sealants</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">RD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Removable Denture</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0);"><b>SURGERY</b></a>
-                                            </li>  
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">X &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extraction due to Caries</a>
-                                            </li>                                         
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)">Xo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extraction due to Other <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Causes</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:red; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Caries</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:#3a018a; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Composite Filling</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:#908d94; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amalgam Filling</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #fc1447, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recurrent Caries</a>
-                                            </li>
-                                            <!-- <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:#fff56b; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcelain Fused to Metal <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crown (PFM)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:#d6cc3e; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ceramic Crown (CER)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background-color:#FFD700; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gold Crown (GC)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #000000, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metal Crown (MC)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #d6cc3e, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ceramic Inlay/Onlay <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(CER I/O)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #FFD700, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gold Inlay/Onlay (G I/O)</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #000000, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Metal Inlay/Onlay (M I/O)</a>
-                                            </li> -->
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Widget -->
-                            </div>                            
-                            <div class="col-xl-9">                               
-                                <div class="widget has-shadow">
-                                    <div class="widget-header bordered no-actions d-flex align-items-center">
-                                        <table width="100%" border="0">
-                                            <tr>
-                                                <td><h4>Tooth Chart || <b><?=$patient['lastname'];?>, <?=$patient['firstname'];?> <?=$patient['middlename'];?></b> || <a href="<?=base_url('view_admission_history/'.$item['customer_id']);?>">Admission History</a></h4></td>
-                                            </tr>
-                                        </table>                                        
-                                    </div>
-                                    <div class="widget-body">
-                                        <div class="table-responsive">
-                                            <table width="100%" cellspacing="0">
+            path:hover {
+            opacity: 0.8;
+            }
+            .slice, .center {
+            stroke: black;
+            stroke-width: 4;
+            cursor: pointer;
+            }
+            /* .slice:hover, .center:hover {
+            fill: lightgray;
+            } */
+        </style>
+<center>
+<div style="width:700px; border:0px solid black;">
+    <table width="100%" border="0" style="font-family:Arial; font-size:12px;">
+        <tr>
+            <td width="120"><img src='data:image/jpg;charset=utf8;base64,<?=base64_encode($setting['logo']);?>' width='100'></td>
+            <td valign="top">
+                <b style="font-size:20px;"><?=$setting['companyname'];?></b>
+                <?=$setting['address'];?>
+                CP: <b><?=$setting['contactno'];?></b>
+                Email: <b><?=$setting['email'];?></b>
+                Clinic Hours: <b><?php
+                    $clinic=explode(';',$setting['clinic_hours']);
+                    echo $clinic[0]."".$clinic[1];
+                ?>
+                </b>
+            </td>
+        </tr>            
+    </table>
+    <hr size="3" color="black">
+    <p style="font-family:Arial;font-size:20px; font-weight:bold;">DENTAL CERTIFICATE</p>
+    <table width="100%" border="0" cellpadding="0" style="font-family:Arial; font-size:13px;">
+        <tr>
+            <td width="15%">Patient's Name:</td>
+            <td style="border-bottom:1px solid black;"><?=$patient['lastname'];?>, <?=$patient['firstname'];?> <?=$patient['middlename'];?></td>
+            <td>&nbsp</td>
+            <td width="5%">Date: </td>
+            <td style="border-bottom:1px solid black;"><?=date('m/d/Y');?></td>            
+        </tr>
+    </table>    
+    <table width="100%" border="0" style="font-family:Arial; font-size:13px;">
+        <tr>
+            <td width="8%">Address:</td>
+            <td style="border-bottom:1px solid black;"><?=$patient['address'];?></td>
+            <td>&nbsp;</td>
+            <td width="4%">Age: </td>
+            <td style="border-bottom:1px solid black;">
+                <?php
+                    $birthdate= new DateTime($patient['birthdate']);
+                    $today=new DateTime(date('Y-m-d'));
+                    $age=$birthdate->diff($today)->y;
+                    echo $age;
+                ?>
+            </td>  
+            <td>&nbsp;</td>
+            <td width="6%">Gender: </td>
+            <td style="border-bottom:1px solid black;"><?=$patient['gender'];?></td>
+        </tr>
+    </table>
+      <br><br>
+    <table width="100%" border="0" cellspacing="0" cellspacing="0">
                                                 <tbody>
                                                     <tr>
                                                         <td width="2%" align="center">
@@ -190,7 +97,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -283,8 +190,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">55</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">55</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe55" 
                                                                         width="4" height="4" 
@@ -300,10 +207,9 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill55center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -317,7 +223,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -409,8 +315,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">54</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">54</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe54" 
                                                                         width="4" height="4" 
@@ -426,10 +332,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill54center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -443,7 +350,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -535,8 +442,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">53</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">53</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe53" 
                                                                         width="4" height="4" 
@@ -552,10 +459,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill53center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -569,7 +477,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -661,8 +569,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">52</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">52</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe52" 
                                                                         width="4" height="4" 
@@ -678,12 +586,13 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill52center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center" style="border-right:1px solid black;">
                                                             <?php
                                                             $tid=51;
                                                             $fill51center="#ffffff";
@@ -695,7 +604,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -787,8 +696,8 @@
                                                             // }                                                            
                                                         
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">51</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">51</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe51" 
                                                                         width="4" height="4" 
@@ -804,10 +713,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill51center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -821,7 +731,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -913,8 +823,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">61</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">61</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe61" 
                                                                         width="4" height="4" 
@@ -930,10 +840,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill61center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -947,7 +858,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1039,8 +950,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">62</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">62</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe62" 
                                                                         width="4" height="4" 
@@ -1056,10 +967,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill62center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -1073,7 +985,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1165,8 +1077,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">63</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">63</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe63" 
                                                                         width="4" height="4" 
@@ -1182,10 +1094,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill63center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -1199,7 +1112,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1291,8 +1204,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">64</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">64</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe64" 
                                                                         width="4" height="4" 
@@ -1308,10 +1221,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill64center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -1325,7 +1239,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1417,8 +1331,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">65</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">65</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe65" 
                                                                         width="4" height="4" 
@@ -1434,10 +1348,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill65center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
 
@@ -1448,19 +1363,7 @@
                                                         <td width="2%" align="center">
                                                             
                                                         </td>
-                                                    </tr><tr>
-                                                        <td colspan="16">&nbsp;</td>
                                                     </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="16" style="border-bottom:1px solid black;"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
-                                                    
                                                     <tr>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -1475,7 +1378,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1564,11 +1467,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe18" 
                                                                         width="4" height="4" 
@@ -1584,7 +1488,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill18center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">18</a>
+                                                            <a style="font-size:9px;">18</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -1599,7 +1503,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1688,11 +1592,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe17" 
                                                                         width="4" height="4" 
@@ -1708,7 +1613,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill17center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">17</a>
+                                                            <a style="font-size:9px;">17</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -1723,7 +1628,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1812,11 +1717,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe16" 
                                                                         width="4" height="4" 
@@ -1832,7 +1738,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill16center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">16</a>
+                                                            <a style="font-size:9px;">16</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -1847,7 +1753,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -1936,11 +1842,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe15" 
                                                                         width="4" height="4" 
@@ -1956,7 +1863,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill15center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">15</a>
+                                                            <a style="font-size:9px;">15</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -1971,7 +1878,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2060,11 +1967,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe14" 
                                                                         width="4" height="4" 
@@ -2080,7 +1988,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill14center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">14</a>
+                                                            <a style="font-size:9px;">14</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2095,7 +2003,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2184,11 +2092,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe13" 
                                                                         width="4" height="4" 
@@ -2204,7 +2113,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill13center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">13</a>
+                                                            <a style="font-size:9px;">13</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2219,7 +2128,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2308,11 +2217,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe12" 
                                                                         width="4" height="4" 
@@ -2328,9 +2238,9 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill12center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">12</a>
+                                                            <a style="font-size:9px;">12</a>
                                                         </td>
-                                                        <td width="2%" align="center">                                                            
+                                                        <td width="2%" align="center" style="border-right:1px solid black;">                                                            
                                                             <?php
                                                             $tid=11;
                                                             $fill11center="#ffffff";
@@ -2343,7 +2253,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2432,11 +2342,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // } 
-                                                            echo $treatment."<br>";                                                           
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                       
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe11" 
                                                                         width="4" height="4" 
@@ -2452,7 +2363,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill11center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">11</a>
+                                                            <a style="font-size:9px;">11</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2466,7 +2377,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2555,11 +2466,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe21" 
                                                                         width="4" height="4" 
@@ -2575,7 +2487,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill21center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">21</a>
+                                                            <a style="font-size:9px;">21</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2589,7 +2501,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2678,11 +2590,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe22" 
                                                                         width="4" height="4" 
@@ -2698,7 +2611,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill22center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">22</a>
+                                                            <a style="font-size:9px;">22</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2712,7 +2625,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2801,11 +2714,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe23" 
                                                                         width="4" height="4" 
@@ -2821,7 +2735,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill23center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">23</a>
+                                                            <a style="font-size:9px;">23</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2835,7 +2749,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -2924,11 +2838,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe24" 
                                                                         width="4" height="4" 
@@ -2944,7 +2859,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill24center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">24</a>
+                                                            <a style="font-size:9px;">24</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -2958,7 +2873,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3047,11 +2962,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe25" 
                                                                         width="4" height="4" 
@@ -3067,7 +2983,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill25center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">25</a>
+                                                            <a style="font-size:9px;">25</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -3081,7 +2997,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3170,11 +3086,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe26" 
                                                                         width="4" height="4" 
@@ -3190,7 +3107,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill26center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">26</a>
+                                                            <a style="font-size:9px;">26</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -3204,7 +3121,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3293,11 +3210,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe27" 
                                                                         width="4" height="4" 
@@ -3313,7 +3231,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill27center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">27</a>
+                                                            <a style="font-size:9px;">27</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -3327,7 +3245,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3416,11 +3334,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }   
-                                                            echo $treatment."<br>";                                                         
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                     
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe28" 
                                                                         width="4" height="4" 
@@ -3436,18 +3355,14 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill28center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">28</a>
+                                                            <a style="font-size:9px;">28</a>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
+                                                    
                                                     <tr>
                                                         <td colspan="16" style="border-bottom:1px solid black;"></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
+                                                    
                                                     <tr>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3461,7 +3376,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3554,8 +3469,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">48</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">48</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe48" 
                                                                         width="4" height="4" 
@@ -3571,10 +3486,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill48center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3588,7 +3504,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3681,8 +3597,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">47</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">47</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe47" 
                                                                         width="4" height="4" 
@@ -3698,10 +3614,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill47center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3715,7 +3632,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3808,8 +3725,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">46</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">46</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe46" 
                                                                         width="4" height="4" 
@@ -3825,10 +3742,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill46center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3842,7 +3760,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -3935,8 +3853,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">45</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">45</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe45" 
                                                                         width="4" height="4" 
@@ -3952,10 +3870,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill45center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -3969,7 +3888,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4062,8 +3981,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">44</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">44</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe44" 
                                                                         width="4" height="4" 
@@ -4079,10 +3998,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill44center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4096,7 +4016,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4189,8 +4109,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">43</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">43</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe43" 
                                                                         width="4" height="4" 
@@ -4206,10 +4126,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill43center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4223,7 +4144,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4316,8 +4237,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">42</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">42</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe42" 
                                                                         width="4" height="4" 
@@ -4333,12 +4254,13 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill42center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
-                                                        <td width="2%" align="center">
+                                                        <td width="2%" align="center" style="border-right:1px solid black;">
                                                             <?php
                                                             $tid=41;
                                                             $fill41center="#ffffff";
@@ -4350,7 +4272,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4443,8 +4365,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">41</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">41</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe41" 
                                                                         width="4" height="4" 
@@ -4460,10 +4382,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill41center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4477,7 +4400,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4570,8 +4493,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">31</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">31</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe31" 
                                                                         width="4" height="4" 
@@ -4587,10 +4510,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill31center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4604,7 +4528,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4697,8 +4621,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">32</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">32</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe32" 
                                                                         width="4" height="4" 
@@ -4714,10 +4638,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill32center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4731,7 +4656,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4824,8 +4749,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">33</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">33</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe33" 
                                                                         width="4" height="4" 
@@ -4841,10 +4766,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill33center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4858,7 +4784,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -4951,8 +4877,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">34</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">34</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe34" 
                                                                         width="4" height="4" 
@@ -4968,10 +4894,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill34center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -4985,7 +4912,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5078,8 +5005,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">35</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">35</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe35" 
                                                                         width="4" height="4" 
@@ -5095,9 +5022,10 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill35center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5111,7 +5039,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5204,8 +5132,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">36</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">36</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe36" 
                                                                         width="4" height="4" 
@@ -5221,10 +5149,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill36center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5238,7 +5167,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5331,8 +5260,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">37</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">37</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe37" 
                                                                         width="4" height="4" 
@@ -5348,10 +5277,11 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill37center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                         <td width="2%" align="center">
                                                             <?php
@@ -5365,7 +5295,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5458,8 +5388,8 @@
                                                             // }                                                            
                                                             
                                                             ?>                                                             
-                                                            <a class="btn btn-info btn-sm text-white">38</a>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <a style="font-size:9px;">38</a>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe38" 
                                                                         width="4" height="4" 
@@ -5475,28 +5405,20 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill38center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <br>
-                                                            <?=$remark;?>
-                                                            <br>
-                                                            <?=$treatment;?>
+                                                            <br><small style="font-size:8px;"><?=$remark;?></small>
+                                                            <br><small style="font-size:8px;"><?=$treatment;?></small>
+                                                            
+                                                            
+                                                            
                                                         </td>
                                                     </tr>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
+                                                                                                      
+                                                   
                                                     <tr>
                                                         <td colspan="16" style="border-bottom:1px solid black;"></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td colspan="16">&nbsp;</td>
-                                                    </tr>
+                                                    
+                                                    
                                                     <tr>
                                                         <td width="2%" align="center">
 
@@ -5519,7 +5441,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5609,11 +5531,11 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }    
-                                                            echo "$treatment<br>";                                                        
-                                                            echo "<b>".$remark."<b>";
+
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe85" 
                                                                         width="4" height="4" 
@@ -5629,7 +5551,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill85center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">85</a>
+                                                            <a style="font-size:9px;">85</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -5643,7 +5565,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5733,11 +5655,11 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }    
-                                                            echo "$treatment<br>";                                                        
-                                                            echo "<b>".$remark."<b>";
+                                                           
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe84" 
                                                                         width="4" height="4" 
@@ -5753,7 +5675,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill84center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">84</a>
+                                                            <a style="font-size:9px;">84</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -5767,7 +5689,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5857,11 +5779,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }    
-                                                            echo "$treatment<br>";                                                        
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                   
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe83" 
                                                                         width="4" height="4" 
@@ -5877,7 +5800,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill83center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">83</a>
+                                                            <a style="font-size:9px;">83</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -5891,7 +5814,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -5981,11 +5904,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }    
-                                                            echo "$treatment<br>";                                                        
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                    
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe82" 
                                                                         width="4" height="4" 
@@ -6001,7 +5925,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill82center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">82</a>
+                                                            <a style="font-size:9px;">82</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6015,7 +5939,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6105,11 +6029,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }    
-                                                            echo "$treatment<br>";                                                        
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                 
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe81" 
                                                                         width="4" height="4" 
@@ -6125,7 +6050,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill81center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">81</a>
+                                                            <a style="font-size:9px;">81</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6139,7 +6064,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6229,11 +6154,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }
-                                                            echo $treatment."<br>";                                                            
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                        
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe71" 
                                                                         width="4" height="4" 
@@ -6249,7 +6175,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill71center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">71</a>
+                                                            <a style="font-size:9px;">71</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6263,7 +6189,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6353,11 +6279,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }
-                                                            echo $treatment."<br>";                                                            
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                        
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe72" 
                                                                         width="4" height="4" 
@@ -6373,7 +6300,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill72center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">72</a>
+                                                            <a style="font-size:9px;">72</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6387,7 +6314,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6477,11 +6404,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }
-                                                            echo $treatment."<br>";                                                            
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                        
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe73" 
                                                                         width="4" height="4" 
@@ -6497,7 +6425,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill73center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">73</a>
+                                                            <a style="font-size:9px;">73</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6511,7 +6439,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6601,11 +6529,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }
-                                                            echo $treatment."<br>";                                                            
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                        
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe74" 
                                                                         width="4" height="4" 
@@ -6621,7 +6550,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill74center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">74</a>
+                                                            <a style="font-size:9px;">74</a>
                                                         </td>
                                                         <td width="2%" align="center">                                                            
                                                             <?php
@@ -6635,7 +6564,7 @@
                                                             $surgery="";
                                                             // if(count($chart)>0){                                                                
                                                             //     foreach($chart as $row){
-                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$item['customer_id'],$tid);
+                                                            $row=$this->Clinic_model->getSingleChart($item['caseno'],$customer_id,$tid);
                                                                 if($row){
                                                                     $treatment=$row['treatment'];
                                                                     $surgery=$row['surgery'];
@@ -6725,11 +6654,12 @@
                                                             // }else{
                                                             //     $remark="&check;";    
                                                             // }
-                                                            echo $treatment."<br>";                                                            
-                                                            echo "<b>".$remark."<b>";
+                                                                                                                        
+                                                            
                                                             ?>
-                                                            <br>
-                                                            <a href="#" class="toothchart" data-toggle="modal" data-target="#ToothChart" data-id="<?=$id;?>_<?=$tid;?>_<?=$item['caseno'];?>_<?=$item['customer_id'];?>">
+                                                            <small style="font-size:8px;"><?=$treatment;?></small><br>
+                                                            <small style="font-size:8px;"><?=$remark;?></small><br>
+                                                            
                                                                 <svg viewBox="0 0 400 400">
                                                                     <pattern id="pattern-stripe75" 
                                                                         width="4" height="4" 
@@ -6745,7 +6675,7 @@
                                                                     <circle class="center" cx="200" cy="200" r="60" fill="<?=$fill75center;?>"/>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-info btn-sm text-white">75</a>
+                                                            <a style="font-size:9px;">75</a>
                                                         </td>
                                                         <td width="2%" align="center">
 
@@ -6758,12 +6688,91 @@
                                                         </td>
                                                     </tr>
                                                 </tbody>
+                                            </table>  
+<br><br>
+                                            <table width="100%" border="0" style="font-size:11px; font-family:Arial;">
+                                                <tr>
+                                                    <td valign="top" width="8%"><b>Legend:</b></td>
+                                                    <td valign="top">
+                                                        <b>Condition</b><br>
+                                                        <b>&check;</b> - Present Teeth<br>
+                                                        <b>D</b> - Decayed (Carries indicated for Filing)<br>
+                                                        <b>M</b> - Missing due to caries<br>
+                                                        <b>Mo</b> - Missing due to Other Causes<br>
+                                                        <b>Im</b> - Impacted Tooth<br>
+                                                        <b>Sp</b> - Supernumerary Tooth<br>
+                                                        <b>Rf</b> - Root Fragment<br>
+                                                        <b>Un</b> - Unerupted<br>                                                        
+                                                    </td>
+                                                    <td valign="top">
+                                                        <b>Restorations & Prosthetics</b><br>
+                                                        <b>Am</b> - Amalgam Filling<br>
+                                                        <b>Co</b> - Composite Filling<br>
+                                                        <b>JC</b> - Jacket Crown<br>
+                                                        <b>Ab</b> - Abutment<br>
+                                                        <b>Att</b> - Attachment<br>
+                                                        <b>P</b> - Pontic<br>
+                                                        <b>In</b> - Inlay<br>
+                                                        <b>Imp</b> - Implant<br>                                                        
+                                                        <b>S</b> - Sealant<br>
+                                                        <b>RD</b> - Removable Denture<br>
+                                                    </td>
+                                                    <td valign="top">
+                                                        <b>Surgery</b><br>
+                                                        <b>X</b> - Extraction due to Caries<br>
+                                                        <b>Xo</b> - Extraction due to Other Causes<br><br><br>
+                                                        <b>X-ray taken:</b><br>
+                                                        &nbsp;&nbsp;&nbsp;___Periapical (Tth No.:____)<br>
+                                                        &nbsp;&nbsp;&nbsp;___Panoramic<br>
+                                                        &nbsp;&nbsp;&nbsp;___Cephalometric<br>
+                                                        &nbsp;&nbsp;&nbsp;___Occlusal (Upper/Lower)<br>
+                                                        &nbsp;&nbsp;&nbsp;___Others:____________
+                                                    </td>
+                                                </tr>
                                             </table>
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                        </div>
-                        <!-- End Row -->
-                    </div>
-                    <!-- End Container -->                                                          
+                                            <br><br>
+    <table width="100%" border="0" style="font-size:14px;">
+    <tr>
+        <td width="20%">
+    Service/s Rendered:
+</td><td style="border-bottom:1px solid black;">
+        <?php
+        foreach($services as $row){
+            echo $row['service_description'].",";
+        }
+        ?></td>        
+    </table>
+    <?php
+        $recommend="";
+        $days="";
+        if($item){
+           $recommend=$item['recommendation'];
+           $days=$item['no_days_rest'];           
+        }
+        ?>
+    <p align="justify" style="font-size:14px; font-family:Arial;">
+        Recommendation/s: <u><?=$recommend;?></u>
+    </p>
+    <p align="justify" style="font-size:14px; font-family:Arial;">
+        This is to certify that <b><u><?=$patient['firstname'];?> <?=$patient['lastname'];?></u></b> has been in my clinic today for the said procedures, needing <b><u><?=$days;?></u></b> days of rest.
+    </p>
+    <p align="justify" style="font-size:14px; font-family:Arial;">
+        This is beeing issued upon the request of the patient for whatever purpose it may serve excluding legal matters.
+    </p>
+    <div style="position:fixed; bottom:30;right:20;">
+    <table width="100%" border="0">
+        <tr>
+            <td style="border-bottom:1px solid black;"></td>
+        </tr>
+        <tr>
+            
+            <td><b>Dr. Clark Kent A. Hermosilla, DMD</b></td>
+        </tr>
+        <tr>
+            
+            <td align="center">License No.: <u>0058758</u></td>
+        </tr>        
+    </table>
+    </div>
+</div>
+    </center>

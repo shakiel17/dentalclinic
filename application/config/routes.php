@@ -50,6 +50,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 #
+$route['print_certificate/(:any)/(:any)'] = 'pages/print_certificate/$1/$2';
+$route['save_certificate'] = 'pages/save_certificate';
+$route['manage_certificate/(:any)/(:any)'] = 'pages/manage_certificate/$1/$2';
+$route['save_clinic_logo'] = 'pages/save_clinic_logo';
+$route['save_settings'] = 'pages/save_settings';
+$route['clinic_settings'] = 'pages/clinic_settings';
+$route['delete_rx/(:any)/(:any)/(:any)'] = 'pages/delete_rx/$1/$2/$3';
+$route['print_rx/(:any)/(:any)'] = 'pages/print_rx/$1/$2';
+$route['save_rx'] = 'pages/save_rx';
+$route['manage_rx/(:any)/(:any)'] = 'pages/manage_rx/$1/$2';
 $route['delete_doctor/(:any)'] = 'pages/delete_doctor/$1';
 $route['save_doctor'] = 'pages/save_doctor';
 $route['manage_doctor'] = 'pages/manage_doctor';

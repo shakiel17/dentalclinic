@@ -330,13 +330,14 @@ date_default_timezone_set('Asia/Manila');
             }                  
             if($this->session->admin_login){}
             else{redirect(base_url());}
-            $data['title'] = "<a href='".base_url('view_billing/'.$caseno)."'>Patient Billing</a> >> Tooth Chart";
+            $data['title'] = "<a href='".base_url('main')."'>Back</a> >> Tooth Chart";
             $data['admission'] = "";
             $data['item'] = $this->Clinic_model->getPatientAdmission($caseno);   
             $data['services'] = $this->Clinic_model->getAllServicesRendered($caseno);
             $data['payment'] = $this->Clinic_model->getPatientPayment($caseno);
             $data['chart']  = $this->Clinic_model->checkChart($caseno,$customer_id);
             $data['status'] = $data['item']['status'];
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
             $this->load->view('includes/header'); 
             $this->load->view('includes/navbar');           
             $this->load->view('includes/sidebar');            
@@ -383,6 +384,137 @@ date_default_timezone_set('Asia/Manila');
                 $this->session->set_flashdata('failed','Unable to save doctor details!');
             }
             redirect(base_url('manage_doctor'));
+        }
+        public function manage_rx($caseno,$customer_id){
+            $page = "manage_rx";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['items'] = $this->Clinic_model->getAllPatientPrescription($caseno,$customer_id);
+            $data['caseno'] = $caseno;
+            $data['customer_id'] = $customer_id;
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
+        public function save_rx(){
+            $caseno=$this->input->post('caseno');
+            $customer_id=$this->input->post('customer_id');
+            $result=$this->Clinic_model->save_rx();
+            if($result){
+                $this->session->set_flashdata('success','Prescription details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save prescription details!');
+            }
+            redirect(base_url('manage_rx/'.$caseno."/".$customer_id));
+        }
+        public function delete_rx($id,$caseno,$customer_id){
+            $result=$this->Clinic_model->delete_rx($id,$caseno,$customer_id);
+            if($result){
+                $this->session->set_flashdata('success','Prescription details successfully deleted!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to delete prescription details!');
+            }
+            redirect(base_url('manage_rx/'.$caseno."/".$customer_id));
+        }
+        public function print_rx($caseno,$customer_id){
+            $page = "print_rx";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['items'] = $this->Clinic_model->getAllPatientPrescription($caseno,$customer_id);
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
+            $data['setting'] = $this->Clinic_model->getSettings();
+            $data['caseno'] = $caseno;
+            $data['customer_id'] = $customer_id;
+            $this->load->view('pages/'.$page,$data);                           
+        }
+        public function clinic_settings(){
+            $page = "manage_settings";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['title'] = "Clinic Settings";
+            $data['item'] = $this->Clinic_model->getSettings();
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
+        public function save_clinic_logo(){
+            $save=$this->Clinic_model->save_clinic_logo();
+            if($save){
+               $this->session->set_flashdata('success','Clinic logo successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save clinic logo!');
+            }
+            redirect(base_url('clinic_settings'));
+        }
+        public function save_settings(){
+            $save=$this->Clinic_model->save_settings();
+            if($save){
+               $this->session->set_flashdata('success','Clinic details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save clinic details!');
+            }
+            redirect(base_url('clinic_settings'));
+        }
+        public function manage_certificate($caseno,$customer_id){
+            $page = "manage_certificate";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}
+            $data['title'] = "<a href='".base_url('view_billing/'.$caseno)."'>Back</a> >> Dental Certificate";
+            $data['admission'] = "";
+            $data['item'] = $this->Clinic_model->getDentalCert($caseno);            
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
+            $data['caseno']=$caseno;
+            $data['customer_id']=$customer_id;
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal',$data);     
+            $this->load->view('includes/footer');
+        }
+        public function save_certificate(){
+            $caseno=$this->input->post('caseno');
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->save_certificate();
+            if($save){
+               $this->session->set_flashdata('success','Certificate details successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save certificate details!');
+            }
+            redirect(base_url('manage_certificate/'.$caseno."/".$customer_id));
+        }
+        public function print_certificate($caseno,$customer_id){
+            $page = "print_cert";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['item'] = $this->Clinic_model->getDentalCert($caseno);
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
+            $data['services'] = $this->Clinic_model->getAllServicesRendered($caseno);
+            $data['setting'] = $this->Clinic_model->getSettings();
+            $data['caseno'] = $caseno;
+            $data['customer_id'] = $customer_id;
+            $this->load->view('pages/'.$page,$data);                           
         }
 }
 ?>

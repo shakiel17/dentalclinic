@@ -1,3 +1,6 @@
+<?php
+$logo=$this->Clinic_model->getSettings();
+?>
 <div class="page">
             <!-- Begin Header -->
             <header class="header">
@@ -14,9 +17,9 @@
                     <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
                         <!-- Begin Logo -->
                         <div class="navbar-header">
-                            <a href="db-default.html" class="navbar-brand">
+                            <a href="<?=base_url('main');?>" class="navbar-brand">
                                 <div class="brand-image brand-big">
-                                    <img src="<?=base_url('design/assets/img/cliniclogo.jpg');?>" alt="logo"  width="70"> Hermosilla Dental
+                                    <img src='data:image/jpg;charset=utf8;base64,<?=base64_encode($logo['logo']);?>' alt="logo"  width="70"> Hermosilla Dental
                                 </div>
                                 <div class="brand-image brand-small">
                                     <img src="<?=base_url('design/assets/img/logo.png');?>" alt="logo" class="logo-small">

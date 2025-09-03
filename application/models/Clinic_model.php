@@ -414,5 +414,103 @@
                 return false;
             }
         }
+        public function getAllPatientPrescription($caseno,$customer_id){
+            $result=$this->db->query("SELECT * FROM prescription WHERE caseno='$caseno' AND customer_id='$customer_id' ORDER BY id ASC");
+            return $result->result_array();
+        }
+        public function save_rx(){
+            $id=$this->input->post('id');
+            $caseno=$this->input->post('caseno');
+            $customer_id=$this->input->post('customer_id');
+            $description=$this->input->post('description');
+            $quantity=$this->input->post('quantity');
+            $route=$this->input->post('route');
+            $frequency=$this->input->post('frequency');
+            $date=date('Y-m-d');
+            $time=date('H:i:s');
+            if($id==""){
+                $result=$this->db->query("INSERT INTO prescription(caseno,customer_id,`description`,quantity,`route`,frequency,datearray,timearray) VALUES('$caseno','$customer_id','$description','$quantity','$route','$frequency','$date','$time')");
+            }else{
+                $result=$this->db->query("UPDATE prescription SET `description`='$description',quantity='$quantity',`route`='$route',frequency='$frequency',datearray='$date',timearray='$time' WHERE id='$id'");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function delete_rx($id){
+            $result=$this->db->query("DELETE FROM prescription WHERE id='$id'");
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function getSettings(){
+            $result=$this->db->query("SELECT * FROM settings");
+            return $result->row_array();
+        }
+        public function save_clinic_logo(){
+            $fileName=basename($_FILES["file"]["name"]);
+            $fileType=pathinfo($fileName, PATHINFO_EXTENSION);
+            $allowTypes = array('jpg','png','jpeg','gif');
+            if(in_array($fileType,$allowTypes)){
+                $image = $_FILES["file"]["tmp_name"];
+                $imgContent=addslashes(file_get_contents($image));
+                $result=$this->db->query("UPDATE settings SET logo='$imgContent'");            
+            }else{
+                return false;
+            }            
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function save_settings(){
+            $companyname=$this->input->post('companyname');
+            $address=$this->input->post('address');
+            $contactno=$this->input->post('contactno');
+            $email=$this->input->post('email');
+            $clinic_hours=$this->input->post('clinic_hours');
+            $check=$this->db->query("SELECT * FROM settings");
+            if($check->num_rows()>0){
+                $result=$this->db->query("UPDATE settings SET companyname='$companyname',`address`='$address',contactno='$contactno',email='$email',clinic_hours='$clinic_hours'");
+            }else{
+                $result=$this->db->query("INSERT INTO settings(companyname,`address`,contactno,email,clinic_hours) VALUES('$companyname','$address','$contactno','$email','$clinic_hours')");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function getDentalCert($caseno){
+            $result=$this->db->query("SELECT * FROM certification WHERE caseno='$caseno'");
+            if($result->num_rows()>0){
+                return $result->row_array();
+            }else{
+                return false;
+            }
+        }
+        public function save_certificate(){
+            $caseno=$this->input->post('caseno');
+            $recommendation=$this->input->post('recommendation');
+            $no_days_rest=$this->input->post('no_days_rest');
+            $date=date('Y-m-d');
+            $time=date('H:i:s');
+            $check=$this->db->query("SELECT * FROM certification WHERE caseno='$caseno'");
+            if($check->num_rows()>0){
+                $result=$this->db->query("UPDATE certification SET recommendation='$recommendation',no_days_rest='$no_days_rest' WHERE caseno='$caseno'");                
+            }else{
+                $result=$this->db->query("INSERT INTO certification(caseno,recommendation,no_days_rest,datearray,timearray) VALUES('$caseno','$recommendation','$no_days_rest','$date','$time')");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 ?>

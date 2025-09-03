@@ -125,7 +125,11 @@
                                                             echo "<td>$rendered</td>";
                                                             echo "<td>$item[status]</td>";
                                                             ?>
-                                                            <td><a href="<?=base_url('view_billing/'.$item['caseno']);?>" class="btn btn-success btn-sm"><i class="la la-calendar"></i> Billing</a></td>
+                                                            <td>
+                                                                <a href="<?=base_url('view_billing/'.$item['caseno']);?>" class="btn btn-success btn-sm mb-1"><i class="la la-calendar"></i> Billing</a>
+                                                                <a href="<?=base_url('admit_chart/'.$item['caseno']."/".$item['customer_id']);?>" class="btn btn-info btn-sm mb-1"><i class="la la-pie-chart"></i> Tooth Chart</a>
+                                                                <a href="<?=base_url('manage_rx/'.$item['caseno']."/".$item['customer_id']);?>" class="btn btn-warning btn-sm mb-1"><i class="la la-file"></i> Rx</a>
+                                                            </td>
                                                             <?php
                                                         echo "</tr>";
                                                     }
