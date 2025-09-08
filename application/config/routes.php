@@ -50,6 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 #
+$route['update_payment_date'] = 'pages/update_payment_date';
+$route['update_admission_date'] = 'pages/update_admission_date';
 $route['print_certificate/(:any)/(:any)'] = 'pages/print_certificate/$1/$2';
 $route['save_certificate'] = 'pages/save_certificate';
 $route['manage_certificate/(:any)/(:any)'] = 'pages/manage_certificate/$1/$2';

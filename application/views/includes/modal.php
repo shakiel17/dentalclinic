@@ -884,3 +884,68 @@
                 </div>
             </div>
         </div>
+
+        <div id="EditAdmissionDate" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update Admission Date</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('update_admission_date');?>" method="POST" class="form-horizontal">
+                        <input type="hidden" name="caseno" id="edit_admit_caseno">
+                        <input type="hidden" name="customer_id" id="edit_admit_customer_id">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-12">Date Admit</label>                                    
+                                <div class="ml-5">
+                                        <input type="date" name="dateadmit" class="form-control" id="edit_admit_date">      
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12">Time Admit</label>                                    
+                                <div class="ml-5">
+                                        <input type="time" name="timeadmit" class="form-control" id="edit_admit_time">      
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="EditPaymentDate" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Update Payment Date</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('update_payment_date');?>" method="POST" class="form-horizontal">
+                        <input type="hidden" name="id" id="edit_payment_id">
+                        <input type="hidden" name="customer_id" id="edit_payment_customer_id">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-12">Payment Date</label>                                    
+                                <div class="ml-5">
+                                        <input type="date" name="datearray" class="form-control" id="edit_payment_date">      
+                                </div>                            
+                            </div>                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

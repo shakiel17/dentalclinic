@@ -516,5 +516,25 @@ date_default_timezone_set('Asia/Manila');
             $data['customer_id'] = $customer_id;
             $this->load->view('pages/'.$page,$data);                           
         }
+        public function update_admission_date(){            
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->update_admission_date();
+            if($save){
+               $this->session->set_flashdata('success','Admission date successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save admission date!');
+            }
+            redirect(base_url("view_admission_history/".$customer_id));
+        }
+        public function update_payment_date(){            
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->update_payment_date();
+            if($save){
+               $this->session->set_flashdata('success','Payment date successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save payment date!');
+            }
+            redirect(base_url("view_patient_account/".$customer_id));
+        }
 }
 ?>

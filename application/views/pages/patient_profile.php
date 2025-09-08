@@ -228,7 +228,7 @@
                                                             echo "<td><a href='".base_url('view_billing/'.$item['caseno'])."'>$item[caseno]</a></td>";
                                                             echo "<td>".$rendered."</td>";
                                                             echo "<td>".$apname."</td>";
-                                                            echo "<td>".date('M-d-Y',strtotime($item['dateadmit']))." ".date('h:i A',strtotime($item['timeadmit']))."</td>";
+                                                            echo "<td><a href='#' class='editAdmission' data-toggle='modal' data-target='#EditAdmissionDate' data-id='$item[caseno]_$item[dateadmit]_".date('h:i',strtotime($item['timeadmit']))."_$customer_id'>".date('M-d-Y',strtotime($item['dateadmit']))." ".date('h:i A',strtotime($item['timeadmit']))."</a></td>";
                                                             echo "<td>$item[status]</td>";
                                                             ?>
                                                             <!-- <td><a href="<?=base_url('view_billing/'.$item['caseno'].'/'.$customer_id);?>" class="btn btn-success btn-sm"><i class="la la-calendar"></i> Billing</a></td> -->
@@ -273,7 +273,7 @@
                                                     //$desc=$this->Clinic_model->getSingleService($row['service_id']);
                                                     
                                                     echo "<tr>";
-                                                        echo "<td>".date('m/d/Y',strtotime($row['datearray']))."</td>";                                                        
+                                                        echo "<td><a href='#' class='editPaymentDate' data-toggle='modal' data-target='#EditPaymentDate' data-id='$row[id]_$row[datearray]_$customer_id'>".date('m/d/Y',strtotime($row['datearray']))."</a></td>";                                                        
                                                         echo "<td align='left'>$description</td>";
                                                         echo "<td>".number_format($gross,2)."</td>";
                                                         $balance=$gross-$row['amount_paid'];                                                                                                            

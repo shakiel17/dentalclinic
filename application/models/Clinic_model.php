@@ -512,5 +512,26 @@
                 return false;
             }
         }
+        public function update_admission_date(){
+            $caseno=$this->input->post('caseno');
+            $dateadmit=$this->input->post('dateadmit');
+            $timeadmit=$this->input->post('timeadmit');
+            $result=$this->db->query("UPDATE admission SET dateadmit='$dateadmit',timeadmit='$timeadmit' WHERE caseno='$caseno'");
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function update_payment_date(){
+            $id=$this->input->post('id');
+            $date=$this->input->post('datearray');            
+            $result=$this->db->query("UPDATE `collection` SET datearray='$date' WHERE id='$id'");
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 ?>

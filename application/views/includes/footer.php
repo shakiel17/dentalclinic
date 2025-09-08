@@ -396,6 +396,21 @@
             document.getElementById('rx_caseno').value=id[5];
             document.getElementById('rx_customer_id').value=id[6];
           });
+          $('.editAdmission').click(function(){
+            var data=$(this).data('id');
+            var id=data.split('_');
+            document.getElementById('edit_admit_caseno').value=id[0];
+            document.getElementById('edit_admit_customer_id').value=id[3];
+            document.getElementById('edit_admit_date').value=id[1];
+            document.getElementById('edit_admit_time').value=id[2];
+          });
+          $('.editPaymentDate').click(function(){
+            var data=$(this).data('id');
+            var id=data.split('_');
+            document.getElementById('edit_payment_id').value=id[0];
+            document.getElementById('edit_payment_customer_id').value=id[2];
+            document.getElementById('edit_payment_date').value=id[1];            
+          });
             </script>
     </body>
 </html>
