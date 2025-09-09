@@ -576,7 +576,7 @@
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-2" value="Ex" onclick="condition(this.value);">
+                                            <input type="radio" name="remarks" id="rad-9" value="Ex" onclick="condition(this.value);">
                                             <label for="rad-9">Ex</label>
                                         </div>
                                     </td>
