@@ -196,6 +196,15 @@
                         document.getElementById('tooth_id').value = id[1];
                         document.getElementById('dent_caseno').value = id[2];
                         document.getElementById('dent_customer_id').value = id[3];
+                        document.getElementById('condition1').innerHTML = '';
+                        document.getElementById('treatment1').innerHTML = '';
+                        document.getElementById('condition').innerHTML = '';
+                        document.getElementById('treatment').innerHTML = '';
+                        document.getElementById('p_center').style.fill = 'white';
+                        document.getElementById('p1').style.fill = 'white';
+                        document.getElementById('p2').style.fill = 'white';
+                        document.getElementById('p3').style.fill = 'white';
+                        document.getElementById('p4').style.fill = 'white';
                        $.ajax({
                             url: '<?=base_url('index.php/pages/fetch_tooth_chart');?>',
                             type: 'POST',
@@ -206,10 +215,271 @@
                                     var rem=response[0]['remarks'];
                                     var treat=response[0]['treatment'];
                                     var surg=response[0]['surgery'];
+                                    
+                                    if(id[1] == 55 || id[1] == 54  || id[1] == 53  || id[1] == 52  || id[1] == 51 || id[1] == 61 || id[1] == 62 || id[1] == 63 || id[1] == 64 || id[1] == 65 || id[1] == 48  || id[1] == 47  || id[1] == 46  || id[1] == 45  || id[1] == 44  || id[1] == 43 || id[1] == 42  || id[1] == 41  || id[1] == 31  || id[1] == 32  || id[1] == 33  || id[1] == 34  || id[1] == 35  || id[1] == 36  || id[1] == 37  || id[1] == 38){                                        
+                                            if(rem=="OK"){
+                                                document.getElementById('condition1').innerHTML = '&check;';
+                                            }else{
+                                                document.getElementById('condition1').innerHTML = rem;
+                                            }                                            
+                                            document.getElementById('treatment1').innerHTML = treat;
+                                    }else{
+                                            if(rem=="OK"){
+                                                document.getElementById('condition').innerHTML = '&check;';
+                                            }else{
+                                                document.getElementById('condition').innerHTML = rem;
+                                            } 
+                                            document.getElementById('treatment').innerHTML = treat;
+
+                                    }
+                                    if(id[1] == 55 || id[1] == 54  || id[1] == 53  || id[1] == 52  || id[1] == 51 || id[1] == 18  || id[1] == 17  || id[1] == 16  || id[1] == 15  || id[1] == 14  || id[1] == 13 || id[1] == 12  || id[1] == 11){
+                            
+                                        if(response[0]['caries_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'red';
+                                        }else if(response[0]['comp_occ']=="1"){
+                                            document.getElementById('p_cener').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_occ']=="1t"){
+                                            document.getElementById('p_center').style.fill = '#908d94';
+                                        }else if(response[0]['recur_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p_center').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_mes']=="1"){
+                                            document.getElementById('p1').style.fill = 'red';
+                                        }else if(response[0]['comp_mes']=="1"){
+                                            document.getElementById('p1').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_mes']=="1"){
+                                            document.getElementById('p1').style.fill = '#908d94';
+                                        }else if(response[0]['recur_mes']=="1"){
+                                            document.getElementById('p1').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p1').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_dis']=="1"){
+                                            document.getElementById('p3').style.fill = 'red';
+                                        }else if(response[0]['comp_dis']=="1"){
+                                            document.getElementById('p3').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_dis']=="1"){
+                                            document.getElementById('p3').style.fill = '#908d94';
+                                        }else if(response[0]['recur_dis']=="1"){
+                                            document.getElementById('p3').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p3').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_buc']=="1"){
+                                            document.getElementById('p4').style.fill = 'red';
+                                        }else if(response[0]['comp_buc']=="1"){
+                                            document.getElementById('p4').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_buc']=="1"){
+                                            document.getElementById('p4').style.fill = '#908d94';
+                                        }else if(response[0]['recur_buc']=="1"){
+                                            document.getElementById('p4').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p4').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_ling']=="1"){
+                                            document.getElementById('p2').style.fill = 'red';
+                                        }else if(response[0]['comp_ling']=="1"){
+                                            document.getElementById('p2').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_ling']=="1"){
+                                            document.getElementById('p2').style.fill = '#908d94';
+                                        }else if(response[0]['recur_ling']=="1"){
+                                            document.getElementById('p2').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p2').style.fill = 'white';
+                                        }
+                                    
+                                    }else
+                                    if(id[1] == 61 || id[1] == 62  || id[1] == 63  || id[1] == 64  || id[1] == 65 || id[1] == 21  || id[1] == 22  || id[1] == 23  || id[1] == 24  || id[1] == 25  || id[1] == 26 || id[1] == 27  || id[1] == 28){
+                                        if(response[0]['caries_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'red';
+                                        }else if(response[0]['comp_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = '#908d94';
+                                        }else if(response[0]['recur_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p_center').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_mes']=="1"){
+                                            document.getElementById('p3').style.fill = 'red';
+                                        }else if(response[0]['comp_mes']=="1"){
+                                            document.getElementById('p3').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_mes']=="1"){
+                                            document.getElementById('p3').style.fill = '#908d94';
+                                        }else if(response[0]['recur_mes']=="1"){
+                                            document.getElementById('p3').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p3').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_dis']=="1"){
+                                            document.getElementById('p1').style.fill = 'red';
+                                        }else if(response[0]['comp_dis']=="1"){
+                                            document.getElementById('p1').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_dis']=="1"){
+                                            document.getElementById('p1').style.fill = '#908d94';
+                                        }else if(response[0]['recur_dis']=="1"){
+                                            document.getElementById('p1').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p1').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_buc']=="1"){
+                                            document.getElementById('p4').style.fill = 'red';
+                                        }else if(response[0]['comp_buc']=="1"){
+                                            document.getElementById('p4').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_buc']=="1"){
+                                            document.getElementById('p4').style.fill = '#908d94';
+                                        }else if(response[0]['recur_buc']=="1"){
+                                            document.getElementById('p4').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p4').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_ling']=="1"){
+                                            document.getElementById('p2').style.fill = 'red';
+                                        }else if(response[0]['comp_ling']=="1"){
+                                            document.getElementById('p2').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_ling']=="1"){
+                                            document.getElementById('p2').style.fill = '#908d94';
+                                        }else if(response[0]['recur_ling']=="1"){
+                                            document.getElementById('p2').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p2').style.fill = 'white';
+                                        }
+                                    }else if(id == 48 || id == 47  || id == 46  || id == 45  || id == 44 || id == 43  || id == 42  || id == 41  || id == 85  || id == 84  || id == 83 || id == 82  || id == 81){
+                                        if(response[0]['caries_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'red';
+                                        }else if(response[0]['comp_occ']=="1"){
+                                            document.getElementById('p_cener').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_occ']=="1t"){
+                                            document.getElementById('p_center').style.fill = '#908d94';
+                                        }else if(response[0]['recur_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p_center').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_mes']=="1"){
+                                            document.getElementById('p1').style.fill = 'red';
+                                        }else if(response[0]['comp_mes']=="1"){
+                                            document.getElementById('p1').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_mes']=="1"){
+                                            document.getElementById('p1').style.fill = '#908d94';
+                                        }else if(response[0]['recur_mes']=="1"){
+                                            document.getElementById('p1').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p1').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_dis']=="1"){
+                                            document.getElementById('p3').style.fill = 'red';
+                                        }else if(response[0]['comp_dis']=="1"){
+                                            document.getElementById('p3').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_dis']=="1"){
+                                            document.getElementById('p3').style.fill = '#908d94';
+                                        }else if(response[0]['recur_dis']=="1"){
+                                            document.getElementById('p3').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p3').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_buc']=="1"){
+                                            document.getElementById('p2').style.fill = 'red';
+                                        }else if(response[0]['comp_buc']=="1"){
+                                            document.getElementById('p2').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_buc']=="1"){
+                                            document.getElementById('p2').style.fill = '#908d94';
+                                        }else if(response[0]['recur_buc']=="1"){
+                                            document.getElementById('p2').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p2').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_ling']=="1"){
+                                            document.getElementById('p4').style.fill = 'red';
+                                        }else if(response[0]['comp_ling']=="1"){
+                                            document.getElementById('p4').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_ling']=="1"){
+                                            document.getElementById('p4').style.fill = '#908d94';
+                                        }else if(response[0]['recur_ling']=="1"){
+                                            document.getElementById('p4').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p4').style.fill = 'white';
+                                        }
+                                    }else{
+                                        if(response[0]['caries_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'red';
+                                        }else if(response[0]['comp_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = '#908d94';
+                                        }else if(response[0]['recur_occ']=="1"){
+                                            document.getElementById('p_center').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p_center').style.fill = 'white';
+                                        }
+                                    
+                                        if(response[0]['caries_mes']=="1"){
+                                            document.getElementById('p3').style.fill = 'red';
+                                        }else if(response[0]['comp_mes']=="1"){
+                                            document.getElementById('p3').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_mes']=="1"){
+                                            document.getElementById('p3').style.fill = '#908d94';
+                                        }else if(response[0]['recur_mes']=="1"){
+                                            document.getElementById('p3').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p3').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_dis']=="1"){
+                                            document.getElementById('p1').style.fill = 'red';
+                                        }else if(response[0]['comp_dis']=="1"){
+                                            document.getElementById('p1').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_dis']=="1"){
+                                            document.getElementById('p1').style.fill = '#908d94';
+                                        }else if(response[0]['recur_dis']=="1"){
+                                            document.getElementById('p1').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p1').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_buc']=="1"){
+                                            document.getElementById('p2').style.fill = 'red';
+                                        }else if(response[0]['comp_buc']=="1"){
+                                            document.getElementById('p2').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_buc']=="1"){
+                                            document.getElementById('p2').style.fill = '#908d94';
+                                        }else if(response[0]['recur_buc']=="1"){
+                                            document.getElementById('p2').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p2').style.fill = 'white';
+                                        }
+                                   
+                                        if(response[0]['caries_ling']=="1"){
+                                            document.getElementById('p4').style.fill = 'red';
+                                        }else if(response[0]['comp_ling']=="1"){
+                                            document.getElementById('p4').style.fill = '#3a018a';
+                                        }else if(response[0]['amal_ling']=="1"){
+                                            document.getElementById('p4').style.fill = '#908d94';
+                                        }else if(response[0]['recur_ling']=="1"){
+                                            document.getElementById('p4').style.fill = 'url(#pattern-stripe)';
+                                        }else{
+                                            document.getElementById('p4').style.fill = 'white';
+                                        }
+                                    }
                                     if(rem=="OK"){
-                                        document.getElementById('rad-1').checked = true;
+                                        document.getElementById('rad-1').checked = true;                                        
                                     }else if(rem=="D"){
-                                        document.getElementById('rad-2').checked = true;
+                                        document.getElementById('rad-2').checked = true;                                        
                                     }else if(rem=="M"){
                                         document.getElementById('rad-3').checked = true;
                                     }else if(rem=="Mo"){
@@ -222,7 +492,11 @@
                                         document.getElementById('rad-7').checked = true;
                                     }else if(rem=="Un"){
                                         document.getElementById('rad-8').checked = true;                                    
+                                    }else if(rem=="Ex"){
+                                        document.getElementById('rad-9').checked = true;                                    
                                     }else{
+                                        document.getElementById('condition').innerHTML = '';
+                                        document.getElementById('condition1').innerHTML = '';
                                         document.getElementById('rad-1').checked = false;
                                         document.getElementById('rad-2').checked = false;
                                         document.getElementById('rad-3').checked = false;
@@ -231,10 +505,10 @@
                                         document.getElementById('rad-6').checked = false;
                                         document.getElementById('rad-7').checked = false;
                                         document.getElementById('rad-8').checked = false;
-                                    }                                                                        
-
+                                    }                                           
+                                    
                                     if(response[0]['caries_occ']=="1"){
-                                        document.getElementById('check-1').checked = true;
+                                        document.getElementById('check-1').checked = true;                                          
                                     }else{
                                         document.getElementById('check-1').checked = false;
                                     }
@@ -337,7 +611,7 @@
                                         document.getElementById('check-20').checked = false;
                                     }
                                     document.getElementById('remarks1').value=treat;
-                                    document.getElementById('remarks2').value=surge;
+                                    document.getElementById('remarks2').value=surge;                                                                        
                                 }else{
                                     document.getElementById('rad-1').checked = false;
                                     document.getElementById('rad-2').checked = false;
@@ -366,8 +640,8 @@
                                     document.getElementById('check-17').checked = false;
                                     document.getElementById('check-18').checked = false;
                                     document.getElementById('check-19').checked = false;
-                                    document.getElementById('check-20').checked = false;
-                                }
+                                    document.getElementById('check-20').checked = false;                                    
+                                }                                                               
                             },
                             error: function(xhr, status, error) {
                                 console.error('AJAX Error:', error);
@@ -411,6 +685,322 @@
             document.getElementById('edit_payment_customer_id').value=id[2];
             document.getElementById('edit_payment_date').value=id[1];            
           });
-            </script>
+          function condition(value){
+            var id = document.getElementById('tooth_id').value;                        
+            if(id == 55 || id == 54  || id == 53  || id == 52  || id == 51 || id == 61 || id == 62 || id == 63 || id == 64 || id == 65 || id == 48  || id == 47  || id == 46  || id == 45  || id == 44  || id == 43 || id == 42  || id == 41  || id == 31  || id == 32  || id == 33  || id == 34  || id == 35  || id == 36  || id == 37  || id == 38){                
+                    if(value=="OK"){
+                        document.getElementById('condition1').innerHTML = '&check;';
+                    }else{
+                        document.getElementById('condition1').innerHTML = value;                
+                    }                    
+            }else{                
+                    if(value=="OK"){
+                        document.getElementById('condition').innerHTML = '&check;';
+                    }else{
+                        document.getElementById('condition').innerHTML = value;                
+                    }                 
+            }            
+          }
+          function treatment(value){
+            var id = document.getElementById('tooth_id').value;                        
+            if(id == 55 || id == 54  || id == 53  || id == 52  || id == 51 || id == 61 || id == 62 || id == 63 || id == 64 || id == 65 || id == 48  || id == 47  || id == 46  || id == 45  || id == 44  || id == 43 || id == 42  || id == 41  || id == 31  || id == 32  || id == 33  || id == 34  || id == 35  || id == 36  || id == 37  || id == 38){               
+                    document.getElementById('treatment1').innerHTML = value;
+            }else{
+                    document.getElementById('treatment').innerHTML = value;
+            }
+          }
+          function mylocation(loc,color){            
+            var id = document.getElementById('tooth_id').value;
+             if(id == 55 || id == 54  || id == 53  || id == 52  || id == 51 || id == 18  || id == 17  || id == 16  || id == 15  || id == 14  || id == 13 || id == 12  || id == 11){
+                if(loc=='center'){
+                    if(document.getElementById('check-1').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-6').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-11').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-16').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else{
+                        document.getElementById('p_center').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q1"){
+                    if(document.getElementById('check-2').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-7').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-12').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-17').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else{
+                        document.getElementById('p1').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q2"){
+                    if(document.getElementById('check-3').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-8').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-13').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-18').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else{
+                        document.getElementById('p3').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q3"){
+                    if(document.getElementById('check-4').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-9').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-14').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-19').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else{
+                        document.getElementById('p4').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q4"){
+                    if(document.getElementById('check-5').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-10').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-15').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-20').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else{
+                        document.getElementById('p2').style.fill = 'white';
+                    }
+                }else{
+                    document.getElementById('p_center').style.fill = white;
+                    document.getElementById('p1').style.fill = white;
+                    document.getElementById('p2').style.fill = white;
+                    document.getElementById('p3').style.fill = white;
+                    document.getElementById('p4').style.fill = white;
+                }
+            }else if(id == 61 || id == 62  || id == 63  || id == 64  || id == 65 || id == 21  || id == 22  || id == 23  || id == 24  || id == 25  || id == 26 || id == 27  || id == 28){
+                if(loc=='center'){
+                    if(document.getElementById('check-1').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-6').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-11').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-16').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else{
+                        document.getElementById('p_center').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q1"){
+                    if(document.getElementById('check-2').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-7').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-12').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-17').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else{
+                        document.getElementById('p3').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q2"){
+                    if(document.getElementById('check-3').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-8').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-13').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-18').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else{
+                        document.getElementById('p1').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q3"){
+                    if(document.getElementById('check-4').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-9').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-14').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-19').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else{
+                        document.getElementById('p4').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q4"){
+                    if(document.getElementById('check-5').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-10').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-15').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-20').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else{
+                        document.getElementById('p2').style.fill = 'white';
+                    }
+                }else{
+                    document.getElementById('p_center').style.fill = 'white';
+                    document.getElementById('p1').style.fill = 'white';
+                    document.getElementById('p2').style.fill = 'white';
+                    document.getElementById('p3').style.fill = 'white';
+                    document.getElementById('p4').style.fill = 'white';
+                }
+            }else if(id == 48 || id == 47  || id == 46  || id == 45  || id == 44 || id == 43  || id == 42  || id == 41  || id == 85  || id == 84  || id == 83 || id == 82  || id == 81){
+                if(loc=='center'){
+                    if(document.getElementById('check-1').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-6').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-11').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-16').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else{
+                        document.getElementById('p_center').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q1"){
+                    if(document.getElementById('check-2').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-7').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-12').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-17').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else{
+                        document.getElementById('p1').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q2"){
+                    if(document.getElementById('check-3').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-8').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-13').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-18').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else{
+                        document.getElementById('p3').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q3"){
+                    if(document.getElementById('check-4').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-9').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-14').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-19').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else{
+                        document.getElementById('p2').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q4"){
+                    if(document.getElementById('check-5').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-10').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-15').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-20').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else{
+                        document.getElementById('p4').style.fill = 'white';
+                    }
+                }else{
+                    document.getElementById('p_center').style.fill = white;
+                    document.getElementById('p1').style.fill = white;
+                    document.getElementById('p2').style.fill = white;
+                    document.getElementById('p3').style.fill = white;
+                    document.getElementById('p4').style.fill = white;
+                }
+            }else{
+                if(loc=='center'){
+                    if(document.getElementById('check-1').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-6').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-11').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else if(document.getElementById('check-16').checked==true){
+                        document.getElementById('p_center').style.fill = color;
+                    }else{
+                        document.getElementById('p_center').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q1"){
+                    if(document.getElementById('check-2').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-7').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-12').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else if(document.getElementById('check-17').checked==true){
+                        document.getElementById('p3').style.fill = color;
+                    }else{
+                        document.getElementById('p3').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q2"){
+                    if(document.getElementById('check-3').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-8').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-13').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else if(document.getElementById('check-18').checked==true){
+                        document.getElementById('p1').style.fill = color;
+                    }else{
+                        document.getElementById('p1').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q3"){
+                    if(document.getElementById('check-4').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-9').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-14').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else if(document.getElementById('check-19').checked==true){
+                        document.getElementById('p2').style.fill = color;
+                    }else{
+                        document.getElementById('p2').style.fill = 'white';
+                    }
+                }else
+                if(loc=="q4"){
+                    if(document.getElementById('check-5').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-10').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-15').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else if(document.getElementById('check-20').checked==true){
+                        document.getElementById('p4').style.fill = color;
+                    }else{
+                        document.getElementById('p4').style.fill = 'white';
+                    }
+                }else{
+                    document.getElementById('p_center').style.fill = 'white';
+                    document.getElementById('p1').style.fill = 'white';
+                    document.getElementById('p2').style.fill = 'white';
+                    document.getElementById('p3').style.fill = 'white';
+                    document.getElementById('p4').style.fill = 'white';
+                }
+            }
+          }
+        </script>
     </body>
 </html>

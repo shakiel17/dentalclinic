@@ -49,7 +49,7 @@
             .slice, .center {
             stroke: black;
             stroke-width: 4;
-            cursor: pointer;
+            cursor: pointer;            
             }
             /* .slice:hover, .center:hover {
             fill: lightgray;

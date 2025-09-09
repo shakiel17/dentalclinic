@@ -528,50 +528,56 @@
                                     
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-1" value="OK">
+                                            <input type="radio" name="remarks" id="rad-1" value="OK" onclick="condition(this.value);">
                                             <label for="rad-1">OK</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-2" value="D">
+                                            <input type="radio" name="remarks" id="rad-2" value="D" onclick="condition(this.value);">
                                             <label for="rad-2">D</label>
                                         </div>
-                                    </td>
+                                    </td>                                    
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-3" value="M">
+                                            <input type="radio" name="remarks" id="rad-3" value="M" onclick="condition(this.value);">
                                             <label for="rad-3">M</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-4" value="Mo">
+                                            <input type="radio" name="remarks" id="rad-4" value="Mo" onclick="condition(this.value);">
                                             <label for="rad-4">MO</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-5" value="Im">
+                                            <input type="radio" name="remarks" id="rad-5" value="Im" onclick="condition(this.value);">
                                             <label for="rad-5">Im</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-6" value="Rf">
+                                            <input type="radio" name="remarks" id="rad-6" value="Rf" onclick="condition(this.value);">
                                             <label for="rad-6">RF</label>
                                         </div>
                                     </td>  
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-7" value="Sp">
+                                            <input type="radio" name="remarks" id="rad-7" value="Sp" onclick="condition(this.value);">
                                             <label for="rad-7">Sp</label>
                                         </div>
                                     </td>                                                                                                                                              
                                     <td>
                                         <div class="styled-radio">
-                                            <input type="radio" name="remarks" id="rad-8" value="Un">
+                                            <input type="radio" name="remarks" id="rad-8" value="Un" onclick="condition(this.value);">
                                             <label for="rad-8">Un</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="styled-radio">
+                                            <input type="radio" name="remarks" id="rad-2" value="Ex" onclick="condition(this.value);">
+                                            <label for="rad-9">Ex</label>
                                         </div>
                                     </td>
                                 </tr>
@@ -582,31 +588,31 @@
                                     <td width="20%">Caries</td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="caries_occ" id="check-1" value="1">
+                                            <input type="checkbox" name="caries_occ" id="check-1" value="1" onclick="mylocation('center','red');">
                                             <label for="check-1">Occlusal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="caries_mes" id="check-2" value="1">
+                                            <input type="checkbox" name="caries_mes" id="check-2" value="1" onclick="mylocation('q1','red');">
                                             <label for="check-2">Mesial</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="caries_dis" id="check-3" value="1">
+                                            <input type="checkbox" name="caries_dis" id="check-3" value="1" onclick="mylocation('q2','red');">
                                             <label for="check-3">Distal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="caries_buc" id="check-4" value="1">
+                                            <input type="checkbox" name="caries_buc" id="check-4" value="1" onclick="mylocation('q3','red');">
                                             <label for="check-4">Buccal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="caries_ling" id="check-5" value="1">
+                                            <input type="checkbox" name="caries_ling" id="check-5" value="1" onclick="mylocation('q4','red');">
                                             <label for="check-5">Lingual</label>
                                         </div>
                                     </td>
@@ -615,31 +621,31 @@
                                     <td width="20%">Composite</td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="comp_occ" id="check-6" value="1">
+                                            <input type="checkbox" name="comp_occ" id="check-6" value="1" onclick="mylocation('center','#3a018a');">
                                             <label for="check-6">Occlusal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="comp_mes" id="check-7" value="1">
+                                            <input type="checkbox" name="comp_mes" id="check-7" value="1" onclick="mylocation('q1','#3a018a');">
                                             <label for="check-7">Mesial</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="comp_dis" id="check-8" value="1">
+                                            <input type="checkbox" name="comp_dis" id="check-8" value="1" onclick="mylocation('q2','#3a018a');">
                                             <label for="check-8">Distal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="comp_buc" id="check-9" value="1">
+                                            <input type="checkbox" name="comp_buc" id="check-9" value="1" onclick="mylocation('q3','#3a018a');">
                                             <label for="check-9">Buccal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="comp_ling" id="check-10" value="1">
+                                            <input type="checkbox" name="comp_ling" id="check-10" value="1" onclick="mylocation('q4','#3a018a');">
                                             <label for="check-10">Lingual</label>
                                         </div>
                                     </td>
@@ -648,31 +654,31 @@
                                     <td width="20%">Amalgam</td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="amal_occ" id="check-11" value="1">
+                                            <input type="checkbox" name="amal_occ" id="check-11" value="1" onclick="mylocation('center','#908d94');">
                                             <label for="check-11">Occlusal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="amal_mes" id="check-12" value="1">
+                                            <input type="checkbox" name="amal_mes" id="check-12" value="1" onclick="mylocation('q1','#908d94');">
                                             <label for="check-12">Mesial</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="amal_dis" id="check-13" value="1">
+                                            <input type="checkbox" name="amal_dis" id="check-13" value="1" onclick="mylocation('q2','#908d94');">
                                             <label for="check-13">Distal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="amal_buc" id="check-14" value="1">
+                                            <input type="checkbox" name="amal_buc" id="check-14" value="1" onclick="mylocation('q3','#908d94');">
                                             <label for="check-14">Buccal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="amal_ling" id="check-15" value="1">
+                                            <input type="checkbox" name="amal_ling" id="check-15" value="1" onclick="mylocation('q4','#908d94');">
                                             <label for="check-15">Lingual</label>
                                         </div>
                                     </td>
@@ -681,31 +687,31 @@
                                     <td width="20%">Recurrent Caries</td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="recur_occ" id="check-16" value="1">
+                                            <input type="checkbox" name="recur_occ" id="check-16" value="1" onclick="mylocation('center','url(#pattern-stripe)');">
                                             <label for="check-16">Occlusal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="recur_mes" id="check-17" value="1">
+                                            <input type="checkbox" name="recur_mes" id="check-17" value="1" onclick="mylocation('q1','url(#pattern-stripe)');">
                                             <label for="check-17">Mesial</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="recur_dis" id="check-18" value="1">
+                                            <input type="checkbox" name="recur_dis" id="check-18" value="1" onclick="mylocation('q2','url(#pattern-stripe)');">
                                             <label for="check-18">Distal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="recur_buc" id="check-19" value="1">
+                                            <input type="checkbox" name="recur_buc" id="check-19" value="1" onclick="mylocation('q3','url(#pattern-stripe)');">
                                             <label for="check-19">Buccal</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="styled-checkbox">
-                                            <input type="checkbox" name="recur_ling" id="check-20" value="1">
+                                            <input type="checkbox" name="recur_ling" id="check-20" value="1" onclick="mylocation('q4','url(#pattern-stripe)');">
                                             <label for="check-20">Lingual</label>
                                         </div>
                                     </td>
@@ -715,8 +721,8 @@
                                 </tr>
                                 <tr>
                                     <td>Treatment</td>
-                                    <td colspan="2">
-                                        <select name="remarks1" class="form-control" id="remarks1">
+                                    <td colspan="3">
+                                        <select name="remarks1" class="form-control" id="remarks1" onchange="treatment(this.value);">
                                             <option value="">None</option>
                                             <option value="Am">Amalgam Filling</option>
                                             <option value="Co">Composite Filling</option>
@@ -728,22 +734,32 @@
                                             <option value="Imp">Implant</option>
                                             <option value="S">Sealants</option>
                                             <option value="RD">Removable Denture</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>Surgery</td>
-                                    <td colspan="2">
-                                        <select name="remarks2" class="form-control" id="remarks2">
-                                            <option value="">None</option>
                                             <option value="X">Extraction due to Caries</option>                                            
-                                            <option value="Xo">Extraction due to Other Causes</option>                                            
+                                            <option value="Xo">Extraction due to Other Causes</option>
                                         </select>
                                     </td>
-                                </tr>
+                                    <td colspan="2" rowspan="3" valign="middle" align="center">
+                                        <span id="treatment"></span><br>
+                                        <span id="condition"></span><br>
+                                        <svg viewBox="0 0 400 400" style="width:50px; height: 50px; fill:white;">   
+                                            <pattern id="pattern-stripe" 
+                                                width="4" height="4" 
+                                                patternUnits="userSpaceOnUse"
+                                                patternTransform="rotate(90)">
+                                                <rect width="1" height="4" transform="translate(0,0)" fill="red"></rect>
+                                            </pattern>                                                                 
+                                            <path class="slice" d="M200,200 L305,95 A150,150 0 0,1 305,305 Z"  id="p1"/>
+                                            <path class="slice" d="M200,200 L305,305 A150,150 0 0,1 95,305 Z"  id="p2"/>
+                                            <path class="slice" d="M200,200 L95,305 A150,150 0 0,1 95,95 Z"  id="p3"/>
+                                            <path class="slice" d="M200,200 L95,95 A150,150 0 0,1 305,95 Z"  id="p4"/>
+                                            <!-- Clickable hole in the center -->
+                                            <circle class="center" cx="200" cy="200" r="60"  id="p_center"/>
+                                        </svg><br>
+                                        <span id="condition1"></span><br>
+                                        <span id="treatment1"></span>
+                                        
+                                    </td>
+                                </tr>                                
                             </table>
                         </div>                        
                         <div class="modal-footer">
