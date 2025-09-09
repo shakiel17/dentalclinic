@@ -75,6 +75,9 @@
                                                 <a class="nav-link" href="javascript:void(0)">Un&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unerupted</a>
                                             </li>
                                             <li class="nav-item">
+                                                <a class="nav-link" href="javascript:void(0)">Ex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Extraction</a>
+                                            </li>
+                                            <li class="nav-item">
                                                 <a class="nav-link" href="javascript:void(0);"><b>RESTORATION & PROSTHETICS</b></a>
                                             </li>  
                                             <li class="nav-item">
@@ -128,6 +131,7 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" href="javascript:void(0)"><div style="background: repeating-linear-gradient(-180deg, #fc1447, #ffffff 1px, white 1px, white 2px); width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recurrent Caries</a>
                                             </li>
+                                            
                                             <!-- <li class="nav-item">
                                                 <a class="nav-link" href="javascript:void(0)"><div style="background-color:#fff56b; width:20px; float:left;">&nbsp;</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Porcelain Fused to Metal <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crown (PFM)</a>
                                             </li>

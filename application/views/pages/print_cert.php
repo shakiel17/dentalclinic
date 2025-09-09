@@ -6703,6 +6703,7 @@
                                                         <b>Sp</b> - Supernumerary Tooth<br>
                                                         <b>Rf</b> - Root Fragment<br>
                                                         <b>Un</b> - Unerupted<br>                                                        
+                                                        <b>Ex</b> - For Extraction<br>
                                                     </td>
                                                     <td valign="top">
                                                         <b>Restorations & Prosthetics</b><br>
