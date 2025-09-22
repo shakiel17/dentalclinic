@@ -45,6 +45,7 @@
                                             <div class="btn-group" role="group">
                                                 <a href="#" class="btn btn-primary ripple addRx" data-toggle="modal" data-target="#ManageRx" data-id="<?=$caseno;?>_<?=$customer_id;?>"><i class="la la-plus-circle"></i> Add Prescription</a>
                                                 <a href="<?=base_url('print_rx/'.$caseno."/".$customer_id);?>" class="btn btn-success ripple" target="_blank"><i class="la la-print"></i> Print</a>
+                                                <a href="<?=base_url('print_rx_nohead/'.$caseno."/".$customer_id);?>" class="btn btn-warning ripple" target="_blank"><i class="la la-print"></i> Print (No Header)</a>
                                             </div>
                                         </div>
                                     </div>

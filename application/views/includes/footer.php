@@ -1001,6 +1001,11 @@
                 }
             }
           }
+
+        $('.addBraceImage').click(function(){
+            var id=$(this).data('id');
+            document.getElementById('brace_id').value=id;
+        });
         </script>
     </body>
 </html>

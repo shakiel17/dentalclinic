@@ -67,6 +67,9 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" href="<?=base_url('view_patient_account/'.$item['customer_id']);?>"><i class="la la-file la-2x align-middle pr-2"></i>Dental Records</a>
                                             </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="<?=base_url('view_patient_braces/'.$item['customer_id']);?>"><i class="la la-database la-2x align-middle pr-2"></i>Dental Braces</a>
+                                            </li>
                                             <!-- <li class="nav-item">
                                                 <a class="nav-link" href="javascript:void(0)"><i class="la la-question-circle la-2x align-middle pr-2"></i>FAQ</a>
                                             </li> -->
@@ -242,9 +245,9 @@
                                     </div>
                                 </div>
                                 <?php
-                                }else{
+                                }else if($admission=="2"){
                                     ?>
-                                    <div class="widget has-shadow">
+                                <div class="widget has-shadow">
                                     <div class="widget-header bordered no-actions d-flex align-items-center">
                                         <table width="100%" border="0">
                                             <tr>
@@ -291,6 +294,93 @@
                                                     echo "</tr>";
                                                     $x++;
                                                 }
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <div class="widget has-shadow">
+                                    <div class="widget-header bordered no-actions d-flex align-items-center">
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td><h4>Dental Braces</h4></td>
+                                                <td align="right"><a href="#" data-toggle="modal" data-target="#AddBraceImage" data-id="<?=$customer_id;?>" class="btn btn-primary btn-sm addBraceImage"><i class="la la-plus"></i> Add Image</a></td>
+                                            </tr>
+                                        </table>                                        
+                                    </div>
+                                    <?php
+                                    if(count($braces_before) > 0){
+                                        $before=count($braces_before);
+                                    }else{
+                                        $before=1;
+                                    }
+                                    if(count($braces_middle) > 0){
+                                        $middle=count($braces_middle);
+                                    }else{
+                                        $middle=1;
+                                    }
+                                    if(count($braces_after) > 0){
+                                        $after=count($braces_after);
+                                    }else{
+                                        $after=1;
+                                    }
+                                    ?>
+                                    <div class="widget-body">
+                                        <div class="table-responsive">
+                                            <table width="100%" border="0" style="border-collapse: collapse; font-size:12px; text-align:center;" cellspacing="0"> 
+                                                <tr>
+                                                    <td colspan="<?=$before;?>" align="left"><b style="font-size:18px;">No Braces</b></td>
+                                                </tr>                                                
+                                                <?php
+                                                echo "<tr>";    
+                                                if(count($braces_before)>0){
+                                                    $row=100/count($braces_before);
+                                                    foreach($braces_before as $item){                                                    
+                                                        echo "<td width='$row'><img src='data:image/jpg;charset=utf8;base64,".base64_encode($item['images'])."' width='300'><br><a href='".base_url('delete_brace_image/'.$item['id'].'/'.$customer_id)."' class='btn btn-danger btn-sm'>remove</a></td>";                                                    
+
+                                                    }
+                                                }else{
+                                                    echo "<td height='100'>No image found!</td>";
+                                                }                                                
+                                                echo "</tr>";
+                                                ?>
+                                            </table>
+                                            <br>
+                                            <table width="100%" border="0" style="border-collapse: collapse; font-size:12px; text-align:center;" cellspacing="0"> 
+                                                <tr>
+                                                    <td colspan="<?=$middle;?>" align="left"><b style="font-size:18px;">With Braces</b></td>
+                                                </tr>                                                
+                                                <?php
+                                                echo "<tr>"; 
+                                                if(count($braces_middle)>0){
+                                                    foreach($braces_middle as $item){                                                    
+                                                        echo "<td width='$row'><img src='data:image/jpg;charset=utf8;base64,".base64_encode($item['images'])."' width='300'><br><a href='".base_url('delete_brace_image/'.$item['id'].'/'.$customer_id)."' class='btn btn-danger btn-sm'>remove</a></td>";                                                    
+                                                    }
+                                                }else{
+                                                    echo "<td height='100'>No image found!</td>";
+                                                }                                                
+                                                echo "</tr>";
+                                                ?>
+                                            </table>
+                                            <br>
+                                            <table width="100%" border="0" style="border-collapse: collapse; font-size:12px; text-align:center;" cellspacing="0"> 
+                                                <tr>
+                                                    <td colspan="<?=$after;?>" align="left"><b style="font-size:18px;">After Braces</b></td>
+                                                </tr>                                                
+                                                <?php
+                                                echo "<tr>";
+                                                if(count($braces_after)>0){
+                                                    foreach($braces_after as $item){
+                                                    
+                                                        echo "<td width='$row'><img src='data:image/jpg;charset=utf8;base64,".base64_encode($item['images'])."' width='300'><br><a href='".base_url('delete_brace_image/'.$item['id'].'/'.$customer_id)."' class='btn btn-danger btn-sm'>remove</a></td>";                                                    
+                                                    }
+                                                }else{
+                                                    echo "<td height='100'>No image found!</td>";
+                                                }                                                
+                                                echo "</tr>";
                                                 ?>
                                             </table>
                                         </div>

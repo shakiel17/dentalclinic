@@ -436,6 +436,20 @@ date_default_timezone_set('Asia/Manila');
             $data['customer_id'] = $customer_id;
             $this->load->view('pages/'.$page,$data);                           
         }
+        public function print_rx_nohead($caseno,$customer_id){
+            $page = "print_rx_nohead";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['items'] = $this->Clinic_model->getAllPatientPrescription($caseno,$customer_id);
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
+            $data['setting'] = $this->Clinic_model->getSettings();
+            $data['caseno'] = $caseno;
+            $data['customer_id'] = $customer_id;
+            $this->load->view('pages/'.$page,$data);                           
+        }
         public function clinic_settings(){
             $page = "manage_settings";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
@@ -535,6 +549,46 @@ date_default_timezone_set('Asia/Manila');
                 $this->session->set_flashdata('failed','Unable to save payment date!');
             }
             redirect(base_url("view_patient_account/".$customer_id));
+        }
+        public function view_patient_braces($id){
+            $page = "patient_profile";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}     
+            $data['title'] = "Patient Profile";
+            $data['admission'] = "3";
+            $data['item'] = $this->Clinic_model->getSinglePatient($id);
+            $data['braces_before'] = $this->Clinic_model->getPatientBraces($id,'before');
+            $data['braces_middle'] = $this->Clinic_model->getPatientBraces($id,'middle');
+            $data['braces_after'] = $this->Clinic_model->getPatientBraces($id,'after');
+            $data['customer_id'] = $id;
+            $this->load->view('includes/header'); 
+            $this->load->view('includes/navbar');           
+            $this->load->view('includes/sidebar');            
+            $this->load->view('pages/'.$page,$data);    
+            $this->load->view('includes/modal');     
+            $this->load->view('includes/footer');               
+        }
+        public function save_brace_image(){
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->save_brace_image();
+            if($save){
+               $this->session->set_flashdata('success','Brace image successfully saved!');                
+            }else{
+                $this->session->set_flashdata('failed','Unable to save brace image!');
+            }
+            redirect(base_url('view_patient_braces/'.$customer_id));
+        }
+        public function delete_brace_image($id,$customer_id){
+            $result=$this->Clinic_model->delete_brace_image($id);
+            if($result){
+                $this->session->set_flashdata('success','Brace image successfully deelted!'); 
+            }else{
+                $this->session->set_flashdata('failed','Unable to delete brace image!');
+            }
+            redirect(base_url('view_patient_braces/'.$customer_id));
         }
 }
 ?>

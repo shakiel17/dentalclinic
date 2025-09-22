@@ -533,5 +533,37 @@
                 return false;
             }
         }
+        public function getPatientBraces($customer_id,$category){
+            $result=$this->db->query("SELECT * FROM braces WHERE customer_id='$customer_id' AND category='$category' ORDER BY id ASC");
+            return $result->result_array();
+        }
+        public function save_brace_image(){
+            $customer_id=$this->input->post('customer_id');
+            $category=$this->input->post('category');
+            // $fileName=basename($_FILES["file"]["name"]);
+            // $fileType=pathinfo($fileName, PATHINFO_EXTENSION);
+            // $allowTypes = array('jpg','png','jpeg','gif');
+            // if(in_array($fileType,$allowTypes)){
+            foreach($_FILES["file"]["tmp_name"] as $image){
+                $imgContent=addslashes(file_get_contents($image));
+                $result=$this->db->query("INSERT INTO braces(customer_id,images,category) VALUES('$customer_id','$imgContent','$category')");            
+            }                                
+            // }else{
+            //     return false;
+            // }            
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function delete_brace_image($id){
+            $result=$this->db->query("DELETE FROM braces WHERE id='$id'");
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 ?>

@@ -965,3 +965,42 @@
                 </div>
             </div>
         </div>
+
+        <div id="AddBraceImage" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Brace Images</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_brace_image');?>" method="POST" class="form-horizontal" enctype="multipart/form-data">                        
+                        <input type="hidden" name="customer_id" id="brace_id">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-12">Image/s</label>
+                                <div class="ml-5">
+                                    <input type="file" name="file[]" class="form-control" multiple required accept="image/*">      
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12">Category</label>
+                                <div class="ml-5">
+                                    <select name="category" class="form-control" required>
+                                        <option value="before">No Brace</option>
+                                        <option value="middle">With Brace</option>
+                                        <option value="after">After Brace</option>
+                                    </select>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

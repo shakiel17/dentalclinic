@@ -50,6 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 #
+$route['print_rx_nohead/(:any)/(:any)'] = 'pages/print_rx_nohead/$1/$2';
+$route['delete_brace_image/(:any)/(:any)'] = 'pages/delete_brace_image/$1/$2';
+$route['save_brace_image'] = 'pages/save_brace_image';
 $route['update_payment_date'] = 'pages/update_payment_date';
 $route['update_admission_date'] = 'pages/update_admission_date';
 $route['print_certificate/(:any)/(:any)'] = 'pages/print_certificate/$1/$2';
@@ -70,6 +73,7 @@ $route['admit_chart/(:any)/(:any)'] = 'pages/admit_chart/$1/$2';
 $route['change_password'] = 'pages/change_password';
 $route['print_dental_records/(:any)'] = 'pages/print_dental_records/$1';
 $route['save_balance_payment'] = 'pages/save_balance_payment';
+$route['view_patient_braces/(:any)'] = 'pages/view_patient_braces/$1';
 $route['view_patient_account/(:any)'] = 'pages/view_patient_account/$1';
 $route['discharge_patient/(:any)'] = 'pages/discharge_patient/$1';
 $route['save_partial_payment'] = 'pages/save_partial_payment';
