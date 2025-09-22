@@ -23,12 +23,12 @@
         </tr>            
     </table>
     <hr size="3" color="white">
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial; font-size:11px; font-weight:bold; color:white;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial; font-size:11px; font-weight:bold;">
         <tr>
-            <td width="22%">Patient's Name:</td>
+            <td width="22%" style="color:white;">Patient's Name:</td>
             <td style="border-bottom:1px solid white;"><?=$patient['lastname'];?>, <?=$patient['firstname'];?> <?=$patient['middlename'];?></td>
             <td>&nbsp</td>
-            <td>Age: </td>
+            <td style="color:white;">Age: </td>
             <td style="border-bottom:1px solid white;">
                 <?php
                     $birthdate= new DateTime($patient['birthdate']);
@@ -42,16 +42,16 @@
             <td style="border-bottom:1px solid black;"><?=$patient['gender'];?></td> -->
         </tr>
     </table>
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family:Arial; font-size:11px; font-weight:bold; color:white;">
+    <table width="100%" border="0" cellpadding="1" cellspacing="0" style="font-family:Arial; font-size:11px; font-weight:bold;">
         <tr>
-            <td>Address:</td>
+            <td style="color:white;">Address:</td>
             <td style="border-bottom:1px solid white;"><?=$patient['address'];?></td>
             <td>&nbsp;</td>
-            <td>Date: </td>
+            <td style="color:white;">Date: </td>
             <td style="border-bottom:1px solid white;"><?=date('m/d/Y');?></td>
         </tr>
     </table>
-    <br>
+    <br><br><br>
     <img src="<?=base_url('design/assets/images/rx.png');?>" width="30" style="margin-left:20px; position:absolute; display:none;">    
     <br>
     <table width="100%" border="0" >

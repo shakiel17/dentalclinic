@@ -55,6 +55,19 @@
             fill: lightgray;
             } */
         </style>
+        <style>
+            #signature-pad {
+            border: 1px solid #000;
+            border-radius: 5px;
+            width: 100%;
+            height: 200px;
+            touch-action: none;
+            }
+            .buttons {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Begin Preloader -->

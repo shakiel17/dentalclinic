@@ -50,6 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 #
+$route['print_contract/(:any)'] = 'pages/print_contract/$1';
+$route['save_contract'] = 'pages/save_contract';
 $route['print_rx_nohead/(:any)/(:any)'] = 'pages/print_rx_nohead/$1/$2';
 $route['delete_brace_image/(:any)/(:any)'] = 'pages/delete_brace_image/$1/$2';
 $route['save_brace_image'] = 'pages/save_brace_image';

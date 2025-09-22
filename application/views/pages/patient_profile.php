@@ -307,7 +307,10 @@
                                         <table width="100%" border="0">
                                             <tr>
                                                 <td><h4>Dental Braces</h4></td>
-                                                <td align="right"><a href="#" data-toggle="modal" data-target="#AddBraceImage" data-id="<?=$customer_id;?>" class="btn btn-primary btn-sm addBraceImage"><i class="la la-plus"></i> Add Image</a></td>
+                                                <td align="right">
+                                                    <a href="#" data-toggle="modal" data-target="#ManageContract" data-id="<?=$customer_id;?>" class="btn btn-info btn-sm manageContract"><i class="la la-gear"></i> Manage Contract</a>
+                                                    <a href="#" data-toggle="modal" data-target="#AddBraceImage" data-id="<?=$customer_id;?>" class="btn btn-primary btn-sm addBraceImage"><i class="la la-plus"></i> Add Image</a>
+                                                </td>
                                             </tr>
                                         </table>                                        
                                     </div>

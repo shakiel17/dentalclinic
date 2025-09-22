@@ -1004,3 +1004,61 @@
                 </div>
             </div>
         </div>
+        <div id="ManageContract" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Contract Details</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">close</span>
+                        </button>
+                    </div>
+                    <form action="<?=base_url('save_contract');?>" method="POST" class="form-horizontal" target="_blank">                        
+                        <input type="hidden" name="customer_id" id="contract_id">
+                        <div class="modal-body">  
+                            <div class="form-group">
+                                <label class="col-lg-12">Date</label>
+                                <div class="ml-5">
+                                    <input type="date" name="datearray" class="form-control" value="<?=date('Y-m-d');?>">
+                                </div>                            
+                            </div>                          
+                            <div class="form-group">
+                                <label class="col-lg-12">Total Fee</label>
+                                <div class="ml-5">
+                                    <input type="text" name="total_fee" class="form-control">
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12">Initial Fee</label>
+                                <div class="ml-5">
+                                    <input type="text" name="initial_fee" class="form-control">
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12">Monthly Fee</label>
+                                <div class="ml-5">
+                                    <input type="text" name="monthly_fee" class="form-control">
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-12">Signature</label>
+                                <canvas id="signature-pad" width="500" height="200"></canvas>
+                                <div class="buttons">
+                                    <button type="button" class="btn btn-default btn-sm" onclick="clearSignature()">Clear</button>
+                                    <button type="button" class="btn btn-success btn-sm" onclick="saveSignature()">Save</button>
+                                </div>
+
+                                <!-- <img id="signature-image" style="margin-top: 10px; display:none;" alt="Saved Signature"/> -->
+                                 <p id="sign-save"></p>
+                                <textarea id="signature-image" name="signature" style="display:none;" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-shadow" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

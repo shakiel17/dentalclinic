@@ -1006,6 +1006,78 @@
             var id=$(this).data('id');
             document.getElementById('brace_id').value=id;
         });
+        $('.addBraceImage').click(function(){
+            var id=$(this).data('id');
+            document.getElementById('contract_id').value=id;
+        });
+
+
+        //=========================Signature==============================
+        const canvas = document.getElementById('signature-pad');
+            const ctx = canvas.getContext('2d');
+            let drawing = false;
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mouseup', stopDraw);
+            canvas.addEventListener('mouseout', stopDraw);
+            canvas.addEventListener('mousemove', draw);
+
+            canvas.addEventListener('touchstart', startDraw);
+            canvas.addEventListener('touchend', stopDraw);
+            canvas.addEventListener('touchcancel', stopDraw);
+            canvas.addEventListener('touchmove', drawTouch);
+
+            function startDraw(e) {
+            drawing = true;
+            ctx.beginPath();
+            ctx.moveTo(getX(e), getY(e));
+            e.preventDefault();
+            }
+
+            function stopDraw(e) {
+            drawing = false;
+            e.preventDefault();
+            }
+
+            function draw(e) {
+            if (!drawing) return;
+            ctx.lineTo(getX(e), getY(e));
+            ctx.stroke();
+            e.preventDefault();
+            }
+
+            function drawTouch(e) {
+            const touch = e.touches[0];
+            draw({
+                clientX: touch.clientX,
+                clientY: touch.clientY,
+                preventDefault: () => {}
+            });
+            }
+
+            function getX(e) {
+            if (e.touches) return e.touches[0].clientX - canvas.getBoundingClientRect().left;
+            return e.clientX - canvas.getBoundingClientRect().left;
+            }
+
+            function getY(e) {
+            if (e.touches) return e.touches[0].clientY - canvas.getBoundingClientRect().top;
+            return e.clientY - canvas.getBoundingClientRect().top;
+            }
+
+            function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById('sign-save').innerHTML = '';
+            }
+
+            function saveSignature() {
+            const dataURL = canvas.toDataURL();
+            const img = document.getElementById('signature-image');
+            //img.src = dataURL;
+            img.value = dataURL;
+            //img.style.display = 'block';
+            document.getElementById('sign-save').innerHTML = 'signature saved!';
+            }
         </script>
     </body>
 </html>
