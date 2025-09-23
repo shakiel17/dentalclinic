@@ -1010,7 +1010,10 @@
             var id=$(this).data('id');
             document.getElementById('contract_id').value=id;
         });
-
+        $('.manageContract').click(function(){
+            var id=$(this).data('id');
+            document.getElementById('contract_id').value=id;
+        });
 
         //=========================Signature==============================
         const canvas = document.getElementById('signature-pad');

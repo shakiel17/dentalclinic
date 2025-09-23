@@ -590,5 +590,28 @@ date_default_timezone_set('Asia/Manila');
             }
             redirect(base_url('view_patient_braces/'.$customer_id));
         }
+        public function save_contract(){
+            $customer_id=$this->input->post('customer_id');
+            $save=$this->Clinic_model->save_contract();
+            if($save){
+                redirect(base_url('print_contract/'.$customer_id));
+            }else{
+                $this->session->set_flashdata('failed','Unable to save brace contract!');
+                echo "<script>window.close();</script>";
+            }
+        }
+        public function print_contract($customer_id){
+            $page = "print_contract";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }                  
+            if($this->session->admin_login){}
+            else{redirect(base_url());}        
+            $data['item'] = $this->Clinic_model->getPatientContract($customer_id);
+            $data['patient'] = $this->Clinic_model->getSinglePatient($customer_id);
+            $data['setting'] = $this->Clinic_model->getSettings();            
+            $data['customer_id'] = $customer_id;
+            $this->load->view('pages/'.$page,$data);                           
+        }
 }
 ?>

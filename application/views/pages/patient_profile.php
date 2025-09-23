@@ -308,6 +308,12 @@
                                             <tr>
                                                 <td><h4>Dental Braces</h4></td>
                                                 <td align="right">
+                                                    <?php
+                                                    $contract=$this->Clinic_model->getPatientContract($customer_id);                                                
+                                                    if($contract){
+                                                        echo "<a href='".base_url('print_contract/'.$customer_id)."' class='btn btn-success btn-sm' target='_blank'><i class='la la-print'></i> Print</a>";
+                                                    }
+                                                    ?>                                                    
                                                     <a href="#" data-toggle="modal" data-target="#ManageContract" data-id="<?=$customer_id;?>" class="btn btn-info btn-sm manageContract"><i class="la la-gear"></i> Manage Contract</a>
                                                     <a href="#" data-toggle="modal" data-target="#AddBraceImage" data-id="<?=$customer_id;?>" class="btn btn-primary btn-sm addBraceImage"><i class="la la-plus"></i> Add Image</a>
                                                 </td>

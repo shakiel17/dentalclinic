@@ -565,5 +565,32 @@
                 return false;
             }
         }
+        public function save_contract(){
+            $customer_id=$this->input->post('customer_id');
+            $total_fee=$this->input->post('total_fee');
+            $initial_fee=$this->input->post('initial_fee');
+            $monthly_fee=$this->input->post('monthly_fee');
+            $signature=$this->input->post('signature');
+            $datearray=$this->input->post('datearray');
+            $check=$this->db->query("SELECT * FROM `contract` WHERE customer_id='$customer_id'");  
+            if($check->num_rows()>0){
+                $result=$this->db->query("UPDATE `contract` SET total_fee='$total_fee',initial_fee='$initial_fee',monthly_fee='$monthly_fee',`signature`='$signature',datearray='$datearray'");
+            }else{
+                $result=$this->db->query("INSERT INTO `contract`(customer_id,total_fee,initial_fee,monthly_fee,`signature`,datearray) VALUES('$customer_id','$total_fee','$initial_fee','$monthly_fee','$signature','$datearray')");
+            }
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        public function getPatientContract($customer_id){
+            $result=$this->db->query("SELECT * FROM `contract` WHERE customer_id='$customer_id'");
+            if($result->num_rows()>0){
+                return $result->row_array();
+            }else{
+                return false;
+            }
+        }
     }
 ?>
