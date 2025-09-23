@@ -66,8 +66,33 @@ CREATE TABLE `admission` (
 
 LOCK TABLES `admission` WRITE;
 /*!40000 ALTER TABLE `admission` DISABLE KEYS */;
-INSERT INTO `admission` VALUES (7,'20250826103404','20250718084109',NULL,'2025-08-26','10:34:04','discharged'),(8,'20250826103621','20250718084109',NULL,'2025-08-26','10:36:21','discharged'),(16,'20250830155939','20250718084109',NULL,'2025-08-30','15:59:39','discharged'),(17,'20250902092906','20250729151534','1','2025-09-02','09:29:06','Active');
+INSERT INTO `admission` VALUES (7,'20250826103404','20250718084109',NULL,'2025-08-25','11:34:00','discharged'),(8,'20250826103621','20250718084109',NULL,'2025-08-26','10:36:21','discharged'),(16,'20250830155939','20250718084109',NULL,'2025-08-30','15:59:39','discharged'),(17,'20250902092906','20250729151534','1','2025-09-02','09:29:06','Active');
 /*!40000 ALTER TABLE `admission` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `braces`
+--
+
+DROP TABLE IF EXISTS `braces`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `braces` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `customer_id` varchar(100) DEFAULT NULL,
+  `images` longblob,
+  `category` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `braces`
+--
+
+LOCK TABLES `braces` WRITE;
+/*!40000 ALTER TABLE `braces` DISABLE KEYS */;
+/*!40000 ALTER TABLE `braces` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -132,8 +157,37 @@ CREATE TABLE `collection` (
 
 LOCK TABLES `collection` WRITE;
 /*!40000 ALTER TABLE `collection` DISABLE KEYS */;
-INSERT INTO `collection` VALUES (14,'RN20250826103404','20250826103404','OR250826103414','20250717083721','CASHONHAND',30000,10000,'cash','','','PAID','RN20250826103404','2025-08-26','10:34:14',0),(15,'RN20250826103414','20250826103404','OR250826103714','20250826100550','CASHONHAND',20000,1000,'cash','','','PAID','RN20250826103414','2025-09-26','10:37:14',0),(16,'RN20250826103621','20250826103621','OR250826103643','20250717083530','CASHONHAND',2500,1000,'cash','','','PAID','RN20250826103621','2025-08-26','10:36:43',0),(17,'RN20250826103643','20250826103621','OR250826104055','20250826104035','CASHONHAND',1500,1500,'cash','','','PAID','RN20250826103643','2025-09-29','10:40:55',0),(18,'RN20250826103714','20250826103404','OR250830155257','20250826100550','CASHONHAND',19000,5000,'cash','','','PAID','RN20250826103714','2025-08-30','15:52:57',1),(19,'RN20250830155257','20250826103404','','20250826100550','AR TRADE',14000,0,'ar','','','pending','RN20250826103714','2025-08-30','15:52:57',NULL),(20,'RN20250830155939','20250830155939','OR250902093944','20250717083439','CASHONHAND',1000,1000,'cash','','','PAID','RN20250830155939','2025-09-02','09:39:44',NULL);
+INSERT INTO `collection` VALUES (14,'RN20250826103404','20250826103404','OR250826103414','20250717083721','CASHONHAND',30000,10000,'cash','','','PAID','RN20250826103404','2025-08-26','10:34:14',0),(15,'RN20250826103414','20250826103404','OR250826103714','20250826100550','CASHONHAND',20000,1000,'cash','','','PAID','RN20250826103414','2025-09-26','10:37:14',0),(16,'RN20250826103621','20250826103621','OR250826103643','20250717083530','CASHONHAND',2500,1000,'cash','','','PAID','RN20250826103621','2025-08-26','10:36:43',0),(17,'RN20250826103643','20250826103621','OR250826104055','20250826104035','CASHONHAND',1500,1500,'cash','','','PAID','RN20250826103643','2025-09-29','10:40:55',0),(18,'RN20250826103714','20250826103404','OR250830155257','20250826100550','CASHONHAND',19000,5000,'cash','','','PAID','RN20250826103714','2025-08-30','15:52:57',1),(19,'RN20250830155257','20250826103404','','20250826100550','AR TRADE',14000,0,'ar','','','pending','RN20250826103714','2025-08-30','15:52:57',NULL),(20,'RN20250830155939','20250830155939','OR250902093944','20250717083439','CASHONHAND',1000,1000,'cash','','','PAID','RN20250830155939','2025-08-29','09:39:44',NULL);
 /*!40000 ALTER TABLE `collection` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contract`
+--
+
+DROP TABLE IF EXISTS `contract`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `contract` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `customer_id` varchar(100) DEFAULT NULL,
+  `total_fee` double DEFAULT NULL,
+  `initial_fee` double DEFAULT NULL,
+  `monthly_fee` double DEFAULT NULL,
+  `signature` longblob,
+  `datearray` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contract`
+--
+
+LOCK TABLES `contract` WRITE;
+/*!40000 ALTER TABLE `contract` DISABLE KEYS */;
+INSERT INTO `contract` VALUES (2,'20250718084109',35000,10000,1000,_binary 'data:image/png;base64,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','2025-09-23');
+/*!40000 ALTER TABLE `contract` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -210,7 +264,7 @@ CREATE TABLE `dentition` (
   `treatment` varchar(100) DEFAULT NULL,
   `surgery` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,7 +273,7 @@ CREATE TABLE `dentition` (
 
 LOCK TABLES `dentition` WRITE;
 /*!40000 ALTER TABLE `dentition` DISABLE KEYS */;
-INSERT INTO `dentition` VALUES (1,'20250718084109','20250830155939','55','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(2,'20250718084109','20250830155939','61','OK','1','','','','','','1','','','','','','','','','','','','','',NULL,NULL),(3,'20250718084109','20250830155939','18','','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(4,'20250718084109','20250830155939','27','OK','1','','','','','1','','','','','','1','1','','','','','','1','',NULL,NULL),(5,'20250718084109','20250830155939','15','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(8,'20250729151534','20250902092906','16','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(9,'20250729151534','20250902092906','21','D','1','','','','','','','1','','','','1','','','','','','','','1','Am',''),(10,'20250729151534','20250902092906','55','OK','','','','','','','','','','','','','','','','','','','','','',''),(11,'20250729151534','20250902092906','54','OK','','','','','','','','','','','','','','','','','','','','','',''),(12,'20250729151534','20250902092906','53','OK','','','','','','','','','','','','','','','','','','','','','',''),(13,'20250729151534','20250902092906','52','OK','','','','','','','','','','','','','','','','','','','','','',''),(14,'20250729151534','20250902092906','51','','','','','','','','1','','','','','','1','','','','','','','','',''),(15,'20250729151534','20250902092906','61','','','','','','','','1','','','','','','1','','','','','','','','',''),(16,'20250729151534','20250902092906','62','','','1','','','','','','1','','','','','','','','','','','','1','',''),(17,'20250729151534','20250902092906','63','','','','','','','','1','','','','','','1','','','','','','','','',''),(18,'20250729151534','20250902092906','17','OK','','','','','','','','','','','','','','','','','','','','','',''),(19,'20250729151534','20250902092906','48','OK','','','','','','','','','','','','','','','','','','','','','',''),(20,'20250729151534','20250902092906','75','OK','','','','','','','','','','','','','','','','','','','','','','');
+INSERT INTO `dentition` VALUES (1,'20250718084109','20250830155939','55','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(2,'20250718084109','20250830155939','61','OK','1','','','','','','1','','','','','','','','','','','','','',NULL,NULL),(3,'20250718084109','20250830155939','18','','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(4,'20250718084109','20250830155939','27','OK','1','','','','','1','','','','','','1','1','','','','','','1','',NULL,NULL),(5,'20250718084109','20250830155939','15','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(8,'20250729151534','20250902092906','16','OK','','','','','','','','','','','','','','','','','','','','',NULL,NULL),(9,'20250729151534','20250902092906','21','D','1','','','','','','1','','','','','','1','','','','','','1','1','Am',''),(10,'20250729151534','20250902092906','55','OK','1','','','','','','1','','','','','','1','','','','','','1','1','',''),(11,'20250729151534','20250902092906','54','OK','','','','','','','','','','','','','','','','','','','','','',''),(12,'20250729151534','20250902092906','53','OK','','','','','','','','','','','','','','','','','','','','','',''),(13,'20250729151534','20250902092906','52','OK','','','','','','','','','','','','','','','','','','','','','',''),(14,'20250729151534','20250902092906','51','OK','1','','','','','','1','','','','','','1','','','','','','','1','',''),(15,'20250729151534','20250902092906','61','','','','','','','','1','','','','','','1','','','','','','','','',''),(16,'20250729151534','20250902092906','62','OK','','1','','','','','','1','','','','','','','','','','','','1','',''),(17,'20250729151534','20250902092906','63','','','','','','','','1','','','','','','1','','','','','','','','',''),(18,'20250729151534','20250902092906','17','OK','','','','','','','','','','','','','','','','','','','','','',''),(19,'20250729151534','20250902092906','48','Rf','1','','','','','','','1','','','','1','','','','','','','1','1','Co',''),(20,'20250729151534','20250902092906','75','OK','','','','','','','','','','','','','','','','','','','','','',''),(21,'20250729151534','20250902092906','18','Ex','','','','','','','','','','','','','','','','','','','','','','');
 /*!40000 ALTER TABLE `dentition` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -406,4 +460,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-03 14:07:16
+-- Dump completed on 2025-09-23 11:52:43
